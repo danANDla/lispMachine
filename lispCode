@@ -1,0 +1,10 @@
+(defmacro when (condition body) '(if ,condition (progn ,body)))
+(setq a 2)
+(setq b 1)
+(print b)
+(loop
+(setq temp a)
+(setq a (+ a b))
+(print a)
+(setq b temp)
+(when (> a 100) (return a)))
