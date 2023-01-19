@@ -11,12 +11,12 @@ prevId = 0
 
 
 def main(args):
+    if len(args) != 2:
+        print("wrong args")
+        return
     global prevId
-    # f = open("../lispPrograms/lispCode", mode="r")
-    # text = f.read().strip()
-
-    text = "(setq a 5) (setq b 2) (+ b (+ b (+ 1 (+ a b))))"
-    text = "(setq a 5) (setq b 2) (+ b (+ b (+ (+ a 1) (+ a b)))) (+ b (+ 1 2))"
+    f = open(args[0], mode="r")
+    text = f.read().strip()
 
     sExpressions = readerWork(text)
     forms = []
@@ -35,7 +35,8 @@ def main(args):
         machineCodes = evaluate(form, machineCodes, True)
         code += machineCodes
 
-    write_code("out", code)
+    code.append(createInstr(Opcode.HLT, '', 0))
+    write_code(args[1], code)
 
 
 if __name__ == '__main__':
