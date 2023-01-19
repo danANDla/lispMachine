@@ -20,6 +20,7 @@ funcs = {
     'if': ListType.SPEC,
 }
 symbols = {}
+symbMem = [0 for i in range(100)] # symbols Addresses, prealloc mem for 100 prevs
 
 
 # Function to check balanced parentheses
@@ -105,7 +106,8 @@ def makeLispForm(expr):
         elif s in symbols:
             form = LispAtom(expr, AtomType.SYMB)
         else:
-            symbols[s] = constNIL
+            symbols[s] = (AtomType.UNDEF, LispAtom('n', AtomType.UNDEF), len(symbMem))
+            symbMem.append('NIL')
             form = LispAtom(expr, AtomType.SYMB)
 
         return form
@@ -114,8 +116,8 @@ def makeLispForm(expr):
     if isSelfEvaluated(pred):
         raise SymbNotFoundException("Bad Lisp Form\nForm starts with self-evaluating object")
     if pred not in symbols and pred not in funcs:
-        symbols[pred] = constNIL
-        # raise SymbNotFoundException(f"Can't find symbol '{pred}'")
+        # symbols[pred] = (AtomType.CONST, constNIL)
+        raise SymbNotFoundException(f"Unknown symbol '{pred}'")
 
     if pred == 'defmacro':
         form = LispList(pred, ListType.MACRO, expr[1:])
@@ -175,6 +177,14 @@ def readExpressions(text, pos, prevCh):
         prevCh = ch
 
     return sExpressions, pos, text[pos - 1]
+
+
+def showSymbols():
+    print("{")
+    for k in symbols.keys():
+        print(f'{k}: <{symbols.get(k)[0]}> {symbols.get(k)[1].content}')
+    print("}")
+    print()
 
 
 # [reader]

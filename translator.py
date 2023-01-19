@@ -6,11 +6,18 @@ import sys
 from lispClasses import *
 from lispReader import *
 from lispEvaluator import *
+from isa import write_code
+
+prevId = 0
 
 
 def main(args):
+    global prevId
     f = open("lispCode", mode="r")
     text = f.read().strip()
+
+    text = "(setq a 5) (setq b 2) (+ b (+ b (+ 1 (+ a b))))"
+    text = "(setq a 5) (setq b 2) (+ b (+ b (+ (+ a 1) (+ a b)))) (+ b (+ 1 2))"
 
     sExpressions = readerWork(text)
     forms = []
@@ -22,9 +29,14 @@ def main(args):
         except SymbNotFoundException as e:
             print(e)
 
+    code = []
     for form in forms:
-        evaluate(form)
-        print()
+        machineCodes = []
+        prevId = 0
+        machineCodes = evaluate(form, machineCodes, True)
+        code += machineCodes
+
+    write_code("lispPrograms/out", code)
 
 
 if __name__ == '__main__':

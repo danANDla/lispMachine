@@ -6,6 +6,8 @@ class AtomType(str, Enum):
     NUM = 'number'
     STR = 'string'
     CONST = 'constant symbol'
+    UNDEF = 'undefined'
+    PREV = 'prev'
 
 
 class ListType(str, Enum):
