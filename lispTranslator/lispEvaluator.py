@@ -1,5 +1,5 @@
-from lispClasses import *
-from lispReader import funcs, symbols, symbMem
+from lispTranslator.lispClasses import *
+from lispTranslator.lispReader import funcs, symbols, symbMem
 from exceptions import *
 from isa import Opcode
 

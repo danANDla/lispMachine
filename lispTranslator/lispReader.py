@@ -1,4 +1,4 @@
-from lispClasses import *
+from lispTranslator.lispClasses import *
 from exceptions import *
 
 funcs = {

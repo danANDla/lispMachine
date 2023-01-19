@@ -3,9 +3,8 @@
 """
 
 import sys
-from lispClasses import *
-from lispReader import *
-from lispEvaluator import *
+from lispTranslator.lispReader import *
+from lispTranslator.lispEvaluator import *
 from isa import write_code
 
 prevId = 0
@@ -13,8 +12,8 @@ prevId = 0
 
 def main(args):
     global prevId
-    f = open("lispPrograms/lispCode", mode="r")
-    text = f.read().strip()
+    # f = open("../lispPrograms/lispCode", mode="r")
+    # text = f.read().strip()
 
     text = "(setq a 5) (setq b 2) (+ b (+ b (+ 1 (+ a b))))"
     text = "(setq a 5) (setq b 2) (+ b (+ b (+ (+ a 1) (+ a b)))) (+ b (+ 1 2))"
@@ -36,7 +35,7 @@ def main(args):
         machineCodes = evaluate(form, machineCodes, True)
         code += machineCodes
 
-    write_code("lispPrograms/out", code)
+    write_code("out", code)
 
 
 if __name__ == '__main__':
