@@ -98,7 +98,7 @@ def makeLispForm(expr):
         s = str(expr)
         form = []
         if s.isnumeric():
-            form = LispAtom(expr, AtomType.NUM)
+            form = LispAtom(int(expr), AtomType.NUM)
         elif s.startswith('"'):
             form = LispAtom(expr, AtomType.STR)
         elif s == 'NIL' or s == 'T':
