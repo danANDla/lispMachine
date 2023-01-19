@@ -13,7 +13,7 @@ prevId = 0
 
 def main(args):
     global prevId
-    f = open("lispCode", mode="r")
+    f = open("lispPrograms/lispCode", mode="r")
     text = f.read().strip()
 
     text = "(setq a 5) (setq b 2) (+ b (+ b (+ 1 (+ a b))))"
