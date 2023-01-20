@@ -207,11 +207,6 @@ class ControlUnit:
                 self.latchPC(Signal.NEXT)
                 self.tick()
 
-            case Opcode.PRINT:
-                self.dataPath.output()
-                self.latchPC(Signal.NEXT)
-                self.tick()
-
             case Opcode.JMP:
                 self.putToAcc(self.pc)
                 self.tick()
@@ -265,6 +260,11 @@ class ControlUnit:
 
                     self.latchPC(Signal.ACC)
                     self.tick()
+
+            case Opcode.PRINT:
+                self.dataPath.output()
+                self.latchPC(Signal.NEXT)
+                self.tick()
 
             case Opcode.SCAN:
                 if instr["mem"] == 1:
