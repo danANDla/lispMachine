@@ -126,8 +126,11 @@ class DataPath:
         self.dataMemory[self.addr] = self.acc
 
     def output(self):
-        symbol = chr(self.acc)
-        self.outBuff.append(symbol)
+        if self.acc > 0x10ffff:
+            print(f"can't send char to output, it's code: {self.acc}")
+        else:
+            symbol = chr(self.acc)
+            self.outBuff.append(symbol)
 
 
 class ControlUnit:
