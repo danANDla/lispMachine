@@ -19,10 +19,6 @@ class Signal(str, Enum):
     ADD = 'add'
 
 
-class ALOperation(str, Enum):
-    ADD = 'add'
-
-
 class ArithmeticLogicUnit:
     def __init__(self):
         self.left = 0
@@ -32,16 +28,16 @@ class ArithmeticLogicUnit:
         self.leftNeg = False
         self.rightNeg = False
         self.rightNul = False
-        self.operation = ALOperation.ADD
+        self.operation = Opcode.ADD
 
-    def set(self, left: int, leftNeg: bool, rightNeg: bool, rightNul: bool, op: ALOperation):
+    def set(self, left: int, leftNeg: bool, rightNeg: bool, rightNul: bool, op: Opcode):
         self.left = left
         self.leftNeg = leftNeg
         self.rightNeg = rightNeg
         self.rightNul = rightNul
         self.operation = op
 
-    def setNoArg(self, leftNeg: bool, rightNeg: bool, rightNul: bool, op: ALOperation):
+    def setNoArg(self, leftNeg: bool, rightNeg: bool, rightNul: bool, op: Opcode):
         self.leftNeg = leftNeg
         self.rightNeg = rightNeg
         self.rightNul = rightNul
@@ -56,7 +52,7 @@ class ArithmeticLogicUnit:
             self.right = 0
 
         match self.operation:
-            case ALOperation.ADD:
+            case Opcode.ADD:
                 self.res = self.left + self.right
 
 
@@ -146,10 +142,7 @@ class ControlUnit:
             raise WrongSignalException('invalid signal')
 
     def putToAcc(self, arg):
-        self.dataPath.alu.left = arg
-        self.dataPath.alu.leftNeg = False
-        self.dataPath.alu.rightNul = True
-        self.dataPath.alu.operation = ALOperation.ADD
+        self.dataPath.alu.set(arg, False, False, True, Opcode.ADD)
         self.dataPath.latchAlu(Signal.CU)
         self.dataPath.alu.execOperation()
         self.dataPath.latchAcc(Signal.ALU)
@@ -201,7 +194,7 @@ class ControlUnit:
                     self.dataPath.alu.left = arg
                     self.dataPath.latchAlu(Signal.CU)
                 self.tick()
-                self.dataPath.alu.setNoArg(False, False, False, ALOperation.ADD)
+                self.dataPath.alu.setNoArg(False, False, False, Opcode.ADD)
                 self.dataPath.alu.execOperation()
                 self.dataPath.latchAcc(Signal.ALU)
                 self.latchPC(Signal.NEXT)
@@ -213,7 +206,7 @@ class ControlUnit:
                 if instr["mem"] == 1:
                     pass
                 elif instr["mem"] == 3:
-                    self.dataPath.alu.set(arg, False, False, False, ALOperation.ADD)
+                    self.dataPath.alu.set(arg, False, False, False, Opcode.ADD)
                     self.dataPath.latchAlu(Signal.CU)
                     self.dataPath.alu.execOperation()
                     self.dataPath.latchAcc(Signal.ALU)
@@ -231,7 +224,7 @@ class ControlUnit:
                 else:
                     self.dataPath.alu.left = arg
                     self.dataPath.latchAlu(Signal.CU)
-                self.dataPath.alu.setNoArg(True, False, False, ALOperation.ADD)
+                self.dataPath.alu.setNoArg(True, False, False, Opcode.ADD)
                 self.dataPath.alu.execOperation()
                 self.dataPath.latchZF(Signal.ALU)
                 self.dataPath.latchSF(Signal.ALU)
@@ -252,7 +245,7 @@ class ControlUnit:
                     if instr["mem"] == 1:
                         pass
                     elif instr["mem"] == 3:
-                        self.dataPath.alu.set(arg, False, False, False, ALOperation.ADD)
+                        self.dataPath.alu.set(arg, False, False, False, Opcode.ADD)
                         self.dataPath.latchAlu(Signal.CU)
                         self.dataPath.alu.execOperation()
                         self.dataPath.latchAcc(Signal.ALU)
