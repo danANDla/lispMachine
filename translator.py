@@ -32,7 +32,7 @@ def main(args):
     for form in forms:
         machineCodes = []
         prevId = 0
-        machineCodes = evaluate(form, machineCodes, True)
+        machineCodes = evaluate(form, machineCodes, 0)[0]
         code += machineCodes
 
     code.append(createInstr(Opcode.HLT, '', 0))
