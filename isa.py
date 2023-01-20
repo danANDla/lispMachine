@@ -10,6 +10,7 @@ class Opcode(str, Enum):
     MOD = 'mod'
     REM = 'rem'
     PRINT = 'print'
+    SCAN = 'scan'
     READ = 'read'
     JMP = 'jmp'
     CMP = 'cmp'

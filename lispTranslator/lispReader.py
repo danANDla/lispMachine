@@ -3,6 +3,7 @@ from exceptions import *
 
 funcs = {
     'print': ListType.FUNC,
+    'scan': ListType.FUNC,
     'defmacro': ListType.FUNC,
     '+': ListType.FUNC,
     '-': ListType.FUNC,

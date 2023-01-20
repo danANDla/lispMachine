@@ -2,7 +2,7 @@ import sys
 import logging
 from isa import Opcode, read_code
 from enum import Enum
-from exceptions import WrongSignalException
+from exceptions import WrongSignalException, EmptyInputException
 
 
 class Signal(str, Enum):
@@ -11,6 +11,7 @@ class Signal(str, Enum):
     MEM = 'fromMem'
     ALU = 'fromAlu'
     PC = 'fromPC'
+    IO = 'fromIO'
     WR = 'writeMem'
     NEXT = 'next'
     ZERO = 'zero'
@@ -69,6 +70,10 @@ class DataPath:
             self.acc = self.dataMemory[self.addr]
         elif sel == Signal.ALU:
             self.acc = self.alu.res
+        elif sel == Signal.IO:
+            if len(self.inputTokens) == 0:
+                raise EmptyInputException('end of file reached')
+            self.acc = ord(self.inputTokens.pop(0))
         else:
             raise WrongSignalException('invalid signal')
 
@@ -250,6 +255,16 @@ class ControlUnit:
                     self.latchPC(Signal.ACC)
                     self.tick()
 
+            case Opcode.SCAN:
+                if instr["mem"] == 1:
+                    self.dataPath.addr = arg
+                    self.dataPath.latchAddr(Signal.CU)
+                    self.dataPath.latchAcc(Signal.IO)
+                    self.dataPath.writeMem()
+                    self.tick()
+                self.latchPC(Signal.NEXT)
+                self.tick()
+
     def __repr__(self):
         state = "{{TICK: {}, PC: {}, ADDR: {}, OUT: {}, ACC: {}, ZF: {}}}".format(
             self._tick,
@@ -276,8 +291,8 @@ class ControlUnit:
         return "{} {}".format(state, action)
 
 
-def simulation(code, input_tokens, data_memory_size, limit):
-    data_path = DataPath(data_memory_size, input_tokens)
+def simulation(code, inputTokens, data_memory_size, limit):
+    data_path = DataPath(data_memory_size, inputTokens)
     control_unit = ControlUnit(code, data_path)
     instr_counter = 0
 
@@ -313,8 +328,9 @@ def main(args):
         for char in input_text:
             input_token.append(char)
 
+    input_token.append('\0')
     output, instr_counter, ticks = simulation(code,
-                                              input_tokens=input_token,
+                                              inputTokens=input_token,
                                               data_memory_size=1000,
                                               limit=1000)
 

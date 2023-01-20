@@ -163,7 +163,6 @@ def lispPrint(form: LispList):
 
     machineCodes = []
     if form.args[0].type == AtomType.SYMB and symbols[form.args[0].content][0] == AtomType.STR:
-        print("printing a string")
         memAddr = symbols[form.args[0].content][2]
         machineCodes.append(createInstr(Opcode.LOAD, memAddr, 2))
         machineCodes.append(createInstr(Opcode.PRINT, '', 0))
@@ -180,6 +179,21 @@ def lispPrint(form: LispList):
         machineCodes += loadValue(form.args[0])
         machineCodes.append(createInstr(Opcode.PRINT, '', 0))
     return machineCodes
+
+
+def lispScan(form: LispList):
+    if len(form.args) != 1:
+        raise InvalidFunctionSignatureException(f'wrong arguments number of function {form.content}')
+    for i, a in enumerate(form.args):
+        if a.type != AtomType.SYMB:
+            raise InvalidFunctionSignatureException(f'{form.content} function only works with numbers')
+        if a.type == AtomType.SYMB and symbols[a.content][0] == AtomType.UNDEF:
+            raise SymbNotFoundException(f"Unknown symbol '{a.content}'")
+
+    machineOp = []
+    memAddr = symbols[form.args[0].content][2]
+    machineOp.append(createInstr(Opcode.SCAN, memAddr, 1))
+    return machineOp
 
 
 def execFunc(form: LispList):
@@ -202,6 +216,8 @@ def execFunc(form: LispList):
                 machineCodes = lispSetq(form)
             case 'print':
                 machineCodes = lispPrint(form)
+            case 'scan':
+                machineCodes = lispScan(form)
 
     return machineCodes
 
