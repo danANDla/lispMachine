@@ -205,7 +205,7 @@ def execCmp(form: LispList, jmpSz: int):
         raise InvalidFunctionSignatureException(f'{form.content} invalid compare function in if condition')
 
     left, right = form.args
-    if left.type == AtomType.SYMB :
+    if left.type == AtomType.SYMB:
         memAddr = symbols[left.content][2]
         machineCodes.append(createInstr(Opcode.LOAD, memAddr, 1))
     elif left.type == AtomType.PREV:
@@ -232,20 +232,31 @@ def execCmp(form: LispList, jmpSz: int):
     return machineCodes
 
 
-def lispIf(form: LispList, condCodes: list, prev):
+def lispIf(form: LispList, condCodes: list, prev: int):
     machineCodes = []
     machineCodes += condCodes
     cond, thenForm = form.args
 
     thenCodes = []
     thenCodes = evaluate(thenForm, thenCodes, prev)[0]
-    machineCodes += execCmp(cond, len(thenCodes))
+    machineCodes += execCmp(cond, len(thenCodes) + 1)
     machineCodes += thenCodes
 
     return machineCodes
 
 
-def execFunc(form: LispList, prev):
+def lispLoop(machineCodes: list):
+    retPos = 0
+    machineCodes.append(createInstr(Opcode.JMP, -len(machineCodes), 3))
+    for i, instr in enumerate(machineCodes):
+        if instr["opcode"] == "hlt" and instr["arg"] == "return":
+            retPos = i
+    jmpSz = len(machineCodes)  - retPos
+    machineCodes[retPos] = createInstr(Opcode.JMP, jmpSz, 3)
+    return machineCodes
+
+
+def execFunc(form: LispList, prev: int):
     print(form)
     machineCodes = []
 
@@ -261,6 +272,8 @@ def execFunc(form: LispList, prev):
                 machineCodes = lispPrint(form)
             case 'scan':
                 machineCodes = lispScan(form)
+            case 'return':
+                machineCodes.append(createInstr(Opcode.HLT, "return", 0))
 
     return machineCodes
 
@@ -271,42 +284,43 @@ def evaluate(form: LispObject, machineCodes: list, prev):
     if type(form) == LispAtom:
         return machineCodes, prev
     else:
-        if form.content == 'loop':
-            print('is loop')
-        else:
-            args = form.args
-            if form.content == 'if':
-                cond, formThen = args
-                if type(cond) != LispList:
-                    if cond.type == AtomType.CONST and cond.content == 'NIL':
-                        pass
-                    else:
-                        cond = constT
-                if type(formThen) != LispList:
-                    raise InvalidFunctionSignatureException('then form should be lispLis')
+        args = form.args
+        if form.content == 'if':
+            cond, formThen = args
+            if type(cond) != LispList:
+                if cond.type == AtomType.CONST and cond.content == 'NIL':
+                    pass
+                else:
+                    cond = constT
+            if type(formThen) != LispList:
+                raise InvalidFunctionSignatureException('then form should be lispLis')
 
-                condCodes = []
-                if type(cond) == LispList:
-                    for i, arg in enumerate(cond.args):
-                        if type(arg) == LispList:
-                            prevId += 1
-                            e = evaluate(arg, condCodes, prevId)
-                            condCodes = e[0]
-                            prevLabel = e[1]
-                            cond.args[i] = LispAtom(prevLabel, AtomType.PREV)
-
-                machineCodes += lispIf(LispList('if', ListType.SPEC, [cond, formThen]), condCodes, prev)
-            elif form.content == 'progn':
-                for i, arg in enumerate(args):
-                    machineCodes = evaluate(arg, machineCodes, prev)[0]
-                machineCodes += storePrev(prev)
-            else:
-                for i, arg in enumerate(args):
+            condCodes = []
+            if type(cond) == LispList:
+                for i, arg in enumerate(cond.args):
                     if type(arg) == LispList:
                         prevId += 1
-                        e = evaluate(arg, machineCodes, prevId)
-                        machineCodes = e[0]
+                        e = evaluate(arg, condCodes, prevId)
+                        condCodes = e[0]
                         prevLabel = e[1]
-                        form.args[i] = LispAtom(prevLabel, AtomType.PREV)
-                machineCodes += execFunc(form, prev)
+                        cond.args[i] = LispAtom(prevLabel, AtomType.PREV)
+
+            machineCodes += lispIf(LispList('if', ListType.SPEC, [cond, formThen]), condCodes, prev)
+        elif form.content == 'progn':
+            for i, arg in enumerate(args):
+                machineCodes = evaluate(arg, machineCodes, prev)[0]
+            machineCodes += storePrev(prev)
+        elif form.content == 'loop':
+            for i, arg in enumerate(args):
+                machineCodes = evaluate(arg, machineCodes, prev)[0]
+            machineCodes = lispLoop(machineCodes)
+        else:
+            for i, arg in enumerate(args):
+                if type(arg) == LispList:
+                    prevId += 1
+                    e = evaluate(arg, machineCodes, prevId)
+                    machineCodes = e[0]
+                    prevLabel = e[1]
+                    form.args[i] = LispAtom(prevLabel, AtomType.PREV)
+            machineCodes += execFunc(form, prev)
     return machineCodes, prev
