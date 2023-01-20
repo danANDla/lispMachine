@@ -15,6 +15,7 @@ class Opcode(str, Enum):
     JMP = 'jmp'
     CMP = 'cmp'
     JE = 'je'
+    JNE = 'jne'
     HLT = 'hlt'
     MEM = 'mem'
 

@@ -232,8 +232,8 @@ class ControlUnit:
                 self.latchPC(Signal.NEXT)
                 self.tick()
 
-            case Opcode.JE:
-                if not self.dataPath.zf:
+            case Opcode.JE | Opcode.JNE:
+                if opcode == Opcode.JE and not self.dataPath.zf or opcode == Opcode.JNE and self.dataPath.zf:
                     self.latchPC(Signal.NEXT)
                     self.tick()
                 else:
