@@ -191,7 +191,6 @@ class ControlUnit:
                 self.tick()
 
             case Opcode.JMP:
-                print(self.pc, arg)
                 self.putToAcc(self.pc)
                 self.tick()
                 if instr["mem"] == 1:

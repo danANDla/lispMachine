@@ -152,7 +152,7 @@ def readExpressions(text, pos, prevCh):
             else:
                 stringReading = True
                 sExpr += ch
-        elif ch == ' ' or ch == '\n':
+        elif (ch == ' ' or ch == '\n') and not stringReading:
             if sExpr == '' and (prevCh == ' ' or prevCh == '\n'):
                 sExpr = 'NIL'
             if sExpr != '' and sExpr != '\n':
