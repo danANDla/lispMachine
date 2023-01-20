@@ -1,0 +1,16 @@
+; Effective solution of 'Even Fibonacci Numbers' problem
+;
+; output_buffer after hlt: '' (4613732)
+;
+(defmacro when (condition body) '(if ,condition (progn ,body)))
+(setq LIMIT 4000000)
+(setq answer 2)
+(setq a 2)
+(setq b 0)
+(loop
+(setq temp (+ b (+ (+ a a) (+ a a))))
+(when (> temp LIMIT) (return temp))
+(setq b a)
+(setq a temp)
+(setq answer (+ answer temp)))
+(print answer)
