@@ -20,7 +20,7 @@ funcs = {
     'if': ListType.SPEC,
 }
 symbols = {}
-symbMem = [0 for i in range(100)] # symbols Addresses, prealloc mem for 100 prevs
+symbMem = [0 for i in range(100)]  # symbols Addresses, prealloc mem for 100 prevs
 
 
 # Function to check balanced parentheses
@@ -42,6 +42,21 @@ def checkParentheses(myStr):
         return "Balanced"
     else:
         return "Unbalanced"
+
+
+def removeComments(text: str):
+    newText = ""
+    for i, line in enumerate(text.split("\n")):
+        commentPos = -1
+        commentPos = line.find(';')
+        if commentPos != -1:
+            if not (commentPos == 1 or commentPos == 0):
+                newText += line[0:commentPos-1]
+                newText += '\n'
+        else:
+            newText += line
+            newText += '\n'
+    return newText
 
 
 def isSelfEvaluated(pred: str) -> bool:

@@ -18,6 +18,7 @@ def main(args):
     f = open(args[0], mode="r")
     text = f.read().strip()
 
+    text = removeComments(text)
     sExpressions = readerWork(text)
     forms = []
 

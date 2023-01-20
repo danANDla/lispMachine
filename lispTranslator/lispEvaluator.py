@@ -257,7 +257,6 @@ def lispLoop(machineCodes: list):
 
 
 def execFunc(form: LispList, prev: int):
-    print(form)
     machineCodes = []
 
     if form.content in funcs:
