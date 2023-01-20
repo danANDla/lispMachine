@@ -253,14 +253,14 @@ def execFunc(form: LispList, prev):
         match form.content:
             case '+':
                 machineCodes = lispSum(form)
+                if prev > -1:
+                    machineCodes += storePrev(prev)
             case 'setq':
                 machineCodes = lispSetq(form)
             case 'print':
                 machineCodes = lispPrint(form)
             case 'scan':
                 machineCodes = lispScan(form)
-    if prev > -1:
-        machineCodes += storePrev(prev)
 
     return machineCodes
 
@@ -276,7 +276,6 @@ def evaluate(form: LispObject, machineCodes: list, prev):
         else:
             args = form.args
             if form.content == 'if':
-
                 cond, formThen = args
                 if type(cond) != LispList:
                     if cond.type == AtomType.CONST and cond.content == 'NIL':
@@ -297,6 +296,10 @@ def evaluate(form: LispObject, machineCodes: list, prev):
                             cond.args[i] = LispAtom(prevLabel, AtomType.PREV)
 
                 machineCodes += lispIf(LispList('if', ListType.SPEC, [cond, formThen]), condCodes, prev)
+            elif form.content == 'progn':
+                for i, arg in enumerate(args):
+                    machineCodes = evaluate(arg, machineCodes, prev)[0]
+                machineCodes += storePrev(prev)
             else:
                 for i, arg in enumerate(args):
                     if type(arg) == LispList:
