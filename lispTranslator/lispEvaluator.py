@@ -165,13 +165,17 @@ def lispPrint(form: LispList):
     if form.args[0].type == AtomType.SYMB and symbols[form.args[0].content][0] == AtomType.STR:
         print("printing a string")
         memAddr = symbols[form.args[0].content][2]
-        for i in range(2):
-            machineCodes.append(createInstr(Opcode.LOAD, memAddr, 2))
-            machineCodes.append(createInstr(Opcode.PRINT, '', 0))
+        machineCodes.append(createInstr(Opcode.LOAD, memAddr, 2))
+        machineCodes.append(createInstr(Opcode.PRINT, '', 0))
 
-            machineCodes.append(createInstr(Opcode.LOAD, memAddr, 1))
-            machineCodes.append(createInstr(Opcode.ADD, 1, 0))
-            machineCodes.append(createInstr(Opcode.STORE, memAddr, 1))
+        machineCodes.append(createInstr(Opcode.LOAD, memAddr, 1))
+        machineCodes.append(createInstr(Opcode.ADD, 1, 0))
+        machineCodes.append(createInstr(Opcode.STORE, memAddr, 1))
+
+        machineCodes.append(createInstr(Opcode.LOAD, memAddr, 2))
+        machineCodes.append(createInstr(Opcode.CMP, 0, 0))
+        machineCodes.append(createInstr(Opcode.JE, 2, 3))
+        machineCodes.append(createInstr(Opcode.JMP, -8, 3))
     else:
         machineCodes += loadValue(form.args[0])
         machineCodes.append(createInstr(Opcode.PRINT, '', 0))
