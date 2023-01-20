@@ -121,10 +121,18 @@ class ControlUnit:
             case Opcode.HLT:
                 return Opcode.HLT
             case Opcode.LOAD:
-                if instr["isAddr"]:
+                if instr["mem"] == 1:
                     self.dataPath.addr = arg
                     self.dataPath.latchAddr(Signal.CU)
                     self.tick()
+                    self.dataPath.latchAcc(Signal.MEM)
+                elif instr["mem"] == 2:
+                    self.dataPath.addr = arg
+                    self.dataPath.latchAddr(Signal.CU)
+                    self.tick()
+                    self.dataPath.latchAcc(Signal.MEM)
+
+                    self.dataPath.latchAddr(Signal.ACC)
                     self.dataPath.latchAcc(Signal.MEM)
                 else:
                     self.dataPath.alu.left = arg
@@ -147,7 +155,7 @@ class ControlUnit:
                 self.tick()
 
             case Opcode.ADD:
-                if instr["isAddr"]:
+                if instr["mem"] == 1:
                     self.dataPath.addr = arg
                     self.dataPath.latchAddr(Signal.CU)
                     self.tick()
@@ -183,8 +191,10 @@ class ControlUnit:
         opcode = instr["opcode"]
         arg = instr.get("arg", "")
         isAddr = ''
-        if instr["isAddr"]:
+        if instr["mem"] == 1:
             isAddr = 'addr'
+        elif instr["mem"] == 2:
+            isAddr = 'indirect addr'
 
         action = "{} {} {}".format(opcode, arg, isAddr)
 

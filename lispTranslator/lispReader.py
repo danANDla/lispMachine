@@ -100,7 +100,7 @@ def makeLispForm(expr):
         if s.isnumeric():
             form = LispAtom(int(expr), AtomType.NUM)
         elif s.startswith('"'):
-            form = LispAtom(expr, AtomType.STR)
+            form = LispAtom(expr[1:-1], AtomType.STR)
         elif s == 'NIL' or s == 'T':
             form = LispAtom(expr, AtomType.CONST)
         elif s in symbols:

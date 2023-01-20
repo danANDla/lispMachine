@@ -5,13 +5,14 @@ from isa import Opcode
 
 buffer = 0
 prevId = 0
+strPointer = 999
 
 
 def createInstr(op: Opcode, arg, ismem):
     return {
         "opcode": op,
         "arg": arg,
-        "isAddr": ismem != 0
+        "mem": ismem
     }
 
 
@@ -34,6 +35,8 @@ def loadValue(value: LispAtom) -> list:
         address = 'prev' + str(value.content)
         machineCodes.append(createInstr(Opcode.LOAD, address, 1))
         return machineCodes
+    elif value.type == AtomType.STR:
+        loadingValue = ord(value.content)
     else:
         loadingValue = value.content
 
@@ -54,6 +57,20 @@ def storeValue(value: LispAtom) -> list:
     return machineCodes
 
 
+def storeString(value: LispAtom) -> list:
+    if value.type != AtomType.STR:
+        raise InvalidFunctionSignatureException('passing non string into storeString')
+    machineCodes = []
+    global strPointer
+    value.content += '\0'
+    print(value)
+    for ch in reversed(value.content):
+        machineCodes += loadValue(LispAtom(ch, AtomType.STR))
+        machineCodes += storeValue(LispAtom(strPointer, AtomType.NUM))
+        strPointer -= 1
+    return machineCodes
+
+
 def storePrev(prev):
     return storeValue(LispAtom(prev, AtomType.PREV))
 
@@ -69,11 +86,20 @@ def lispSetq(form):
     if form.args[0].content in symbols:
         memAddr = symbols[form.args[0].content][2]
         symbols[form.args[0].content] = (AtomType.CONST, constNIL, memAddr)
+    if form.args[1].type == AtomType.STR:
+        memAddr = symbols[form.args[0].content][2]
+        symbols[form.args[0].content] = (AtomType.STR, '', memAddr)
     else:
         symbols[form.args[0].content] = (AtomType.CONST, constNIL, len(symbMem))
 
     val = form.args[1]
     t = val.type
+
+    if t == AtomType.STR:
+        machineOp = storeString(val)
+        machineOp += loadValue(LispAtom(strPointer + 1, AtomType.NUM))
+        machineOp += storeValue(form.args[0])
+        return machineOp
 
     if t == AtomType.SYMB:
         if val.content not in symbols:
@@ -128,6 +154,7 @@ def lispPrint(form: LispList):
         if not (a.type == AtomType.SYMB or a.type == AtomType.NUM or a.type == AtomType.PREV):
             raise InvalidFunctionSignatureException(f'{form.content} function only works with numbers')
         if a.type == AtomType.SYMB and not (
+                symbols[a.content][0] == AtomType.STR or
                 symbols[a.content] == 'NIL' or
                 symbols[a.content] == constNIL or
                 symbols[a.content][0] == AtomType.CONST or
@@ -135,8 +162,19 @@ def lispPrint(form: LispList):
             raise InvalidFunctionSignatureException(f'{form.content} function only works with numbers')
 
     machineCodes = []
-    machineCodes += loadValue(form.args[0])
-    machineCodes.append(createInstr(Opcode.PRINT, '', 0))
+    if form.args[0].type == AtomType.SYMB and symbols[form.args[0].content][0] == AtomType.STR:
+        print("printing a string")
+        memAddr = symbols[form.args[0].content][2]
+        for i in range(2):
+            machineCodes.append(createInstr(Opcode.LOAD, memAddr, 2))
+            machineCodes.append(createInstr(Opcode.PRINT, '', 0))
+
+            machineCodes.append(createInstr(Opcode.LOAD, memAddr, 1))
+            machineCodes.append(createInstr(Opcode.ADD, 1, 0))
+            machineCodes.append(createInstr(Opcode.STORE, memAddr, 1))
+    else:
+        machineCodes += loadValue(form.args[0])
+        machineCodes.append(createInstr(Opcode.PRINT, '', 0))
     return machineCodes
 
 
