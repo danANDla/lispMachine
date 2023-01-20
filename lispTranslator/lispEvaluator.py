@@ -201,7 +201,7 @@ def execCmp(form: LispList, jmpSz: int):
     machineCodes = []
     if len(form.args) != 2:
         raise InvalidFunctionSignatureException(f'wrong arguments number of function {form.content}')
-    if form.content not in {'<', '<=', '>', '>=', '='}:
+    if form.content not in {'>', '>=', '=', '!='}:
         raise InvalidFunctionSignatureException(f'{form.content} invalid compare function in if condition')
 
     left, right = form.args
@@ -223,6 +223,12 @@ def execCmp(form: LispList, jmpSz: int):
 
     if form.content == '=':
         machineCodes.append(createInstr(Opcode.JNE, jmpSz, 3))
+    elif form.content == '!=':
+        machineCodes.append(createInstr(Opcode.JE, jmpSz, 3))
+    elif form.content == '>=':
+        machineCodes.append(createInstr(Opcode.JL, jmpSz, 3))
+    elif form.content == '>':
+        machineCodes.append(createInstr(Opcode.JLE, jmpSz, 3))
     return machineCodes
 
 

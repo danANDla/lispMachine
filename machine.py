@@ -55,6 +55,7 @@ class DataPath:
         self.addr = 0
         self.alu = ArithmeticLogicUnit()
         self.zf = False
+        self.sf = False
         self.outBuff = []
 
     def latchAddr(self, sel: Signal):
@@ -84,6 +85,11 @@ class DataPath:
             self.zf = self.alu.res == 0
         else:
             raise WrongSignalException('invalid signal')
+    def latchSF(self, sel: Signal):
+        if sel == Signal.ACC:
+            self.sf = self.acc < 0
+        elif sel == Signal.ALU:
+            self.sf = self.alu.res < 0
 
     def latchAlu(self, sel: Signal):
         self.alu.right = self.acc
@@ -223,17 +229,22 @@ class ControlUnit:
                 else:
                     self.dataPath.alu.left = arg
                     self.dataPath.latchAlu(Signal.CU)
-                self.dataPath.alu.leftNeg = False
-                self.dataPath.alu.rightNeg = True
+                self.dataPath.alu.leftNeg = True
+                self.dataPath.alu.rightNeg = False
                 self.dataPath.alu.rightNul = False
                 self.dataPath.alu.operation = ALOperation.ADD
                 self.dataPath.alu.execOperation()
                 self.dataPath.latchZF(Signal.ALU)
+                self.dataPath.latchSF(Signal.ALU)
                 self.latchPC(Signal.NEXT)
                 self.tick()
 
-            case Opcode.JE | Opcode.JNE:
+            case Opcode.JE | Opcode.JNE | Opcode.JL | Opcode.JLE:
                 if opcode == Opcode.JE and not self.dataPath.zf or opcode == Opcode.JNE and self.dataPath.zf:
+                    self.latchPC(Signal.NEXT)
+                    self.tick()
+                elif opcode == Opcode.JL and not self.dataPath.sf or \
+                        (opcode == Opcode.JLE and not self.dataPath.sf and not self.dataPath.zf):
                     self.latchPC(Signal.NEXT)
                     self.tick()
                 else:
@@ -266,13 +277,19 @@ class ControlUnit:
                 self.tick()
 
     def __repr__(self):
-        state = "{{TICK: {}, PC: {}, ADDR: {}, OUT: {}, ACC: {}, ZF: {}}}".format(
+        zf = 0
+        sf = 0
+        if self.dataPath.zf:
+            zf = 1
+        if self.dataPath.sf:
+            sf = 1
+        state = "{{TICK: {}, PC: {}, ADDR: {}, OUT: {}, ACC: {}, ZF|SF: {}{}}}".format(
             self._tick,
             self.pc,
             self.dataPath.addr,
             self.dataPath.dataMemory[self.dataPath.addr],
             self.dataPath.acc,
-            self.dataPath.zf
+            zf, sf
         )
 
         instr = self.program[self.pc]
