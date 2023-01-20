@@ -1,0 +1,21 @@
+; This program contains macros.
+; Macroses are used to make your code more intuitive.
+; 
+; The standard if-clause in Lisp limits number of forms,
+; that will be evaluated if condition is true.
+; That is why when you want to execute several instructions
+; if condition is true, you should you use progn.
+;
+; With using macroses you can turn it into
+; more understandable code.
+;
+; In this program when macro is created
+; and '(when (> 100 a) (print a) (print a))'
+; is turned into '(if (> 100 a) (progn (print a) (print a)))'
+; after lispReader translation part.
+;
+; output_buffer after hlt: 'NN'
+;
+(defmacro when (condition &body) '(if ,condition (progn ,body)))
+(setq a 78)
+(when (> 100 a) (print a) (print a))

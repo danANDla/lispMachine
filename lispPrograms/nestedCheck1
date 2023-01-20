@@ -1,0 +1,6 @@
+; this program contains nested lispForms
+;
+; output_buffer after hlt: 'T' (it IS the 84th char in ascii table)
+;
+(setq a 5) (setq b 10)
+(setq b (+ (+ 50 (+ 1 2)) (+ b (+ (+ a 1) (+ a b))))) (print b)

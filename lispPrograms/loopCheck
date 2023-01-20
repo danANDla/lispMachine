@@ -1,0 +1,12 @@
+; This program contains loop-clause
+; It evaluates inner forms until return statement is reached
+;
+; output_buffer after hlt: '123456789:;<=>?stop'
+;
+(setq b "stop")
+(setq a 48)
+(loop
+(setq a (+ 1 a))
+(if (= a 64) (return))
+(print a)) ; this print function is after return statement, that is why 64th char is not printed
+(print b)
