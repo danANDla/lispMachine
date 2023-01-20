@@ -112,7 +112,7 @@ def lispSetq(form):
     return machineOp
 
 
-def lispSum(form: LispList):
+def arithCheck(form: LispList) -> bool:
     if len(form.args) != 2:
         raise InvalidFunctionSignatureException(f'wrong arguments number of function {form.content}')
     for i, a in enumerate(form.args):
@@ -128,18 +128,31 @@ def lispSum(form: LispList):
                 symbols[a.content][0] == AtomType.CONST or
                 symbols[a.content][0] == AtomType.NUM):
             raise InvalidFunctionSignatureException(f'sum function only works with numbers')
+    return True
+
+
+def lispArith(form: LispList):
+    if not arithCheck(form):
+        return
 
     machineCodes = []
 
     for instr in loadValue(form.args[0]):
         machineCodes.append(instr)
 
+    code = Opcode.ADD
+    if form.content == 'rem':
+        code = Opcode.REM
+    elif form.content == 'mod':
+        code = Opcode.MOD
+    elif form.content == '-':
+        code = Opcode.SUB
     if form.args[1].type == AtomType.PREV:
-        machineCodes.append(createInstr(Opcode.ADD, int(form.args[1].content), 1))
+        machineCodes.append(createInstr(code, int(form.args[1].content), 1))
     elif form.args[1].type == AtomType.SYMB:
-        machineCodes.append(createInstr(Opcode.ADD, symbols[form.args[1].content][2], 1))
+        machineCodes.append(createInstr(code, symbols[form.args[1].content][2], 1))
     else:
-        machineCodes.append(createInstr(Opcode.ADD, form.args[1].content, 0))
+        machineCodes.append(createInstr(code, form.args[1].content, 0))
     # machineCodes += storeValue(form.args[0])
     return machineCodes
 
@@ -251,7 +264,7 @@ def lispLoop(machineCodes: list):
     for i, instr in enumerate(machineCodes):
         if instr["opcode"] == "hlt" and instr["arg"] == "return":
             retPos = i
-    jmpSz = len(machineCodes)  - retPos
+    jmpSz = len(machineCodes) - retPos
     machineCodes[retPos] = createInstr(Opcode.JMP, jmpSz, 3)
     return machineCodes
 
@@ -261,8 +274,8 @@ def execFunc(form: LispList, prev: int):
 
     if form.content in funcs:
         match form.content:
-            case '+':
-                machineCodes = lispSum(form)
+            case '+' | '-' | 'mod' | 'rem':
+                machineCodes = lispArith(form)
                 if prev > -1:
                     machineCodes += storePrev(prev)
             case 'setq':

@@ -2,7 +2,7 @@ import sys
 import logging
 from isa import Opcode, read_code
 from enum import Enum
-from exceptions import WrongSignalException, EmptyInputException
+from exceptions import WrongSignalException, EmptyInputException, ZeroDivisionEception
 
 
 class Signal(str, Enum):
@@ -54,6 +54,16 @@ class ArithmeticLogicUnit:
         match self.operation:
             case Opcode.ADD:
                 self.res = self.left + self.right
+            case Opcode.REM:
+                if self.left == 0:
+                    raise ZeroDivisionEception('ALU can not divide by zero')
+                self.res = self.right % self.left
+            case Opcode.MOD:
+                if self.left == 0:
+                    raise ZeroDivisionEception('ALU can not divide by zero')
+                self.res = self.right // self.left
+            case _:
+                raise WrongSignalException(f'ALU can not exec {self.operation}')
 
 
 class DataPath:
@@ -194,7 +204,10 @@ class ControlUnit:
                     self.dataPath.alu.left = arg
                     self.dataPath.latchAlu(Signal.CU)
                 self.tick()
-                self.dataPath.alu.setNoArg(False, False, False, Opcode.ADD)
+                if opcode == Opcode.SUB:
+                    self.dataPath.alu.setNoArg(True, False, False, Opcode.ADD)
+                else:
+                    self.dataPath.alu.setNoArg(False, False, False, opcode)
                 self.dataPath.alu.execOperation()
                 self.dataPath.latchAcc(Signal.ALU)
                 self.latchPC(Signal.NEXT)
