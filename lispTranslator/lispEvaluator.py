@@ -219,6 +219,8 @@ def execCmp(form: LispList, jmpSz: int):
 
     left, right = form.args
     if left.type == AtomType.SYMB:
+        if left.content not in symbols or symbols[left.content][0] == AtomType.UNDEF:
+            raise SymbNotFoundException(f"Unknown symbol '{left.content}'")
         memAddr = symbols[left.content][2]
         machineCodes.append(createInstr(Opcode.LOAD, memAddr, 1))
     elif left.type == AtomType.PREV:
@@ -227,6 +229,8 @@ def execCmp(form: LispList, jmpSz: int):
         machineCodes.append(createInstr(Opcode.LOAD, left.content, 0))
 
     if right.type == AtomType.SYMB:
+        if right.content not in symbols or symbols[right.content][0] == AtomType.UNDEF:
+            raise SymbNotFoundException(f"Unknown symbol '{right.content}'")
         memAddr = symbols[right.content][2]
         machineCodes.append(createInstr(Opcode.CMP, memAddr, 1))
     elif right.type == AtomType.PREV:
