@@ -5,12 +5,10 @@ test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
   image:
     name: python-tools
-    entrypoint: [""]
-  before_script:
-    - pip freeze > requirements.txt
-    - pip install -r requirements.txt
+    entrypoint: [""]t
   script:
     - echo "Running unit tests..."
+    - pip3 install --no-cache-dir -r requirements.txt
     - python3-coverage run -m pytest --verbose
     - find . -type f -name "*.py" | xargs -t python3-coverage report
     - find . -type f -name "*.py" | xargs -t pep8 --ignore=E501
