@@ -5,7 +5,7 @@ test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
   image:
     name: python-tools
-    entrypoint: [""]t
+    entrypoint: [""]
   script:
     - echo "Running unit tests..."
     - pip3 install --no-cache-dir -r requirements.txt
