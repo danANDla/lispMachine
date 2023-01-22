@@ -1,0 +1,6 @@
+(setq a 1)
+(loop
+  (if (= a 0) (return a))
+  (scan a)
+  (print a)
+)
