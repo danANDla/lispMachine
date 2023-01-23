@@ -84,7 +84,7 @@ def substituteRecursively(dic: dict, expr):
     return expr
 
 
-def makeFuncFromMacro(macro: LispList, symbols, symbMem):
+def makeFuncFromMacro(macro: LispList, symbols: dict, symbAddr: int):
     rule = symbols.get(macro.content)
     macroArgs = {}
     for i, arg in enumerate(rule[1].args[1]):
@@ -100,14 +100,14 @@ def makeFuncFromMacro(macro: LispList, symbols, symbMem):
     body = rule[1].args[2]
     subBody = substituteRecursively(macroArgs, body)
 
-    newForm, symbols, symbMem = makeLispForm(subBody, symbols, symbMem)
+    newForm, symbols, symbAddr = makeLispForm(subBody, symbols, symbAddr)
 
     return newForm, symbols
 
 
-def makeLispForm(expr, symbols, symbMem):
+def makeLispForm(expr, symbols: dict, symbAddr: int):
     if isinstance(expr, (LispAtom, LispList)):
-        return expr, symbols, symbMem
+        return expr, symbols, symbAddr
     if not isinstance(expr, list):
         s = str(expr)
         form = []
@@ -120,11 +120,11 @@ def makeLispForm(expr, symbols, symbMem):
         elif s in symbols:
             form = LispAtom(expr, AtomType.SYMB)
         else:
-            symbols[s] = (AtomType.UNDEF, LispAtom('n', AtomType.UNDEF), len(symbMem))
-            symbMem.append('NIL')
+            symbols[s] = (AtomType.UNDEF, LispAtom('n', AtomType.UNDEF), symbAddr)
+            symbAddr += 1
             form = LispAtom(expr, AtomType.SYMB)
 
-        return form, symbols, symbMem
+        return form, symbols, symbAddr
 
     pred = expr[0]
     if isSelfEvaluated(pred):
@@ -138,10 +138,10 @@ def makeLispForm(expr, symbols, symbMem):
     else:
         args = []
         for arg in expr[1:]:
-            m = makeLispForm(arg, symbols, symbMem)
+            m = makeLispForm(arg, symbols, symbAddr)
             args.append(m[0])
             symbols = m[1]
-            symbMem = m[2]
+            symbAddr = m[2]
         form = LispList(pred, funcs.get(pred), args)
 
     if pred == 'defmacro':
@@ -149,9 +149,9 @@ def makeLispForm(expr, symbols, symbMem):
             raise MacrosNameTakenException(f"Macos with name '{pred}' is already defined")
         symbols[expr[1]] = (ListType.MACRO, form)
     elif pred in symbols and not isinstance(symbols.get(pred), LispAtom):
-        form, symbols = makeFuncFromMacro(form, symbols, symbMem)
+        form, symbols = makeFuncFromMacro(form, symbols, symbAddr)
 
-    return form, symbols, symbMem
+    return form, symbols, symbAddr
 
 
 def readExpressions(text, pos, prevCh):
@@ -207,16 +207,16 @@ def showSymbols(symbols):
 # [reader]
 def readerWork(text):
     symbols = {}
-    symbMem = [0 for _ in range(100)]  # symbols Addresses, prealloc mem for 100 prevs
+    symbAddr = 100
     forms = []
 
     text = removeComments(text)
     if checkParentheses(text) == 'Balanced':
         sExpressions = readExpressions(text, 0, 'a')
         for expr in sExpressions[0]:
-            form, symbols, symbMem = makeLispForm(expr, symbols, symbMem)
+            form, symbols, symbAddr = makeLispForm(expr, symbols, symbAddr)
             if form.type != ListType.MACRO:
                 forms.append(form)
     else:
         print('Bad parenthesis')
-    return forms, symbols, symbMem
+    return forms, symbols, symbAddr

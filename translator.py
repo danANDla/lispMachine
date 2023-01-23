@@ -22,7 +22,7 @@ def main(args):
     with open(args[0], mode="r", encoding="UTF-8") as f:
         text = f.read().strip()
 
-    sExpressions, symbols, symbMem = readerWork(text)
+    sExpressions, symbols, _ = readerWork(text)
 
     code = []
     for form in sExpressions:
