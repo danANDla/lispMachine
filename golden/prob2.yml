@@ -17,308 +17,308 @@ output: |
   ============================================================
   can't send char to output, it's code: 4613732
 
-  instr_counter:  298 ticks: 669
+  instr_counter:  298 ticks: 723
 log: |
-  DEBUG    root:machine.py:327 {TICK: 0, PC: 0, ADDR: 0, OUT: 0, ACC: 0, ZF|SF: 00} load 4000000 
-  DEBUG    root:machine.py:337 {TICK: 2, PC: 1, ADDR: 0, OUT: 0, ACC: 4000000, ZF|SF: 00} store 100 addr
-  DEBUG    root:machine.py:337 {TICK: 4, PC: 2, ADDR: 100, OUT: 4000000, ACC: 4000000, ZF|SF: 00} load 2 
-  DEBUG    root:machine.py:337 {TICK: 6, PC: 3, ADDR: 100, OUT: 4000000, ACC: 2, ZF|SF: 00} store 101 addr
-  DEBUG    root:machine.py:337 {TICK: 8, PC: 4, ADDR: 101, OUT: 2, ACC: 2, ZF|SF: 00} load 2 
-  DEBUG    root:machine.py:337 {TICK: 10, PC: 5, ADDR: 101, OUT: 2, ACC: 2, ZF|SF: 00} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 12, PC: 6, ADDR: 102, OUT: 2, ACC: 2, ZF|SF: 00} load 0 
-  DEBUG    root:machine.py:337 {TICK: 14, PC: 7, ADDR: 102, OUT: 2, ACC: 0, ZF|SF: 00} store 103 addr
-  DEBUG    root:machine.py:337 {TICK: 16, PC: 8, ADDR: 103, OUT: 0, ACC: 0, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 18, PC: 9, ADDR: 102, OUT: 2, ACC: 2, ZF|SF: 00} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 21, PC: 10, ADDR: 102, OUT: 2, ACC: 4, ZF|SF: 00} store 3 addr
-  DEBUG    root:machine.py:337 {TICK: 23, PC: 11, ADDR: 3, OUT: 4, ACC: 4, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 25, PC: 12, ADDR: 102, OUT: 2, ACC: 2, ZF|SF: 00} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 28, PC: 13, ADDR: 102, OUT: 2, ACC: 4, ZF|SF: 00} store 4 addr
-  DEBUG    root:machine.py:337 {TICK: 30, PC: 14, ADDR: 4, OUT: 4, ACC: 4, ZF|SF: 00} load 3 addr
-  DEBUG    root:machine.py:337 {TICK: 32, PC: 15, ADDR: 3, OUT: 4, ACC: 4, ZF|SF: 00} add 4 addr
-  DEBUG    root:machine.py:337 {TICK: 35, PC: 16, ADDR: 4, OUT: 4, ACC: 8, ZF|SF: 00} store 2 addr
-  DEBUG    root:machine.py:337 {TICK: 37, PC: 17, ADDR: 2, OUT: 8, ACC: 8, ZF|SF: 00} load 103 addr
-  DEBUG    root:machine.py:337 {TICK: 39, PC: 18, ADDR: 103, OUT: 0, ACC: 0, ZF|SF: 00} add 2 addr
-  DEBUG    root:machine.py:337 {TICK: 42, PC: 19, ADDR: 2, OUT: 8, ACC: 8, ZF|SF: 00} store 1 addr
-  DEBUG    root:machine.py:337 {TICK: 44, PC: 20, ADDR: 1, OUT: 8, ACC: 8, ZF|SF: 00} load 1 addr
-  DEBUG    root:machine.py:337 {TICK: 46, PC: 21, ADDR: 1, OUT: 8, ACC: 8, ZF|SF: 00} store 104 addr
-  DEBUG    root:machine.py:337 {TICK: 48, PC: 22, ADDR: 104, OUT: 8, ACC: 8, ZF|SF: 00} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 50, PC: 23, ADDR: 104, OUT: 8, ACC: 8, ZF|SF: 00} cmp 100 addr
-  DEBUG    root:machine.py:337 {TICK: 52, PC: 24, ADDR: 100, OUT: 4000000, ACC: 8, ZF|SF: 01} jle 3 relative addr
-  DEBUG    root:machine.py:337 {TICK: 55, PC: 27, ADDR: 100, OUT: 4000000, ACC: 27, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 57, PC: 28, ADDR: 102, OUT: 2, ACC: 2, ZF|SF: 01} store 103 addr
-  DEBUG    root:machine.py:337 {TICK: 59, PC: 29, ADDR: 103, OUT: 2, ACC: 2, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 61, PC: 30, ADDR: 104, OUT: 8, ACC: 8, ZF|SF: 01} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 63, PC: 31, ADDR: 102, OUT: 8, ACC: 8, ZF|SF: 01} load 101 addr
-  DEBUG    root:machine.py:337 {TICK: 65, PC: 32, ADDR: 101, OUT: 2, ACC: 2, ZF|SF: 01} add 104 addr
-  DEBUG    root:machine.py:337 {TICK: 68, PC: 33, ADDR: 104, OUT: 8, ACC: 10, ZF|SF: 01} store 5 addr
-  DEBUG    root:machine.py:337 {TICK: 70, PC: 34, ADDR: 5, OUT: 10, ACC: 10, ZF|SF: 01} load 5 addr
-  DEBUG    root:machine.py:337 {TICK: 72, PC: 35, ADDR: 5, OUT: 10, ACC: 10, ZF|SF: 01} store 101 addr
-  DEBUG    root:machine.py:337 {TICK: 74, PC: 36, ADDR: 101, OUT: 10, ACC: 10, ZF|SF: 01} jmp -28 relative addr
-  DEBUG    root:machine.py:337 {TICK: 77, PC: 8, ADDR: 101, OUT: 10, ACC: 8, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 79, PC: 9, ADDR: 102, OUT: 8, ACC: 8, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 82, PC: 10, ADDR: 102, OUT: 8, ACC: 16, ZF|SF: 01} store 3 addr
-  DEBUG    root:machine.py:337 {TICK: 84, PC: 11, ADDR: 3, OUT: 16, ACC: 16, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 86, PC: 12, ADDR: 102, OUT: 8, ACC: 8, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 89, PC: 13, ADDR: 102, OUT: 8, ACC: 16, ZF|SF: 01} store 4 addr
-  DEBUG    root:machine.py:337 {TICK: 91, PC: 14, ADDR: 4, OUT: 16, ACC: 16, ZF|SF: 01} load 3 addr
-  DEBUG    root:machine.py:337 {TICK: 93, PC: 15, ADDR: 3, OUT: 16, ACC: 16, ZF|SF: 01} add 4 addr
-  DEBUG    root:machine.py:337 {TICK: 96, PC: 16, ADDR: 4, OUT: 16, ACC: 32, ZF|SF: 01} store 2 addr
-  DEBUG    root:machine.py:337 {TICK: 98, PC: 17, ADDR: 2, OUT: 32, ACC: 32, ZF|SF: 01} load 103 addr
-  DEBUG    root:machine.py:337 {TICK: 100, PC: 18, ADDR: 103, OUT: 2, ACC: 2, ZF|SF: 01} add 2 addr
-  DEBUG    root:machine.py:337 {TICK: 103, PC: 19, ADDR: 2, OUT: 32, ACC: 34, ZF|SF: 01} store 1 addr
-  DEBUG    root:machine.py:337 {TICK: 105, PC: 20, ADDR: 1, OUT: 34, ACC: 34, ZF|SF: 01} load 1 addr
-  DEBUG    root:machine.py:337 {TICK: 107, PC: 21, ADDR: 1, OUT: 34, ACC: 34, ZF|SF: 01} store 104 addr
-  DEBUG    root:machine.py:337 {TICK: 109, PC: 22, ADDR: 104, OUT: 34, ACC: 34, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 111, PC: 23, ADDR: 104, OUT: 34, ACC: 34, ZF|SF: 01} cmp 100 addr
-  DEBUG    root:machine.py:337 {TICK: 113, PC: 24, ADDR: 100, OUT: 4000000, ACC: 34, ZF|SF: 01} jle 3 relative addr
-  DEBUG    root:machine.py:337 {TICK: 116, PC: 27, ADDR: 100, OUT: 4000000, ACC: 27, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 118, PC: 28, ADDR: 102, OUT: 8, ACC: 8, ZF|SF: 01} store 103 addr
-  DEBUG    root:machine.py:337 {TICK: 120, PC: 29, ADDR: 103, OUT: 8, ACC: 8, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 122, PC: 30, ADDR: 104, OUT: 34, ACC: 34, ZF|SF: 01} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 124, PC: 31, ADDR: 102, OUT: 34, ACC: 34, ZF|SF: 01} load 101 addr
-  DEBUG    root:machine.py:337 {TICK: 126, PC: 32, ADDR: 101, OUT: 10, ACC: 10, ZF|SF: 01} add 104 addr
-  DEBUG    root:machine.py:337 {TICK: 129, PC: 33, ADDR: 104, OUT: 34, ACC: 44, ZF|SF: 01} store 5 addr
-  DEBUG    root:machine.py:337 {TICK: 131, PC: 34, ADDR: 5, OUT: 44, ACC: 44, ZF|SF: 01} load 5 addr
-  DEBUG    root:machine.py:337 {TICK: 133, PC: 35, ADDR: 5, OUT: 44, ACC: 44, ZF|SF: 01} store 101 addr
-  DEBUG    root:machine.py:337 {TICK: 135, PC: 36, ADDR: 101, OUT: 44, ACC: 44, ZF|SF: 01} jmp -28 relative addr
-  DEBUG    root:machine.py:337 {TICK: 138, PC: 8, ADDR: 101, OUT: 44, ACC: 8, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 140, PC: 9, ADDR: 102, OUT: 34, ACC: 34, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 143, PC: 10, ADDR: 102, OUT: 34, ACC: 68, ZF|SF: 01} store 3 addr
-  DEBUG    root:machine.py:337 {TICK: 145, PC: 11, ADDR: 3, OUT: 68, ACC: 68, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 147, PC: 12, ADDR: 102, OUT: 34, ACC: 34, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 150, PC: 13, ADDR: 102, OUT: 34, ACC: 68, ZF|SF: 01} store 4 addr
-  DEBUG    root:machine.py:337 {TICK: 152, PC: 14, ADDR: 4, OUT: 68, ACC: 68, ZF|SF: 01} load 3 addr
-  DEBUG    root:machine.py:337 {TICK: 154, PC: 15, ADDR: 3, OUT: 68, ACC: 68, ZF|SF: 01} add 4 addr
-  DEBUG    root:machine.py:337 {TICK: 157, PC: 16, ADDR: 4, OUT: 68, ACC: 136, ZF|SF: 01} store 2 addr
-  DEBUG    root:machine.py:337 {TICK: 159, PC: 17, ADDR: 2, OUT: 136, ACC: 136, ZF|SF: 01} load 103 addr
-  DEBUG    root:machine.py:337 {TICK: 161, PC: 18, ADDR: 103, OUT: 8, ACC: 8, ZF|SF: 01} add 2 addr
-  DEBUG    root:machine.py:337 {TICK: 164, PC: 19, ADDR: 2, OUT: 136, ACC: 144, ZF|SF: 01} store 1 addr
-  DEBUG    root:machine.py:337 {TICK: 166, PC: 20, ADDR: 1, OUT: 144, ACC: 144, ZF|SF: 01} load 1 addr
-  DEBUG    root:machine.py:337 {TICK: 168, PC: 21, ADDR: 1, OUT: 144, ACC: 144, ZF|SF: 01} store 104 addr
-  DEBUG    root:machine.py:337 {TICK: 170, PC: 22, ADDR: 104, OUT: 144, ACC: 144, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 172, PC: 23, ADDR: 104, OUT: 144, ACC: 144, ZF|SF: 01} cmp 100 addr
-  DEBUG    root:machine.py:337 {TICK: 174, PC: 24, ADDR: 100, OUT: 4000000, ACC: 144, ZF|SF: 01} jle 3 relative addr
-  DEBUG    root:machine.py:337 {TICK: 177, PC: 27, ADDR: 100, OUT: 4000000, ACC: 27, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 179, PC: 28, ADDR: 102, OUT: 34, ACC: 34, ZF|SF: 01} store 103 addr
-  DEBUG    root:machine.py:337 {TICK: 181, PC: 29, ADDR: 103, OUT: 34, ACC: 34, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 183, PC: 30, ADDR: 104, OUT: 144, ACC: 144, ZF|SF: 01} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 185, PC: 31, ADDR: 102, OUT: 144, ACC: 144, ZF|SF: 01} load 101 addr
-  DEBUG    root:machine.py:337 {TICK: 187, PC: 32, ADDR: 101, OUT: 44, ACC: 44, ZF|SF: 01} add 104 addr
-  DEBUG    root:machine.py:337 {TICK: 190, PC: 33, ADDR: 104, OUT: 144, ACC: 188, ZF|SF: 01} store 5 addr
-  DEBUG    root:machine.py:337 {TICK: 192, PC: 34, ADDR: 5, OUT: 188, ACC: 188, ZF|SF: 01} load 5 addr
-  DEBUG    root:machine.py:337 {TICK: 194, PC: 35, ADDR: 5, OUT: 188, ACC: 188, ZF|SF: 01} store 101 addr
-  DEBUG    root:machine.py:337 {TICK: 196, PC: 36, ADDR: 101, OUT: 188, ACC: 188, ZF|SF: 01} jmp -28 relative addr
-  DEBUG    root:machine.py:337 {TICK: 199, PC: 8, ADDR: 101, OUT: 188, ACC: 8, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 201, PC: 9, ADDR: 102, OUT: 144, ACC: 144, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 204, PC: 10, ADDR: 102, OUT: 144, ACC: 288, ZF|SF: 01} store 3 addr
-  DEBUG    root:machine.py:337 {TICK: 206, PC: 11, ADDR: 3, OUT: 288, ACC: 288, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 208, PC: 12, ADDR: 102, OUT: 144, ACC: 144, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 211, PC: 13, ADDR: 102, OUT: 144, ACC: 288, ZF|SF: 01} store 4 addr
-  DEBUG    root:machine.py:337 {TICK: 213, PC: 14, ADDR: 4, OUT: 288, ACC: 288, ZF|SF: 01} load 3 addr
-  DEBUG    root:machine.py:337 {TICK: 215, PC: 15, ADDR: 3, OUT: 288, ACC: 288, ZF|SF: 01} add 4 addr
-  DEBUG    root:machine.py:337 {TICK: 218, PC: 16, ADDR: 4, OUT: 288, ACC: 576, ZF|SF: 01} store 2 addr
-  DEBUG    root:machine.py:337 {TICK: 220, PC: 17, ADDR: 2, OUT: 576, ACC: 576, ZF|SF: 01} load 103 addr
-  DEBUG    root:machine.py:337 {TICK: 222, PC: 18, ADDR: 103, OUT: 34, ACC: 34, ZF|SF: 01} add 2 addr
-  DEBUG    root:machine.py:337 {TICK: 225, PC: 19, ADDR: 2, OUT: 576, ACC: 610, ZF|SF: 01} store 1 addr
-  DEBUG    root:machine.py:337 {TICK: 227, PC: 20, ADDR: 1, OUT: 610, ACC: 610, ZF|SF: 01} load 1 addr
-  DEBUG    root:machine.py:337 {TICK: 229, PC: 21, ADDR: 1, OUT: 610, ACC: 610, ZF|SF: 01} store 104 addr
-  DEBUG    root:machine.py:337 {TICK: 231, PC: 22, ADDR: 104, OUT: 610, ACC: 610, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 233, PC: 23, ADDR: 104, OUT: 610, ACC: 610, ZF|SF: 01} cmp 100 addr
-  DEBUG    root:machine.py:337 {TICK: 235, PC: 24, ADDR: 100, OUT: 4000000, ACC: 610, ZF|SF: 01} jle 3 relative addr
-  DEBUG    root:machine.py:337 {TICK: 238, PC: 27, ADDR: 100, OUT: 4000000, ACC: 27, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 240, PC: 28, ADDR: 102, OUT: 144, ACC: 144, ZF|SF: 01} store 103 addr
-  DEBUG    root:machine.py:337 {TICK: 242, PC: 29, ADDR: 103, OUT: 144, ACC: 144, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 244, PC: 30, ADDR: 104, OUT: 610, ACC: 610, ZF|SF: 01} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 246, PC: 31, ADDR: 102, OUT: 610, ACC: 610, ZF|SF: 01} load 101 addr
-  DEBUG    root:machine.py:337 {TICK: 248, PC: 32, ADDR: 101, OUT: 188, ACC: 188, ZF|SF: 01} add 104 addr
-  DEBUG    root:machine.py:337 {TICK: 251, PC: 33, ADDR: 104, OUT: 610, ACC: 798, ZF|SF: 01} store 5 addr
-  DEBUG    root:machine.py:337 {TICK: 253, PC: 34, ADDR: 5, OUT: 798, ACC: 798, ZF|SF: 01} load 5 addr
-  DEBUG    root:machine.py:337 {TICK: 255, PC: 35, ADDR: 5, OUT: 798, ACC: 798, ZF|SF: 01} store 101 addr
-  DEBUG    root:machine.py:337 {TICK: 257, PC: 36, ADDR: 101, OUT: 798, ACC: 798, ZF|SF: 01} jmp -28 relative addr
-  DEBUG    root:machine.py:337 {TICK: 260, PC: 8, ADDR: 101, OUT: 798, ACC: 8, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 262, PC: 9, ADDR: 102, OUT: 610, ACC: 610, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 265, PC: 10, ADDR: 102, OUT: 610, ACC: 1220, ZF|SF: 01} store 3 addr
-  DEBUG    root:machine.py:337 {TICK: 267, PC: 11, ADDR: 3, OUT: 1220, ACC: 1220, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 269, PC: 12, ADDR: 102, OUT: 610, ACC: 610, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 272, PC: 13, ADDR: 102, OUT: 610, ACC: 1220, ZF|SF: 01} store 4 addr
-  DEBUG    root:machine.py:337 {TICK: 274, PC: 14, ADDR: 4, OUT: 1220, ACC: 1220, ZF|SF: 01} load 3 addr
-  DEBUG    root:machine.py:337 {TICK: 276, PC: 15, ADDR: 3, OUT: 1220, ACC: 1220, ZF|SF: 01} add 4 addr
-  DEBUG    root:machine.py:337 {TICK: 279, PC: 16, ADDR: 4, OUT: 1220, ACC: 2440, ZF|SF: 01} store 2 addr
-  DEBUG    root:machine.py:337 {TICK: 281, PC: 17, ADDR: 2, OUT: 2440, ACC: 2440, ZF|SF: 01} load 103 addr
-  DEBUG    root:machine.py:337 {TICK: 283, PC: 18, ADDR: 103, OUT: 144, ACC: 144, ZF|SF: 01} add 2 addr
-  DEBUG    root:machine.py:337 {TICK: 286, PC: 19, ADDR: 2, OUT: 2440, ACC: 2584, ZF|SF: 01} store 1 addr
-  DEBUG    root:machine.py:337 {TICK: 288, PC: 20, ADDR: 1, OUT: 2584, ACC: 2584, ZF|SF: 01} load 1 addr
-  DEBUG    root:machine.py:337 {TICK: 290, PC: 21, ADDR: 1, OUT: 2584, ACC: 2584, ZF|SF: 01} store 104 addr
-  DEBUG    root:machine.py:337 {TICK: 292, PC: 22, ADDR: 104, OUT: 2584, ACC: 2584, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 294, PC: 23, ADDR: 104, OUT: 2584, ACC: 2584, ZF|SF: 01} cmp 100 addr
-  DEBUG    root:machine.py:337 {TICK: 296, PC: 24, ADDR: 100, OUT: 4000000, ACC: 2584, ZF|SF: 01} jle 3 relative addr
-  DEBUG    root:machine.py:337 {TICK: 299, PC: 27, ADDR: 100, OUT: 4000000, ACC: 27, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 301, PC: 28, ADDR: 102, OUT: 610, ACC: 610, ZF|SF: 01} store 103 addr
-  DEBUG    root:machine.py:337 {TICK: 303, PC: 29, ADDR: 103, OUT: 610, ACC: 610, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 305, PC: 30, ADDR: 104, OUT: 2584, ACC: 2584, ZF|SF: 01} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 307, PC: 31, ADDR: 102, OUT: 2584, ACC: 2584, ZF|SF: 01} load 101 addr
-  DEBUG    root:machine.py:337 {TICK: 309, PC: 32, ADDR: 101, OUT: 798, ACC: 798, ZF|SF: 01} add 104 addr
-  DEBUG    root:machine.py:337 {TICK: 312, PC: 33, ADDR: 104, OUT: 2584, ACC: 3382, ZF|SF: 01} store 5 addr
-  DEBUG    root:machine.py:337 {TICK: 314, PC: 34, ADDR: 5, OUT: 3382, ACC: 3382, ZF|SF: 01} load 5 addr
-  DEBUG    root:machine.py:337 {TICK: 316, PC: 35, ADDR: 5, OUT: 3382, ACC: 3382, ZF|SF: 01} store 101 addr
-  DEBUG    root:machine.py:337 {TICK: 318, PC: 36, ADDR: 101, OUT: 3382, ACC: 3382, ZF|SF: 01} jmp -28 relative addr
-  DEBUG    root:machine.py:337 {TICK: 321, PC: 8, ADDR: 101, OUT: 3382, ACC: 8, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 323, PC: 9, ADDR: 102, OUT: 2584, ACC: 2584, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 326, PC: 10, ADDR: 102, OUT: 2584, ACC: 5168, ZF|SF: 01} store 3 addr
-  DEBUG    root:machine.py:337 {TICK: 328, PC: 11, ADDR: 3, OUT: 5168, ACC: 5168, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 330, PC: 12, ADDR: 102, OUT: 2584, ACC: 2584, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 333, PC: 13, ADDR: 102, OUT: 2584, ACC: 5168, ZF|SF: 01} store 4 addr
-  DEBUG    root:machine.py:337 {TICK: 335, PC: 14, ADDR: 4, OUT: 5168, ACC: 5168, ZF|SF: 01} load 3 addr
-  DEBUG    root:machine.py:337 {TICK: 337, PC: 15, ADDR: 3, OUT: 5168, ACC: 5168, ZF|SF: 01} add 4 addr
-  DEBUG    root:machine.py:337 {TICK: 340, PC: 16, ADDR: 4, OUT: 5168, ACC: 10336, ZF|SF: 01} store 2 addr
-  DEBUG    root:machine.py:337 {TICK: 342, PC: 17, ADDR: 2, OUT: 10336, ACC: 10336, ZF|SF: 01} load 103 addr
-  DEBUG    root:machine.py:337 {TICK: 344, PC: 18, ADDR: 103, OUT: 610, ACC: 610, ZF|SF: 01} add 2 addr
-  DEBUG    root:machine.py:337 {TICK: 347, PC: 19, ADDR: 2, OUT: 10336, ACC: 10946, ZF|SF: 01} store 1 addr
-  DEBUG    root:machine.py:337 {TICK: 349, PC: 20, ADDR: 1, OUT: 10946, ACC: 10946, ZF|SF: 01} load 1 addr
-  DEBUG    root:machine.py:337 {TICK: 351, PC: 21, ADDR: 1, OUT: 10946, ACC: 10946, ZF|SF: 01} store 104 addr
-  DEBUG    root:machine.py:337 {TICK: 353, PC: 22, ADDR: 104, OUT: 10946, ACC: 10946, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 355, PC: 23, ADDR: 104, OUT: 10946, ACC: 10946, ZF|SF: 01} cmp 100 addr
-  DEBUG    root:machine.py:337 {TICK: 357, PC: 24, ADDR: 100, OUT: 4000000, ACC: 10946, ZF|SF: 01} jle 3 relative addr
-  DEBUG    root:machine.py:337 {TICK: 360, PC: 27, ADDR: 100, OUT: 4000000, ACC: 27, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 362, PC: 28, ADDR: 102, OUT: 2584, ACC: 2584, ZF|SF: 01} store 103 addr
-  DEBUG    root:machine.py:337 {TICK: 364, PC: 29, ADDR: 103, OUT: 2584, ACC: 2584, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 366, PC: 30, ADDR: 104, OUT: 10946, ACC: 10946, ZF|SF: 01} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 368, PC: 31, ADDR: 102, OUT: 10946, ACC: 10946, ZF|SF: 01} load 101 addr
-  DEBUG    root:machine.py:337 {TICK: 370, PC: 32, ADDR: 101, OUT: 3382, ACC: 3382, ZF|SF: 01} add 104 addr
-  DEBUG    root:machine.py:337 {TICK: 373, PC: 33, ADDR: 104, OUT: 10946, ACC: 14328, ZF|SF: 01} store 5 addr
-  DEBUG    root:machine.py:337 {TICK: 375, PC: 34, ADDR: 5, OUT: 14328, ACC: 14328, ZF|SF: 01} load 5 addr
-  DEBUG    root:machine.py:337 {TICK: 377, PC: 35, ADDR: 5, OUT: 14328, ACC: 14328, ZF|SF: 01} store 101 addr
-  DEBUG    root:machine.py:337 {TICK: 379, PC: 36, ADDR: 101, OUT: 14328, ACC: 14328, ZF|SF: 01} jmp -28 relative addr
-  DEBUG    root:machine.py:337 {TICK: 382, PC: 8, ADDR: 101, OUT: 14328, ACC: 8, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 384, PC: 9, ADDR: 102, OUT: 10946, ACC: 10946, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 387, PC: 10, ADDR: 102, OUT: 10946, ACC: 21892, ZF|SF: 01} store 3 addr
-  DEBUG    root:machine.py:337 {TICK: 389, PC: 11, ADDR: 3, OUT: 21892, ACC: 21892, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 391, PC: 12, ADDR: 102, OUT: 10946, ACC: 10946, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 394, PC: 13, ADDR: 102, OUT: 10946, ACC: 21892, ZF|SF: 01} store 4 addr
-  DEBUG    root:machine.py:337 {TICK: 396, PC: 14, ADDR: 4, OUT: 21892, ACC: 21892, ZF|SF: 01} load 3 addr
-  DEBUG    root:machine.py:337 {TICK: 398, PC: 15, ADDR: 3, OUT: 21892, ACC: 21892, ZF|SF: 01} add 4 addr
-  DEBUG    root:machine.py:337 {TICK: 401, PC: 16, ADDR: 4, OUT: 21892, ACC: 43784, ZF|SF: 01} store 2 addr
-  DEBUG    root:machine.py:337 {TICK: 403, PC: 17, ADDR: 2, OUT: 43784, ACC: 43784, ZF|SF: 01} load 103 addr
-  DEBUG    root:machine.py:337 {TICK: 405, PC: 18, ADDR: 103, OUT: 2584, ACC: 2584, ZF|SF: 01} add 2 addr
-  DEBUG    root:machine.py:337 {TICK: 408, PC: 19, ADDR: 2, OUT: 43784, ACC: 46368, ZF|SF: 01} store 1 addr
-  DEBUG    root:machine.py:337 {TICK: 410, PC: 20, ADDR: 1, OUT: 46368, ACC: 46368, ZF|SF: 01} load 1 addr
-  DEBUG    root:machine.py:337 {TICK: 412, PC: 21, ADDR: 1, OUT: 46368, ACC: 46368, ZF|SF: 01} store 104 addr
-  DEBUG    root:machine.py:337 {TICK: 414, PC: 22, ADDR: 104, OUT: 46368, ACC: 46368, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 416, PC: 23, ADDR: 104, OUT: 46368, ACC: 46368, ZF|SF: 01} cmp 100 addr
-  DEBUG    root:machine.py:337 {TICK: 418, PC: 24, ADDR: 100, OUT: 4000000, ACC: 46368, ZF|SF: 01} jle 3 relative addr
-  DEBUG    root:machine.py:337 {TICK: 421, PC: 27, ADDR: 100, OUT: 4000000, ACC: 27, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 423, PC: 28, ADDR: 102, OUT: 10946, ACC: 10946, ZF|SF: 01} store 103 addr
-  DEBUG    root:machine.py:337 {TICK: 425, PC: 29, ADDR: 103, OUT: 10946, ACC: 10946, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 427, PC: 30, ADDR: 104, OUT: 46368, ACC: 46368, ZF|SF: 01} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 429, PC: 31, ADDR: 102, OUT: 46368, ACC: 46368, ZF|SF: 01} load 101 addr
-  DEBUG    root:machine.py:337 {TICK: 431, PC: 32, ADDR: 101, OUT: 14328, ACC: 14328, ZF|SF: 01} add 104 addr
-  DEBUG    root:machine.py:337 {TICK: 434, PC: 33, ADDR: 104, OUT: 46368, ACC: 60696, ZF|SF: 01} store 5 addr
-  DEBUG    root:machine.py:337 {TICK: 436, PC: 34, ADDR: 5, OUT: 60696, ACC: 60696, ZF|SF: 01} load 5 addr
-  DEBUG    root:machine.py:337 {TICK: 438, PC: 35, ADDR: 5, OUT: 60696, ACC: 60696, ZF|SF: 01} store 101 addr
-  DEBUG    root:machine.py:337 {TICK: 440, PC: 36, ADDR: 101, OUT: 60696, ACC: 60696, ZF|SF: 01} jmp -28 relative addr
-  DEBUG    root:machine.py:337 {TICK: 443, PC: 8, ADDR: 101, OUT: 60696, ACC: 8, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 445, PC: 9, ADDR: 102, OUT: 46368, ACC: 46368, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 448, PC: 10, ADDR: 102, OUT: 46368, ACC: 92736, ZF|SF: 01} store 3 addr
-  DEBUG    root:machine.py:337 {TICK: 450, PC: 11, ADDR: 3, OUT: 92736, ACC: 92736, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 452, PC: 12, ADDR: 102, OUT: 46368, ACC: 46368, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 455, PC: 13, ADDR: 102, OUT: 46368, ACC: 92736, ZF|SF: 01} store 4 addr
-  DEBUG    root:machine.py:337 {TICK: 457, PC: 14, ADDR: 4, OUT: 92736, ACC: 92736, ZF|SF: 01} load 3 addr
-  DEBUG    root:machine.py:337 {TICK: 459, PC: 15, ADDR: 3, OUT: 92736, ACC: 92736, ZF|SF: 01} add 4 addr
-  DEBUG    root:machine.py:337 {TICK: 462, PC: 16, ADDR: 4, OUT: 92736, ACC: 185472, ZF|SF: 01} store 2 addr
-  DEBUG    root:machine.py:337 {TICK: 464, PC: 17, ADDR: 2, OUT: 185472, ACC: 185472, ZF|SF: 01} load 103 addr
-  DEBUG    root:machine.py:337 {TICK: 466, PC: 18, ADDR: 103, OUT: 10946, ACC: 10946, ZF|SF: 01} add 2 addr
-  DEBUG    root:machine.py:337 {TICK: 469, PC: 19, ADDR: 2, OUT: 185472, ACC: 196418, ZF|SF: 01} store 1 addr
-  DEBUG    root:machine.py:337 {TICK: 471, PC: 20, ADDR: 1, OUT: 196418, ACC: 196418, ZF|SF: 01} load 1 addr
-  DEBUG    root:machine.py:337 {TICK: 473, PC: 21, ADDR: 1, OUT: 196418, ACC: 196418, ZF|SF: 01} store 104 addr
-  DEBUG    root:machine.py:337 {TICK: 475, PC: 22, ADDR: 104, OUT: 196418, ACC: 196418, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 477, PC: 23, ADDR: 104, OUT: 196418, ACC: 196418, ZF|SF: 01} cmp 100 addr
-  DEBUG    root:machine.py:337 {TICK: 479, PC: 24, ADDR: 100, OUT: 4000000, ACC: 196418, ZF|SF: 01} jle 3 relative addr
-  DEBUG    root:machine.py:337 {TICK: 482, PC: 27, ADDR: 100, OUT: 4000000, ACC: 27, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 484, PC: 28, ADDR: 102, OUT: 46368, ACC: 46368, ZF|SF: 01} store 103 addr
-  DEBUG    root:machine.py:337 {TICK: 486, PC: 29, ADDR: 103, OUT: 46368, ACC: 46368, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 488, PC: 30, ADDR: 104, OUT: 196418, ACC: 196418, ZF|SF: 01} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 490, PC: 31, ADDR: 102, OUT: 196418, ACC: 196418, ZF|SF: 01} load 101 addr
-  DEBUG    root:machine.py:337 {TICK: 492, PC: 32, ADDR: 101, OUT: 60696, ACC: 60696, ZF|SF: 01} add 104 addr
-  DEBUG    root:machine.py:337 {TICK: 495, PC: 33, ADDR: 104, OUT: 196418, ACC: 257114, ZF|SF: 01} store 5 addr
-  DEBUG    root:machine.py:337 {TICK: 497, PC: 34, ADDR: 5, OUT: 257114, ACC: 257114, ZF|SF: 01} load 5 addr
-  DEBUG    root:machine.py:337 {TICK: 499, PC: 35, ADDR: 5, OUT: 257114, ACC: 257114, ZF|SF: 01} store 101 addr
-  DEBUG    root:machine.py:337 {TICK: 501, PC: 36, ADDR: 101, OUT: 257114, ACC: 257114, ZF|SF: 01} jmp -28 relative addr
-  DEBUG    root:machine.py:337 {TICK: 504, PC: 8, ADDR: 101, OUT: 257114, ACC: 8, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 506, PC: 9, ADDR: 102, OUT: 196418, ACC: 196418, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 509, PC: 10, ADDR: 102, OUT: 196418, ACC: 392836, ZF|SF: 01} store 3 addr
-  DEBUG    root:machine.py:337 {TICK: 511, PC: 11, ADDR: 3, OUT: 392836, ACC: 392836, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 513, PC: 12, ADDR: 102, OUT: 196418, ACC: 196418, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 516, PC: 13, ADDR: 102, OUT: 196418, ACC: 392836, ZF|SF: 01} store 4 addr
-  DEBUG    root:machine.py:337 {TICK: 518, PC: 14, ADDR: 4, OUT: 392836, ACC: 392836, ZF|SF: 01} load 3 addr
-  DEBUG    root:machine.py:337 {TICK: 520, PC: 15, ADDR: 3, OUT: 392836, ACC: 392836, ZF|SF: 01} add 4 addr
-  DEBUG    root:machine.py:337 {TICK: 523, PC: 16, ADDR: 4, OUT: 392836, ACC: 785672, ZF|SF: 01} store 2 addr
-  DEBUG    root:machine.py:337 {TICK: 525, PC: 17, ADDR: 2, OUT: 785672, ACC: 785672, ZF|SF: 01} load 103 addr
-  DEBUG    root:machine.py:337 {TICK: 527, PC: 18, ADDR: 103, OUT: 46368, ACC: 46368, ZF|SF: 01} add 2 addr
-  DEBUG    root:machine.py:337 {TICK: 530, PC: 19, ADDR: 2, OUT: 785672, ACC: 832040, ZF|SF: 01} store 1 addr
-  DEBUG    root:machine.py:337 {TICK: 532, PC: 20, ADDR: 1, OUT: 832040, ACC: 832040, ZF|SF: 01} load 1 addr
-  DEBUG    root:machine.py:337 {TICK: 534, PC: 21, ADDR: 1, OUT: 832040, ACC: 832040, ZF|SF: 01} store 104 addr
-  DEBUG    root:machine.py:337 {TICK: 536, PC: 22, ADDR: 104, OUT: 832040, ACC: 832040, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 538, PC: 23, ADDR: 104, OUT: 832040, ACC: 832040, ZF|SF: 01} cmp 100 addr
-  DEBUG    root:machine.py:337 {TICK: 540, PC: 24, ADDR: 100, OUT: 4000000, ACC: 832040, ZF|SF: 01} jle 3 relative addr
-  DEBUG    root:machine.py:337 {TICK: 543, PC: 27, ADDR: 100, OUT: 4000000, ACC: 27, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 545, PC: 28, ADDR: 102, OUT: 196418, ACC: 196418, ZF|SF: 01} store 103 addr
-  DEBUG    root:machine.py:337 {TICK: 547, PC: 29, ADDR: 103, OUT: 196418, ACC: 196418, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 549, PC: 30, ADDR: 104, OUT: 832040, ACC: 832040, ZF|SF: 01} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 551, PC: 31, ADDR: 102, OUT: 832040, ACC: 832040, ZF|SF: 01} load 101 addr
-  DEBUG    root:machine.py:337 {TICK: 553, PC: 32, ADDR: 101, OUT: 257114, ACC: 257114, ZF|SF: 01} add 104 addr
-  DEBUG    root:machine.py:337 {TICK: 556, PC: 33, ADDR: 104, OUT: 832040, ACC: 1089154, ZF|SF: 01} store 5 addr
-  DEBUG    root:machine.py:337 {TICK: 558, PC: 34, ADDR: 5, OUT: 1089154, ACC: 1089154, ZF|SF: 01} load 5 addr
-  DEBUG    root:machine.py:337 {TICK: 560, PC: 35, ADDR: 5, OUT: 1089154, ACC: 1089154, ZF|SF: 01} store 101 addr
-  DEBUG    root:machine.py:337 {TICK: 562, PC: 36, ADDR: 101, OUT: 1089154, ACC: 1089154, ZF|SF: 01} jmp -28 relative addr
-  DEBUG    root:machine.py:337 {TICK: 565, PC: 8, ADDR: 101, OUT: 1089154, ACC: 8, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 567, PC: 9, ADDR: 102, OUT: 832040, ACC: 832040, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 570, PC: 10, ADDR: 102, OUT: 832040, ACC: 1664080, ZF|SF: 01} store 3 addr
-  DEBUG    root:machine.py:337 {TICK: 572, PC: 11, ADDR: 3, OUT: 1664080, ACC: 1664080, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 574, PC: 12, ADDR: 102, OUT: 832040, ACC: 832040, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 577, PC: 13, ADDR: 102, OUT: 832040, ACC: 1664080, ZF|SF: 01} store 4 addr
-  DEBUG    root:machine.py:337 {TICK: 579, PC: 14, ADDR: 4, OUT: 1664080, ACC: 1664080, ZF|SF: 01} load 3 addr
-  DEBUG    root:machine.py:337 {TICK: 581, PC: 15, ADDR: 3, OUT: 1664080, ACC: 1664080, ZF|SF: 01} add 4 addr
-  DEBUG    root:machine.py:337 {TICK: 584, PC: 16, ADDR: 4, OUT: 1664080, ACC: 3328160, ZF|SF: 01} store 2 addr
-  DEBUG    root:machine.py:337 {TICK: 586, PC: 17, ADDR: 2, OUT: 3328160, ACC: 3328160, ZF|SF: 01} load 103 addr
-  DEBUG    root:machine.py:337 {TICK: 588, PC: 18, ADDR: 103, OUT: 196418, ACC: 196418, ZF|SF: 01} add 2 addr
-  DEBUG    root:machine.py:337 {TICK: 591, PC: 19, ADDR: 2, OUT: 3328160, ACC: 3524578, ZF|SF: 01} store 1 addr
-  DEBUG    root:machine.py:337 {TICK: 593, PC: 20, ADDR: 1, OUT: 3524578, ACC: 3524578, ZF|SF: 01} load 1 addr
-  DEBUG    root:machine.py:337 {TICK: 595, PC: 21, ADDR: 1, OUT: 3524578, ACC: 3524578, ZF|SF: 01} store 104 addr
-  DEBUG    root:machine.py:337 {TICK: 597, PC: 22, ADDR: 104, OUT: 3524578, ACC: 3524578, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 599, PC: 23, ADDR: 104, OUT: 3524578, ACC: 3524578, ZF|SF: 01} cmp 100 addr
-  DEBUG    root:machine.py:337 {TICK: 601, PC: 24, ADDR: 100, OUT: 4000000, ACC: 3524578, ZF|SF: 01} jle 3 relative addr
-  DEBUG    root:machine.py:337 {TICK: 604, PC: 27, ADDR: 100, OUT: 4000000, ACC: 27, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 606, PC: 28, ADDR: 102, OUT: 832040, ACC: 832040, ZF|SF: 01} store 103 addr
-  DEBUG    root:machine.py:337 {TICK: 608, PC: 29, ADDR: 103, OUT: 832040, ACC: 832040, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 610, PC: 30, ADDR: 104, OUT: 3524578, ACC: 3524578, ZF|SF: 01} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 612, PC: 31, ADDR: 102, OUT: 3524578, ACC: 3524578, ZF|SF: 01} load 101 addr
-  DEBUG    root:machine.py:337 {TICK: 614, PC: 32, ADDR: 101, OUT: 1089154, ACC: 1089154, ZF|SF: 01} add 104 addr
-  DEBUG    root:machine.py:337 {TICK: 617, PC: 33, ADDR: 104, OUT: 3524578, ACC: 4613732, ZF|SF: 01} store 5 addr
-  DEBUG    root:machine.py:337 {TICK: 619, PC: 34, ADDR: 5, OUT: 4613732, ACC: 4613732, ZF|SF: 01} load 5 addr
-  DEBUG    root:machine.py:337 {TICK: 621, PC: 35, ADDR: 5, OUT: 4613732, ACC: 4613732, ZF|SF: 01} store 101 addr
-  DEBUG    root:machine.py:337 {TICK: 623, PC: 36, ADDR: 101, OUT: 4613732, ACC: 4613732, ZF|SF: 01} jmp -28 relative addr
-  DEBUG    root:machine.py:337 {TICK: 626, PC: 8, ADDR: 101, OUT: 4613732, ACC: 8, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 628, PC: 9, ADDR: 102, OUT: 3524578, ACC: 3524578, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 631, PC: 10, ADDR: 102, OUT: 3524578, ACC: 7049156, ZF|SF: 01} store 3 addr
-  DEBUG    root:machine.py:337 {TICK: 633, PC: 11, ADDR: 3, OUT: 7049156, ACC: 7049156, ZF|SF: 01} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 635, PC: 12, ADDR: 102, OUT: 3524578, ACC: 3524578, ZF|SF: 01} add 102 addr
-  DEBUG    root:machine.py:337 {TICK: 638, PC: 13, ADDR: 102, OUT: 3524578, ACC: 7049156, ZF|SF: 01} store 4 addr
-  DEBUG    root:machine.py:337 {TICK: 640, PC: 14, ADDR: 4, OUT: 7049156, ACC: 7049156, ZF|SF: 01} load 3 addr
-  DEBUG    root:machine.py:337 {TICK: 642, PC: 15, ADDR: 3, OUT: 7049156, ACC: 7049156, ZF|SF: 01} add 4 addr
-  DEBUG    root:machine.py:337 {TICK: 645, PC: 16, ADDR: 4, OUT: 7049156, ACC: 14098312, ZF|SF: 01} store 2 addr
-  DEBUG    root:machine.py:337 {TICK: 647, PC: 17, ADDR: 2, OUT: 14098312, ACC: 14098312, ZF|SF: 01} load 103 addr
-  DEBUG    root:machine.py:337 {TICK: 649, PC: 18, ADDR: 103, OUT: 832040, ACC: 832040, ZF|SF: 01} add 2 addr
-  DEBUG    root:machine.py:337 {TICK: 652, PC: 19, ADDR: 2, OUT: 14098312, ACC: 14930352, ZF|SF: 01} store 1 addr
-  DEBUG    root:machine.py:337 {TICK: 654, PC: 20, ADDR: 1, OUT: 14930352, ACC: 14930352, ZF|SF: 01} load 1 addr
-  DEBUG    root:machine.py:337 {TICK: 656, PC: 21, ADDR: 1, OUT: 14930352, ACC: 14930352, ZF|SF: 01} store 104 addr
-  DEBUG    root:machine.py:337 {TICK: 658, PC: 22, ADDR: 104, OUT: 14930352, ACC: 14930352, ZF|SF: 01} load 104 addr
-  DEBUG    root:machine.py:337 {TICK: 660, PC: 23, ADDR: 104, OUT: 14930352, ACC: 14930352, ZF|SF: 01} cmp 100 addr
-  DEBUG    root:machine.py:337 {TICK: 662, PC: 24, ADDR: 100, OUT: 4000000, ACC: 14930352, ZF|SF: 00} jle 3 relative addr
-  DEBUG    root:machine.py:337 {TICK: 663, PC: 25, ADDR: 100, OUT: 4000000, ACC: 14930352, ZF|SF: 00} jmp 12 relative addr
-  DEBUG    root:machine.py:337 {TICK: 666, PC: 37, ADDR: 100, OUT: 4000000, ACC: 37, ZF|SF: 00} load 101 addr
-  DEBUG    root:machine.py:337 {TICK: 668, PC: 38, ADDR: 101, OUT: 4613732, ACC: 4613732, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 669, PC: 39, ADDR: 101, OUT: 4613732, ACC: 4613732, ZF|SF: 00} hlt  
-  INFO     root:machine.py:342 output_buffer: ''
+  DEBUG    root:machine.py:329 {TICK: 0, PC: 0, ADDR: 0, OUT: 0, ACC: 0, ZF|SF: 00} load 4000000 
+  DEBUG    root:machine.py:339 {TICK: 2, PC: 1, ADDR: 0, OUT: 0, ACC: 4000000, ZF|SF: 00} store 100 addr
+  DEBUG    root:machine.py:339 {TICK: 4, PC: 2, ADDR: 100, OUT: 4000000, ACC: 4000000, ZF|SF: 00} load 2 
+  DEBUG    root:machine.py:339 {TICK: 6, PC: 3, ADDR: 100, OUT: 4000000, ACC: 2, ZF|SF: 00} store 101 addr
+  DEBUG    root:machine.py:339 {TICK: 8, PC: 4, ADDR: 101, OUT: 2, ACC: 2, ZF|SF: 00} load 2 
+  DEBUG    root:machine.py:339 {TICK: 10, PC: 5, ADDR: 101, OUT: 2, ACC: 2, ZF|SF: 00} store 102 addr
+  DEBUG    root:machine.py:339 {TICK: 12, PC: 6, ADDR: 102, OUT: 2, ACC: 2, ZF|SF: 00} load 0 
+  DEBUG    root:machine.py:339 {TICK: 14, PC: 7, ADDR: 102, OUT: 2, ACC: 0, ZF|SF: 00} store 103 addr
+  DEBUG    root:machine.py:339 {TICK: 16, PC: 8, ADDR: 103, OUT: 0, ACC: 0, ZF|SF: 00} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 18, PC: 9, ADDR: 102, OUT: 2, ACC: 2, ZF|SF: 00} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 22, PC: 10, ADDR: 102, OUT: 2, ACC: 4, ZF|SF: 00} store 3 addr
+  DEBUG    root:machine.py:339 {TICK: 24, PC: 11, ADDR: 3, OUT: 4, ACC: 4, ZF|SF: 00} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 26, PC: 12, ADDR: 102, OUT: 2, ACC: 2, ZF|SF: 00} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 30, PC: 13, ADDR: 102, OUT: 2, ACC: 4, ZF|SF: 00} store 4 addr
+  DEBUG    root:machine.py:339 {TICK: 32, PC: 14, ADDR: 4, OUT: 4, ACC: 4, ZF|SF: 00} load 3 addr
+  DEBUG    root:machine.py:339 {TICK: 34, PC: 15, ADDR: 3, OUT: 4, ACC: 4, ZF|SF: 00} add 4 addr
+  DEBUG    root:machine.py:339 {TICK: 38, PC: 16, ADDR: 4, OUT: 4, ACC: 8, ZF|SF: 00} store 2 addr
+  DEBUG    root:machine.py:339 {TICK: 40, PC: 17, ADDR: 2, OUT: 8, ACC: 8, ZF|SF: 00} load 103 addr
+  DEBUG    root:machine.py:339 {TICK: 42, PC: 18, ADDR: 103, OUT: 0, ACC: 0, ZF|SF: 00} add 2 addr
+  DEBUG    root:machine.py:339 {TICK: 46, PC: 19, ADDR: 2, OUT: 8, ACC: 8, ZF|SF: 00} store 1 addr
+  DEBUG    root:machine.py:339 {TICK: 48, PC: 20, ADDR: 1, OUT: 8, ACC: 8, ZF|SF: 00} load 1 addr
+  DEBUG    root:machine.py:339 {TICK: 50, PC: 21, ADDR: 1, OUT: 8, ACC: 8, ZF|SF: 00} store 104 addr
+  DEBUG    root:machine.py:339 {TICK: 52, PC: 22, ADDR: 104, OUT: 8, ACC: 8, ZF|SF: 00} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 54, PC: 23, ADDR: 104, OUT: 8, ACC: 8, ZF|SF: 00} cmp 100 addr
+  DEBUG    root:machine.py:339 {TICK: 56, PC: 24, ADDR: 100, OUT: 4000000, ACC: 8, ZF|SF: 01} jle 4 relative addr
+  DEBUG    root:machine.py:339 {TICK: 59, PC: 28, ADDR: 100, OUT: 4000000, ACC: 28, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 61, PC: 29, ADDR: 102, OUT: 2, ACC: 2, ZF|SF: 01} store 103 addr
+  DEBUG    root:machine.py:339 {TICK: 63, PC: 30, ADDR: 103, OUT: 2, ACC: 2, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 65, PC: 31, ADDR: 104, OUT: 8, ACC: 8, ZF|SF: 01} store 102 addr
+  DEBUG    root:machine.py:339 {TICK: 67, PC: 32, ADDR: 102, OUT: 8, ACC: 8, ZF|SF: 01} load 101 addr
+  DEBUG    root:machine.py:339 {TICK: 69, PC: 33, ADDR: 101, OUT: 2, ACC: 2, ZF|SF: 01} add 104 addr
+  DEBUG    root:machine.py:339 {TICK: 73, PC: 34, ADDR: 104, OUT: 8, ACC: 10, ZF|SF: 01} store 5 addr
+  DEBUG    root:machine.py:339 {TICK: 75, PC: 35, ADDR: 5, OUT: 10, ACC: 10, ZF|SF: 01} load 5 addr
+  DEBUG    root:machine.py:339 {TICK: 77, PC: 36, ADDR: 5, OUT: 10, ACC: 10, ZF|SF: 01} store 101 addr
+  DEBUG    root:machine.py:339 {TICK: 79, PC: 37, ADDR: 101, OUT: 10, ACC: 10, ZF|SF: 01} jmp -29 relative addr
+  DEBUG    root:machine.py:339 {TICK: 82, PC: 8, ADDR: 101, OUT: 10, ACC: 8, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 84, PC: 9, ADDR: 102, OUT: 8, ACC: 8, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 88, PC: 10, ADDR: 102, OUT: 8, ACC: 16, ZF|SF: 01} store 3 addr
+  DEBUG    root:machine.py:339 {TICK: 90, PC: 11, ADDR: 3, OUT: 16, ACC: 16, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 92, PC: 12, ADDR: 102, OUT: 8, ACC: 8, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 96, PC: 13, ADDR: 102, OUT: 8, ACC: 16, ZF|SF: 01} store 4 addr
+  DEBUG    root:machine.py:339 {TICK: 98, PC: 14, ADDR: 4, OUT: 16, ACC: 16, ZF|SF: 01} load 3 addr
+  DEBUG    root:machine.py:339 {TICK: 100, PC: 15, ADDR: 3, OUT: 16, ACC: 16, ZF|SF: 01} add 4 addr
+  DEBUG    root:machine.py:339 {TICK: 104, PC: 16, ADDR: 4, OUT: 16, ACC: 32, ZF|SF: 01} store 2 addr
+  DEBUG    root:machine.py:339 {TICK: 106, PC: 17, ADDR: 2, OUT: 32, ACC: 32, ZF|SF: 01} load 103 addr
+  DEBUG    root:machine.py:339 {TICK: 108, PC: 18, ADDR: 103, OUT: 2, ACC: 2, ZF|SF: 01} add 2 addr
+  DEBUG    root:machine.py:339 {TICK: 112, PC: 19, ADDR: 2, OUT: 32, ACC: 34, ZF|SF: 01} store 1 addr
+  DEBUG    root:machine.py:339 {TICK: 114, PC: 20, ADDR: 1, OUT: 34, ACC: 34, ZF|SF: 01} load 1 addr
+  DEBUG    root:machine.py:339 {TICK: 116, PC: 21, ADDR: 1, OUT: 34, ACC: 34, ZF|SF: 01} store 104 addr
+  DEBUG    root:machine.py:339 {TICK: 118, PC: 22, ADDR: 104, OUT: 34, ACC: 34, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 120, PC: 23, ADDR: 104, OUT: 34, ACC: 34, ZF|SF: 01} cmp 100 addr
+  DEBUG    root:machine.py:339 {TICK: 122, PC: 24, ADDR: 100, OUT: 4000000, ACC: 34, ZF|SF: 01} jle 4 relative addr
+  DEBUG    root:machine.py:339 {TICK: 125, PC: 28, ADDR: 100, OUT: 4000000, ACC: 28, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 127, PC: 29, ADDR: 102, OUT: 8, ACC: 8, ZF|SF: 01} store 103 addr
+  DEBUG    root:machine.py:339 {TICK: 129, PC: 30, ADDR: 103, OUT: 8, ACC: 8, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 131, PC: 31, ADDR: 104, OUT: 34, ACC: 34, ZF|SF: 01} store 102 addr
+  DEBUG    root:machine.py:339 {TICK: 133, PC: 32, ADDR: 102, OUT: 34, ACC: 34, ZF|SF: 01} load 101 addr
+  DEBUG    root:machine.py:339 {TICK: 135, PC: 33, ADDR: 101, OUT: 10, ACC: 10, ZF|SF: 01} add 104 addr
+  DEBUG    root:machine.py:339 {TICK: 139, PC: 34, ADDR: 104, OUT: 34, ACC: 44, ZF|SF: 01} store 5 addr
+  DEBUG    root:machine.py:339 {TICK: 141, PC: 35, ADDR: 5, OUT: 44, ACC: 44, ZF|SF: 01} load 5 addr
+  DEBUG    root:machine.py:339 {TICK: 143, PC: 36, ADDR: 5, OUT: 44, ACC: 44, ZF|SF: 01} store 101 addr
+  DEBUG    root:machine.py:339 {TICK: 145, PC: 37, ADDR: 101, OUT: 44, ACC: 44, ZF|SF: 01} jmp -29 relative addr
+  DEBUG    root:machine.py:339 {TICK: 148, PC: 8, ADDR: 101, OUT: 44, ACC: 8, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 150, PC: 9, ADDR: 102, OUT: 34, ACC: 34, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 154, PC: 10, ADDR: 102, OUT: 34, ACC: 68, ZF|SF: 01} store 3 addr
+  DEBUG    root:machine.py:339 {TICK: 156, PC: 11, ADDR: 3, OUT: 68, ACC: 68, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 158, PC: 12, ADDR: 102, OUT: 34, ACC: 34, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 162, PC: 13, ADDR: 102, OUT: 34, ACC: 68, ZF|SF: 01} store 4 addr
+  DEBUG    root:machine.py:339 {TICK: 164, PC: 14, ADDR: 4, OUT: 68, ACC: 68, ZF|SF: 01} load 3 addr
+  DEBUG    root:machine.py:339 {TICK: 166, PC: 15, ADDR: 3, OUT: 68, ACC: 68, ZF|SF: 01} add 4 addr
+  DEBUG    root:machine.py:339 {TICK: 170, PC: 16, ADDR: 4, OUT: 68, ACC: 136, ZF|SF: 01} store 2 addr
+  DEBUG    root:machine.py:339 {TICK: 172, PC: 17, ADDR: 2, OUT: 136, ACC: 136, ZF|SF: 01} load 103 addr
+  DEBUG    root:machine.py:339 {TICK: 174, PC: 18, ADDR: 103, OUT: 8, ACC: 8, ZF|SF: 01} add 2 addr
+  DEBUG    root:machine.py:339 {TICK: 178, PC: 19, ADDR: 2, OUT: 136, ACC: 144, ZF|SF: 01} store 1 addr
+  DEBUG    root:machine.py:339 {TICK: 180, PC: 20, ADDR: 1, OUT: 144, ACC: 144, ZF|SF: 01} load 1 addr
+  DEBUG    root:machine.py:339 {TICK: 182, PC: 21, ADDR: 1, OUT: 144, ACC: 144, ZF|SF: 01} store 104 addr
+  DEBUG    root:machine.py:339 {TICK: 184, PC: 22, ADDR: 104, OUT: 144, ACC: 144, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 186, PC: 23, ADDR: 104, OUT: 144, ACC: 144, ZF|SF: 01} cmp 100 addr
+  DEBUG    root:machine.py:339 {TICK: 188, PC: 24, ADDR: 100, OUT: 4000000, ACC: 144, ZF|SF: 01} jle 4 relative addr
+  DEBUG    root:machine.py:339 {TICK: 191, PC: 28, ADDR: 100, OUT: 4000000, ACC: 28, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 193, PC: 29, ADDR: 102, OUT: 34, ACC: 34, ZF|SF: 01} store 103 addr
+  DEBUG    root:machine.py:339 {TICK: 195, PC: 30, ADDR: 103, OUT: 34, ACC: 34, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 197, PC: 31, ADDR: 104, OUT: 144, ACC: 144, ZF|SF: 01} store 102 addr
+  DEBUG    root:machine.py:339 {TICK: 199, PC: 32, ADDR: 102, OUT: 144, ACC: 144, ZF|SF: 01} load 101 addr
+  DEBUG    root:machine.py:339 {TICK: 201, PC: 33, ADDR: 101, OUT: 44, ACC: 44, ZF|SF: 01} add 104 addr
+  DEBUG    root:machine.py:339 {TICK: 205, PC: 34, ADDR: 104, OUT: 144, ACC: 188, ZF|SF: 01} store 5 addr
+  DEBUG    root:machine.py:339 {TICK: 207, PC: 35, ADDR: 5, OUT: 188, ACC: 188, ZF|SF: 01} load 5 addr
+  DEBUG    root:machine.py:339 {TICK: 209, PC: 36, ADDR: 5, OUT: 188, ACC: 188, ZF|SF: 01} store 101 addr
+  DEBUG    root:machine.py:339 {TICK: 211, PC: 37, ADDR: 101, OUT: 188, ACC: 188, ZF|SF: 01} jmp -29 relative addr
+  DEBUG    root:machine.py:339 {TICK: 214, PC: 8, ADDR: 101, OUT: 188, ACC: 8, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 216, PC: 9, ADDR: 102, OUT: 144, ACC: 144, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 220, PC: 10, ADDR: 102, OUT: 144, ACC: 288, ZF|SF: 01} store 3 addr
+  DEBUG    root:machine.py:339 {TICK: 222, PC: 11, ADDR: 3, OUT: 288, ACC: 288, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 224, PC: 12, ADDR: 102, OUT: 144, ACC: 144, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 228, PC: 13, ADDR: 102, OUT: 144, ACC: 288, ZF|SF: 01} store 4 addr
+  DEBUG    root:machine.py:339 {TICK: 230, PC: 14, ADDR: 4, OUT: 288, ACC: 288, ZF|SF: 01} load 3 addr
+  DEBUG    root:machine.py:339 {TICK: 232, PC: 15, ADDR: 3, OUT: 288, ACC: 288, ZF|SF: 01} add 4 addr
+  DEBUG    root:machine.py:339 {TICK: 236, PC: 16, ADDR: 4, OUT: 288, ACC: 576, ZF|SF: 01} store 2 addr
+  DEBUG    root:machine.py:339 {TICK: 238, PC: 17, ADDR: 2, OUT: 576, ACC: 576, ZF|SF: 01} load 103 addr
+  DEBUG    root:machine.py:339 {TICK: 240, PC: 18, ADDR: 103, OUT: 34, ACC: 34, ZF|SF: 01} add 2 addr
+  DEBUG    root:machine.py:339 {TICK: 244, PC: 19, ADDR: 2, OUT: 576, ACC: 610, ZF|SF: 01} store 1 addr
+  DEBUG    root:machine.py:339 {TICK: 246, PC: 20, ADDR: 1, OUT: 610, ACC: 610, ZF|SF: 01} load 1 addr
+  DEBUG    root:machine.py:339 {TICK: 248, PC: 21, ADDR: 1, OUT: 610, ACC: 610, ZF|SF: 01} store 104 addr
+  DEBUG    root:machine.py:339 {TICK: 250, PC: 22, ADDR: 104, OUT: 610, ACC: 610, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 252, PC: 23, ADDR: 104, OUT: 610, ACC: 610, ZF|SF: 01} cmp 100 addr
+  DEBUG    root:machine.py:339 {TICK: 254, PC: 24, ADDR: 100, OUT: 4000000, ACC: 610, ZF|SF: 01} jle 4 relative addr
+  DEBUG    root:machine.py:339 {TICK: 257, PC: 28, ADDR: 100, OUT: 4000000, ACC: 28, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 259, PC: 29, ADDR: 102, OUT: 144, ACC: 144, ZF|SF: 01} store 103 addr
+  DEBUG    root:machine.py:339 {TICK: 261, PC: 30, ADDR: 103, OUT: 144, ACC: 144, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 263, PC: 31, ADDR: 104, OUT: 610, ACC: 610, ZF|SF: 01} store 102 addr
+  DEBUG    root:machine.py:339 {TICK: 265, PC: 32, ADDR: 102, OUT: 610, ACC: 610, ZF|SF: 01} load 101 addr
+  DEBUG    root:machine.py:339 {TICK: 267, PC: 33, ADDR: 101, OUT: 188, ACC: 188, ZF|SF: 01} add 104 addr
+  DEBUG    root:machine.py:339 {TICK: 271, PC: 34, ADDR: 104, OUT: 610, ACC: 798, ZF|SF: 01} store 5 addr
+  DEBUG    root:machine.py:339 {TICK: 273, PC: 35, ADDR: 5, OUT: 798, ACC: 798, ZF|SF: 01} load 5 addr
+  DEBUG    root:machine.py:339 {TICK: 275, PC: 36, ADDR: 5, OUT: 798, ACC: 798, ZF|SF: 01} store 101 addr
+  DEBUG    root:machine.py:339 {TICK: 277, PC: 37, ADDR: 101, OUT: 798, ACC: 798, ZF|SF: 01} jmp -29 relative addr
+  DEBUG    root:machine.py:339 {TICK: 280, PC: 8, ADDR: 101, OUT: 798, ACC: 8, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 282, PC: 9, ADDR: 102, OUT: 610, ACC: 610, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 286, PC: 10, ADDR: 102, OUT: 610, ACC: 1220, ZF|SF: 01} store 3 addr
+  DEBUG    root:machine.py:339 {TICK: 288, PC: 11, ADDR: 3, OUT: 1220, ACC: 1220, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 290, PC: 12, ADDR: 102, OUT: 610, ACC: 610, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 294, PC: 13, ADDR: 102, OUT: 610, ACC: 1220, ZF|SF: 01} store 4 addr
+  DEBUG    root:machine.py:339 {TICK: 296, PC: 14, ADDR: 4, OUT: 1220, ACC: 1220, ZF|SF: 01} load 3 addr
+  DEBUG    root:machine.py:339 {TICK: 298, PC: 15, ADDR: 3, OUT: 1220, ACC: 1220, ZF|SF: 01} add 4 addr
+  DEBUG    root:machine.py:339 {TICK: 302, PC: 16, ADDR: 4, OUT: 1220, ACC: 2440, ZF|SF: 01} store 2 addr
+  DEBUG    root:machine.py:339 {TICK: 304, PC: 17, ADDR: 2, OUT: 2440, ACC: 2440, ZF|SF: 01} load 103 addr
+  DEBUG    root:machine.py:339 {TICK: 306, PC: 18, ADDR: 103, OUT: 144, ACC: 144, ZF|SF: 01} add 2 addr
+  DEBUG    root:machine.py:339 {TICK: 310, PC: 19, ADDR: 2, OUT: 2440, ACC: 2584, ZF|SF: 01} store 1 addr
+  DEBUG    root:machine.py:339 {TICK: 312, PC: 20, ADDR: 1, OUT: 2584, ACC: 2584, ZF|SF: 01} load 1 addr
+  DEBUG    root:machine.py:339 {TICK: 314, PC: 21, ADDR: 1, OUT: 2584, ACC: 2584, ZF|SF: 01} store 104 addr
+  DEBUG    root:machine.py:339 {TICK: 316, PC: 22, ADDR: 104, OUT: 2584, ACC: 2584, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 318, PC: 23, ADDR: 104, OUT: 2584, ACC: 2584, ZF|SF: 01} cmp 100 addr
+  DEBUG    root:machine.py:339 {TICK: 320, PC: 24, ADDR: 100, OUT: 4000000, ACC: 2584, ZF|SF: 01} jle 4 relative addr
+  DEBUG    root:machine.py:339 {TICK: 323, PC: 28, ADDR: 100, OUT: 4000000, ACC: 28, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 325, PC: 29, ADDR: 102, OUT: 610, ACC: 610, ZF|SF: 01} store 103 addr
+  DEBUG    root:machine.py:339 {TICK: 327, PC: 30, ADDR: 103, OUT: 610, ACC: 610, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 329, PC: 31, ADDR: 104, OUT: 2584, ACC: 2584, ZF|SF: 01} store 102 addr
+  DEBUG    root:machine.py:339 {TICK: 331, PC: 32, ADDR: 102, OUT: 2584, ACC: 2584, ZF|SF: 01} load 101 addr
+  DEBUG    root:machine.py:339 {TICK: 333, PC: 33, ADDR: 101, OUT: 798, ACC: 798, ZF|SF: 01} add 104 addr
+  DEBUG    root:machine.py:339 {TICK: 337, PC: 34, ADDR: 104, OUT: 2584, ACC: 3382, ZF|SF: 01} store 5 addr
+  DEBUG    root:machine.py:339 {TICK: 339, PC: 35, ADDR: 5, OUT: 3382, ACC: 3382, ZF|SF: 01} load 5 addr
+  DEBUG    root:machine.py:339 {TICK: 341, PC: 36, ADDR: 5, OUT: 3382, ACC: 3382, ZF|SF: 01} store 101 addr
+  DEBUG    root:machine.py:339 {TICK: 343, PC: 37, ADDR: 101, OUT: 3382, ACC: 3382, ZF|SF: 01} jmp -29 relative addr
+  DEBUG    root:machine.py:339 {TICK: 346, PC: 8, ADDR: 101, OUT: 3382, ACC: 8, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 348, PC: 9, ADDR: 102, OUT: 2584, ACC: 2584, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 352, PC: 10, ADDR: 102, OUT: 2584, ACC: 5168, ZF|SF: 01} store 3 addr
+  DEBUG    root:machine.py:339 {TICK: 354, PC: 11, ADDR: 3, OUT: 5168, ACC: 5168, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 356, PC: 12, ADDR: 102, OUT: 2584, ACC: 2584, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 360, PC: 13, ADDR: 102, OUT: 2584, ACC: 5168, ZF|SF: 01} store 4 addr
+  DEBUG    root:machine.py:339 {TICK: 362, PC: 14, ADDR: 4, OUT: 5168, ACC: 5168, ZF|SF: 01} load 3 addr
+  DEBUG    root:machine.py:339 {TICK: 364, PC: 15, ADDR: 3, OUT: 5168, ACC: 5168, ZF|SF: 01} add 4 addr
+  DEBUG    root:machine.py:339 {TICK: 368, PC: 16, ADDR: 4, OUT: 5168, ACC: 10336, ZF|SF: 01} store 2 addr
+  DEBUG    root:machine.py:339 {TICK: 370, PC: 17, ADDR: 2, OUT: 10336, ACC: 10336, ZF|SF: 01} load 103 addr
+  DEBUG    root:machine.py:339 {TICK: 372, PC: 18, ADDR: 103, OUT: 610, ACC: 610, ZF|SF: 01} add 2 addr
+  DEBUG    root:machine.py:339 {TICK: 376, PC: 19, ADDR: 2, OUT: 10336, ACC: 10946, ZF|SF: 01} store 1 addr
+  DEBUG    root:machine.py:339 {TICK: 378, PC: 20, ADDR: 1, OUT: 10946, ACC: 10946, ZF|SF: 01} load 1 addr
+  DEBUG    root:machine.py:339 {TICK: 380, PC: 21, ADDR: 1, OUT: 10946, ACC: 10946, ZF|SF: 01} store 104 addr
+  DEBUG    root:machine.py:339 {TICK: 382, PC: 22, ADDR: 104, OUT: 10946, ACC: 10946, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 384, PC: 23, ADDR: 104, OUT: 10946, ACC: 10946, ZF|SF: 01} cmp 100 addr
+  DEBUG    root:machine.py:339 {TICK: 386, PC: 24, ADDR: 100, OUT: 4000000, ACC: 10946, ZF|SF: 01} jle 4 relative addr
+  DEBUG    root:machine.py:339 {TICK: 389, PC: 28, ADDR: 100, OUT: 4000000, ACC: 28, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 391, PC: 29, ADDR: 102, OUT: 2584, ACC: 2584, ZF|SF: 01} store 103 addr
+  DEBUG    root:machine.py:339 {TICK: 393, PC: 30, ADDR: 103, OUT: 2584, ACC: 2584, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 395, PC: 31, ADDR: 104, OUT: 10946, ACC: 10946, ZF|SF: 01} store 102 addr
+  DEBUG    root:machine.py:339 {TICK: 397, PC: 32, ADDR: 102, OUT: 10946, ACC: 10946, ZF|SF: 01} load 101 addr
+  DEBUG    root:machine.py:339 {TICK: 399, PC: 33, ADDR: 101, OUT: 3382, ACC: 3382, ZF|SF: 01} add 104 addr
+  DEBUG    root:machine.py:339 {TICK: 403, PC: 34, ADDR: 104, OUT: 10946, ACC: 14328, ZF|SF: 01} store 5 addr
+  DEBUG    root:machine.py:339 {TICK: 405, PC: 35, ADDR: 5, OUT: 14328, ACC: 14328, ZF|SF: 01} load 5 addr
+  DEBUG    root:machine.py:339 {TICK: 407, PC: 36, ADDR: 5, OUT: 14328, ACC: 14328, ZF|SF: 01} store 101 addr
+  DEBUG    root:machine.py:339 {TICK: 409, PC: 37, ADDR: 101, OUT: 14328, ACC: 14328, ZF|SF: 01} jmp -29 relative addr
+  DEBUG    root:machine.py:339 {TICK: 412, PC: 8, ADDR: 101, OUT: 14328, ACC: 8, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 414, PC: 9, ADDR: 102, OUT: 10946, ACC: 10946, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 418, PC: 10, ADDR: 102, OUT: 10946, ACC: 21892, ZF|SF: 01} store 3 addr
+  DEBUG    root:machine.py:339 {TICK: 420, PC: 11, ADDR: 3, OUT: 21892, ACC: 21892, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 422, PC: 12, ADDR: 102, OUT: 10946, ACC: 10946, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 426, PC: 13, ADDR: 102, OUT: 10946, ACC: 21892, ZF|SF: 01} store 4 addr
+  DEBUG    root:machine.py:339 {TICK: 428, PC: 14, ADDR: 4, OUT: 21892, ACC: 21892, ZF|SF: 01} load 3 addr
+  DEBUG    root:machine.py:339 {TICK: 430, PC: 15, ADDR: 3, OUT: 21892, ACC: 21892, ZF|SF: 01} add 4 addr
+  DEBUG    root:machine.py:339 {TICK: 434, PC: 16, ADDR: 4, OUT: 21892, ACC: 43784, ZF|SF: 01} store 2 addr
+  DEBUG    root:machine.py:339 {TICK: 436, PC: 17, ADDR: 2, OUT: 43784, ACC: 43784, ZF|SF: 01} load 103 addr
+  DEBUG    root:machine.py:339 {TICK: 438, PC: 18, ADDR: 103, OUT: 2584, ACC: 2584, ZF|SF: 01} add 2 addr
+  DEBUG    root:machine.py:339 {TICK: 442, PC: 19, ADDR: 2, OUT: 43784, ACC: 46368, ZF|SF: 01} store 1 addr
+  DEBUG    root:machine.py:339 {TICK: 444, PC: 20, ADDR: 1, OUT: 46368, ACC: 46368, ZF|SF: 01} load 1 addr
+  DEBUG    root:machine.py:339 {TICK: 446, PC: 21, ADDR: 1, OUT: 46368, ACC: 46368, ZF|SF: 01} store 104 addr
+  DEBUG    root:machine.py:339 {TICK: 448, PC: 22, ADDR: 104, OUT: 46368, ACC: 46368, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 450, PC: 23, ADDR: 104, OUT: 46368, ACC: 46368, ZF|SF: 01} cmp 100 addr
+  DEBUG    root:machine.py:339 {TICK: 452, PC: 24, ADDR: 100, OUT: 4000000, ACC: 46368, ZF|SF: 01} jle 4 relative addr
+  DEBUG    root:machine.py:339 {TICK: 455, PC: 28, ADDR: 100, OUT: 4000000, ACC: 28, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 457, PC: 29, ADDR: 102, OUT: 10946, ACC: 10946, ZF|SF: 01} store 103 addr
+  DEBUG    root:machine.py:339 {TICK: 459, PC: 30, ADDR: 103, OUT: 10946, ACC: 10946, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 461, PC: 31, ADDR: 104, OUT: 46368, ACC: 46368, ZF|SF: 01} store 102 addr
+  DEBUG    root:machine.py:339 {TICK: 463, PC: 32, ADDR: 102, OUT: 46368, ACC: 46368, ZF|SF: 01} load 101 addr
+  DEBUG    root:machine.py:339 {TICK: 465, PC: 33, ADDR: 101, OUT: 14328, ACC: 14328, ZF|SF: 01} add 104 addr
+  DEBUG    root:machine.py:339 {TICK: 469, PC: 34, ADDR: 104, OUT: 46368, ACC: 60696, ZF|SF: 01} store 5 addr
+  DEBUG    root:machine.py:339 {TICK: 471, PC: 35, ADDR: 5, OUT: 60696, ACC: 60696, ZF|SF: 01} load 5 addr
+  DEBUG    root:machine.py:339 {TICK: 473, PC: 36, ADDR: 5, OUT: 60696, ACC: 60696, ZF|SF: 01} store 101 addr
+  DEBUG    root:machine.py:339 {TICK: 475, PC: 37, ADDR: 101, OUT: 60696, ACC: 60696, ZF|SF: 01} jmp -29 relative addr
+  DEBUG    root:machine.py:339 {TICK: 478, PC: 8, ADDR: 101, OUT: 60696, ACC: 8, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 480, PC: 9, ADDR: 102, OUT: 46368, ACC: 46368, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 484, PC: 10, ADDR: 102, OUT: 46368, ACC: 92736, ZF|SF: 01} store 3 addr
+  DEBUG    root:machine.py:339 {TICK: 486, PC: 11, ADDR: 3, OUT: 92736, ACC: 92736, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 488, PC: 12, ADDR: 102, OUT: 46368, ACC: 46368, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 492, PC: 13, ADDR: 102, OUT: 46368, ACC: 92736, ZF|SF: 01} store 4 addr
+  DEBUG    root:machine.py:339 {TICK: 494, PC: 14, ADDR: 4, OUT: 92736, ACC: 92736, ZF|SF: 01} load 3 addr
+  DEBUG    root:machine.py:339 {TICK: 496, PC: 15, ADDR: 3, OUT: 92736, ACC: 92736, ZF|SF: 01} add 4 addr
+  DEBUG    root:machine.py:339 {TICK: 500, PC: 16, ADDR: 4, OUT: 92736, ACC: 185472, ZF|SF: 01} store 2 addr
+  DEBUG    root:machine.py:339 {TICK: 502, PC: 17, ADDR: 2, OUT: 185472, ACC: 185472, ZF|SF: 01} load 103 addr
+  DEBUG    root:machine.py:339 {TICK: 504, PC: 18, ADDR: 103, OUT: 10946, ACC: 10946, ZF|SF: 01} add 2 addr
+  DEBUG    root:machine.py:339 {TICK: 508, PC: 19, ADDR: 2, OUT: 185472, ACC: 196418, ZF|SF: 01} store 1 addr
+  DEBUG    root:machine.py:339 {TICK: 510, PC: 20, ADDR: 1, OUT: 196418, ACC: 196418, ZF|SF: 01} load 1 addr
+  DEBUG    root:machine.py:339 {TICK: 512, PC: 21, ADDR: 1, OUT: 196418, ACC: 196418, ZF|SF: 01} store 104 addr
+  DEBUG    root:machine.py:339 {TICK: 514, PC: 22, ADDR: 104, OUT: 196418, ACC: 196418, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 516, PC: 23, ADDR: 104, OUT: 196418, ACC: 196418, ZF|SF: 01} cmp 100 addr
+  DEBUG    root:machine.py:339 {TICK: 518, PC: 24, ADDR: 100, OUT: 4000000, ACC: 196418, ZF|SF: 01} jle 4 relative addr
+  DEBUG    root:machine.py:339 {TICK: 521, PC: 28, ADDR: 100, OUT: 4000000, ACC: 28, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 523, PC: 29, ADDR: 102, OUT: 46368, ACC: 46368, ZF|SF: 01} store 103 addr
+  DEBUG    root:machine.py:339 {TICK: 525, PC: 30, ADDR: 103, OUT: 46368, ACC: 46368, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 527, PC: 31, ADDR: 104, OUT: 196418, ACC: 196418, ZF|SF: 01} store 102 addr
+  DEBUG    root:machine.py:339 {TICK: 529, PC: 32, ADDR: 102, OUT: 196418, ACC: 196418, ZF|SF: 01} load 101 addr
+  DEBUG    root:machine.py:339 {TICK: 531, PC: 33, ADDR: 101, OUT: 60696, ACC: 60696, ZF|SF: 01} add 104 addr
+  DEBUG    root:machine.py:339 {TICK: 535, PC: 34, ADDR: 104, OUT: 196418, ACC: 257114, ZF|SF: 01} store 5 addr
+  DEBUG    root:machine.py:339 {TICK: 537, PC: 35, ADDR: 5, OUT: 257114, ACC: 257114, ZF|SF: 01} load 5 addr
+  DEBUG    root:machine.py:339 {TICK: 539, PC: 36, ADDR: 5, OUT: 257114, ACC: 257114, ZF|SF: 01} store 101 addr
+  DEBUG    root:machine.py:339 {TICK: 541, PC: 37, ADDR: 101, OUT: 257114, ACC: 257114, ZF|SF: 01} jmp -29 relative addr
+  DEBUG    root:machine.py:339 {TICK: 544, PC: 8, ADDR: 101, OUT: 257114, ACC: 8, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 546, PC: 9, ADDR: 102, OUT: 196418, ACC: 196418, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 550, PC: 10, ADDR: 102, OUT: 196418, ACC: 392836, ZF|SF: 01} store 3 addr
+  DEBUG    root:machine.py:339 {TICK: 552, PC: 11, ADDR: 3, OUT: 392836, ACC: 392836, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 554, PC: 12, ADDR: 102, OUT: 196418, ACC: 196418, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 558, PC: 13, ADDR: 102, OUT: 196418, ACC: 392836, ZF|SF: 01} store 4 addr
+  DEBUG    root:machine.py:339 {TICK: 560, PC: 14, ADDR: 4, OUT: 392836, ACC: 392836, ZF|SF: 01} load 3 addr
+  DEBUG    root:machine.py:339 {TICK: 562, PC: 15, ADDR: 3, OUT: 392836, ACC: 392836, ZF|SF: 01} add 4 addr
+  DEBUG    root:machine.py:339 {TICK: 566, PC: 16, ADDR: 4, OUT: 392836, ACC: 785672, ZF|SF: 01} store 2 addr
+  DEBUG    root:machine.py:339 {TICK: 568, PC: 17, ADDR: 2, OUT: 785672, ACC: 785672, ZF|SF: 01} load 103 addr
+  DEBUG    root:machine.py:339 {TICK: 570, PC: 18, ADDR: 103, OUT: 46368, ACC: 46368, ZF|SF: 01} add 2 addr
+  DEBUG    root:machine.py:339 {TICK: 574, PC: 19, ADDR: 2, OUT: 785672, ACC: 832040, ZF|SF: 01} store 1 addr
+  DEBUG    root:machine.py:339 {TICK: 576, PC: 20, ADDR: 1, OUT: 832040, ACC: 832040, ZF|SF: 01} load 1 addr
+  DEBUG    root:machine.py:339 {TICK: 578, PC: 21, ADDR: 1, OUT: 832040, ACC: 832040, ZF|SF: 01} store 104 addr
+  DEBUG    root:machine.py:339 {TICK: 580, PC: 22, ADDR: 104, OUT: 832040, ACC: 832040, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 582, PC: 23, ADDR: 104, OUT: 832040, ACC: 832040, ZF|SF: 01} cmp 100 addr
+  DEBUG    root:machine.py:339 {TICK: 584, PC: 24, ADDR: 100, OUT: 4000000, ACC: 832040, ZF|SF: 01} jle 4 relative addr
+  DEBUG    root:machine.py:339 {TICK: 587, PC: 28, ADDR: 100, OUT: 4000000, ACC: 28, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 589, PC: 29, ADDR: 102, OUT: 196418, ACC: 196418, ZF|SF: 01} store 103 addr
+  DEBUG    root:machine.py:339 {TICK: 591, PC: 30, ADDR: 103, OUT: 196418, ACC: 196418, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 593, PC: 31, ADDR: 104, OUT: 832040, ACC: 832040, ZF|SF: 01} store 102 addr
+  DEBUG    root:machine.py:339 {TICK: 595, PC: 32, ADDR: 102, OUT: 832040, ACC: 832040, ZF|SF: 01} load 101 addr
+  DEBUG    root:machine.py:339 {TICK: 597, PC: 33, ADDR: 101, OUT: 257114, ACC: 257114, ZF|SF: 01} add 104 addr
+  DEBUG    root:machine.py:339 {TICK: 601, PC: 34, ADDR: 104, OUT: 832040, ACC: 1089154, ZF|SF: 01} store 5 addr
+  DEBUG    root:machine.py:339 {TICK: 603, PC: 35, ADDR: 5, OUT: 1089154, ACC: 1089154, ZF|SF: 01} load 5 addr
+  DEBUG    root:machine.py:339 {TICK: 605, PC: 36, ADDR: 5, OUT: 1089154, ACC: 1089154, ZF|SF: 01} store 101 addr
+  DEBUG    root:machine.py:339 {TICK: 607, PC: 37, ADDR: 101, OUT: 1089154, ACC: 1089154, ZF|SF: 01} jmp -29 relative addr
+  DEBUG    root:machine.py:339 {TICK: 610, PC: 8, ADDR: 101, OUT: 1089154, ACC: 8, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 612, PC: 9, ADDR: 102, OUT: 832040, ACC: 832040, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 616, PC: 10, ADDR: 102, OUT: 832040, ACC: 1664080, ZF|SF: 01} store 3 addr
+  DEBUG    root:machine.py:339 {TICK: 618, PC: 11, ADDR: 3, OUT: 1664080, ACC: 1664080, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 620, PC: 12, ADDR: 102, OUT: 832040, ACC: 832040, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 624, PC: 13, ADDR: 102, OUT: 832040, ACC: 1664080, ZF|SF: 01} store 4 addr
+  DEBUG    root:machine.py:339 {TICK: 626, PC: 14, ADDR: 4, OUT: 1664080, ACC: 1664080, ZF|SF: 01} load 3 addr
+  DEBUG    root:machine.py:339 {TICK: 628, PC: 15, ADDR: 3, OUT: 1664080, ACC: 1664080, ZF|SF: 01} add 4 addr
+  DEBUG    root:machine.py:339 {TICK: 632, PC: 16, ADDR: 4, OUT: 1664080, ACC: 3328160, ZF|SF: 01} store 2 addr
+  DEBUG    root:machine.py:339 {TICK: 634, PC: 17, ADDR: 2, OUT: 3328160, ACC: 3328160, ZF|SF: 01} load 103 addr
+  DEBUG    root:machine.py:339 {TICK: 636, PC: 18, ADDR: 103, OUT: 196418, ACC: 196418, ZF|SF: 01} add 2 addr
+  DEBUG    root:machine.py:339 {TICK: 640, PC: 19, ADDR: 2, OUT: 3328160, ACC: 3524578, ZF|SF: 01} store 1 addr
+  DEBUG    root:machine.py:339 {TICK: 642, PC: 20, ADDR: 1, OUT: 3524578, ACC: 3524578, ZF|SF: 01} load 1 addr
+  DEBUG    root:machine.py:339 {TICK: 644, PC: 21, ADDR: 1, OUT: 3524578, ACC: 3524578, ZF|SF: 01} store 104 addr
+  DEBUG    root:machine.py:339 {TICK: 646, PC: 22, ADDR: 104, OUT: 3524578, ACC: 3524578, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 648, PC: 23, ADDR: 104, OUT: 3524578, ACC: 3524578, ZF|SF: 01} cmp 100 addr
+  DEBUG    root:machine.py:339 {TICK: 650, PC: 24, ADDR: 100, OUT: 4000000, ACC: 3524578, ZF|SF: 01} jle 4 relative addr
+  DEBUG    root:machine.py:339 {TICK: 653, PC: 28, ADDR: 100, OUT: 4000000, ACC: 28, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 655, PC: 29, ADDR: 102, OUT: 832040, ACC: 832040, ZF|SF: 01} store 103 addr
+  DEBUG    root:machine.py:339 {TICK: 657, PC: 30, ADDR: 103, OUT: 832040, ACC: 832040, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 659, PC: 31, ADDR: 104, OUT: 3524578, ACC: 3524578, ZF|SF: 01} store 102 addr
+  DEBUG    root:machine.py:339 {TICK: 661, PC: 32, ADDR: 102, OUT: 3524578, ACC: 3524578, ZF|SF: 01} load 101 addr
+  DEBUG    root:machine.py:339 {TICK: 663, PC: 33, ADDR: 101, OUT: 1089154, ACC: 1089154, ZF|SF: 01} add 104 addr
+  DEBUG    root:machine.py:339 {TICK: 667, PC: 34, ADDR: 104, OUT: 3524578, ACC: 4613732, ZF|SF: 01} store 5 addr
+  DEBUG    root:machine.py:339 {TICK: 669, PC: 35, ADDR: 5, OUT: 4613732, ACC: 4613732, ZF|SF: 01} load 5 addr
+  DEBUG    root:machine.py:339 {TICK: 671, PC: 36, ADDR: 5, OUT: 4613732, ACC: 4613732, ZF|SF: 01} store 101 addr
+  DEBUG    root:machine.py:339 {TICK: 673, PC: 37, ADDR: 101, OUT: 4613732, ACC: 4613732, ZF|SF: 01} jmp -29 relative addr
+  DEBUG    root:machine.py:339 {TICK: 676, PC: 8, ADDR: 101, OUT: 4613732, ACC: 8, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 678, PC: 9, ADDR: 102, OUT: 3524578, ACC: 3524578, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 682, PC: 10, ADDR: 102, OUT: 3524578, ACC: 7049156, ZF|SF: 01} store 3 addr
+  DEBUG    root:machine.py:339 {TICK: 684, PC: 11, ADDR: 3, OUT: 7049156, ACC: 7049156, ZF|SF: 01} load 102 addr
+  DEBUG    root:machine.py:339 {TICK: 686, PC: 12, ADDR: 102, OUT: 3524578, ACC: 3524578, ZF|SF: 01} add 102 addr
+  DEBUG    root:machine.py:339 {TICK: 690, PC: 13, ADDR: 102, OUT: 3524578, ACC: 7049156, ZF|SF: 01} store 4 addr
+  DEBUG    root:machine.py:339 {TICK: 692, PC: 14, ADDR: 4, OUT: 7049156, ACC: 7049156, ZF|SF: 01} load 3 addr
+  DEBUG    root:machine.py:339 {TICK: 694, PC: 15, ADDR: 3, OUT: 7049156, ACC: 7049156, ZF|SF: 01} add 4 addr
+  DEBUG    root:machine.py:339 {TICK: 698, PC: 16, ADDR: 4, OUT: 7049156, ACC: 14098312, ZF|SF: 01} store 2 addr
+  DEBUG    root:machine.py:339 {TICK: 700, PC: 17, ADDR: 2, OUT: 14098312, ACC: 14098312, ZF|SF: 01} load 103 addr
+  DEBUG    root:machine.py:339 {TICK: 702, PC: 18, ADDR: 103, OUT: 832040, ACC: 832040, ZF|SF: 01} add 2 addr
+  DEBUG    root:machine.py:339 {TICK: 706, PC: 19, ADDR: 2, OUT: 14098312, ACC: 14930352, ZF|SF: 01} store 1 addr
+  DEBUG    root:machine.py:339 {TICK: 708, PC: 20, ADDR: 1, OUT: 14930352, ACC: 14930352, ZF|SF: 01} load 1 addr
+  DEBUG    root:machine.py:339 {TICK: 710, PC: 21, ADDR: 1, OUT: 14930352, ACC: 14930352, ZF|SF: 01} store 104 addr
+  DEBUG    root:machine.py:339 {TICK: 712, PC: 22, ADDR: 104, OUT: 14930352, ACC: 14930352, ZF|SF: 01} load 104 addr
+  DEBUG    root:machine.py:339 {TICK: 714, PC: 23, ADDR: 104, OUT: 14930352, ACC: 14930352, ZF|SF: 01} cmp 100 addr
+  DEBUG    root:machine.py:339 {TICK: 716, PC: 24, ADDR: 100, OUT: 4000000, ACC: 14930352, ZF|SF: 00} jle 4 relative addr
+  DEBUG    root:machine.py:339 {TICK: 717, PC: 25, ADDR: 100, OUT: 4000000, ACC: 14930352, ZF|SF: 00} jmp 13 relative addr
+  DEBUG    root:machine.py:339 {TICK: 720, PC: 38, ADDR: 100, OUT: 4000000, ACC: 38, ZF|SF: 00} load 101 addr
+  DEBUG    root:machine.py:339 {TICK: 722, PC: 39, ADDR: 101, OUT: 4613732, ACC: 4613732, ZF|SF: 00} print  
+  DEBUG    root:machine.py:339 {TICK: 723, PC: 40, ADDR: 101, OUT: 4613732, ACC: 4613732, ZF|SF: 00} hlt  
+  INFO     root:machine.py:344 output_buffer: ''
 code: |-
   [
       {
@@ -443,13 +443,18 @@ code: |-
       },
       {
           "opcode": "jle",
-          "arg": 3,
+          "arg": 4,
           "mem": 3
       },
       {
           "opcode": "jmp",
-          "arg": 12,
+          "arg": 13,
           "mem": 3
+      },
+      {
+          "opcode": "store",
+          "arg": 0,
+          "mem": 1
       },
       {
           "opcode": "store",
@@ -503,7 +508,7 @@ code: |-
       },
       {
           "opcode": "jmp",
-          "arg": -28,
+          "arg": -29,
           "mem": 3
       },
       {
