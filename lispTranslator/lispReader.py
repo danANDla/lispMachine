@@ -65,7 +65,7 @@ def removeComments(text: str):
 
 
 def isSelfEvaluated(pred: str) -> bool:
-    return pred[0] == '"' or str.isnumeric(pred) or pred == 'NIL' or pred == 'T'
+    return isinstance(pred, str) and (pred[0] == '"' or str.isnumeric(pred) or pred == 'NIL' or pred == 'T')
 
 
 def substituteRecursively(dic: dict, expr):
