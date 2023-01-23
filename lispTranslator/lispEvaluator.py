@@ -69,7 +69,6 @@ def storeString(value: LispAtom) -> list:
     machineCodes = []
     global strPointer
     value.content += '\0'
-    print(value)
     for ch in reversed(value.content):
         machineCodes += loadValue(LispAtom(ch, AtomType.STR))
         machineCodes += storeValue(LispAtom(strPointer, AtomType.NUM))
