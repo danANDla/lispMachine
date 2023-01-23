@@ -3,7 +3,7 @@ class SymbNotFoundException(Exception):
         self.value = value
 
     def __str__(self):
-        return (repr(self.value))
+        return repr(self.value)
 
 
 class MacrosNameTakenException(Exception):
@@ -11,7 +11,7 @@ class MacrosNameTakenException(Exception):
         self.value = value
 
     def __str__(self):
-        return (repr(self.value))
+        return repr(self.value)
 
 
 class InvalidFunctionSignatureException(Exception):
@@ -19,7 +19,7 @@ class InvalidFunctionSignatureException(Exception):
         self.value = value
 
     def __str__(self):
-        return (repr(self.value))
+        return repr(self.value)
 
 
 class WrongSignalException(Exception):
@@ -27,7 +27,7 @@ class WrongSignalException(Exception):
         self.value = value
 
     def __str__(self):
-        return (repr(self.value))
+        return repr(self.value)
 
 
 class EmptyInputException(Exception):
@@ -35,12 +35,12 @@ class EmptyInputException(Exception):
         self.value = value
 
     def __str__(self):
-        return (repr(self.value))
+        return repr(self.value)
 
 
-class ZeroDivisionEception(Exception):
+class ZeroDivisionException(Exception):
     def __init__(self, value):
         self.value = value
 
     def __str__(self):
-        return (repr(self.value))
+        return repr(self.value)

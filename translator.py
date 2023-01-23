@@ -7,9 +7,10 @@
 """
 
 import sys
-from lispTranslator.lispReader import *
-from lispTranslator.lispEvaluator import *
-from isa import write_code
+from lispTranslator.lispReader import removeComments, readerWork, makeLispForm
+from lispTranslator.lispEvaluator import evaluate, createInstr
+from exceptions import SymbNotFoundException
+from isa import write_code, Opcode
 
 prevId = 0
 

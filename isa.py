@@ -2,6 +2,15 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-class-docstring
 
+"""
+Типы данных для представления и сериализации/десериализации машинного кода.
+
+Особенности:
+- Машинный код сериализуется в список JSON.
+- Один элемент списка -- одна инструкция.
+- Индекс списка -- адрес инструкции.
+"""
+
 import json
 from enum import Enum
 

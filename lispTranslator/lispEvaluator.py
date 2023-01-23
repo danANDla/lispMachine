@@ -1,10 +1,15 @@
 # pylint: disable=invalid-name
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-class-docstring
+# pylint: disable=line-too-long
 
-from lispTranslator.lispClasses import *
+"""
+    Модуль, преобразующий Lisp объекты в машинный код
+"""
+
+from lispTranslator.lispClasses import LispAtom, AtomType, constNIL, constT, LispList, ListType, LispObject
 from lispTranslator.lispReader import funcs, symbols, symbMem
-from exceptions import *
+from exceptions import InvalidFunctionSignatureException, SymbNotFoundException
 from isa import Opcode
 
 buffer = 0
@@ -24,9 +29,6 @@ def loadValue(value: LispAtom) -> list:
     loadingValue = 0
     machineCodes = []
     if value.type == AtomType.SYMB:
-        '''
-            load mem[symbol.addres]
-        '''
         address = symbols[value.content][2]
         machineCodes.append(createInstr(Opcode.LOAD, address, 1))
         return machineCodes
@@ -122,7 +124,7 @@ def arithCheck(form: LispList) -> bool:
     for i, a in enumerate(form.args):
         if a.type == AtomType.SYMB and symbols[a.content][0] == AtomType.UNDEF:
             raise SymbNotFoundException(f"Unknown symbol '{a.content}'")
-        if type(a) != LispAtom:
+        if not isinstance(a, LispAtom):
             raise InvalidFunctionSignatureException(f'sum function only works with atoms')
         if not (a.type == AtomType.SYMB or a.type == AtomType.NUM or a.type == AtomType.PREV):
             raise InvalidFunctionSignatureException(f'sum function only works with numbers')
@@ -166,7 +168,7 @@ def lispPrint(form: LispList):
     for i, a in enumerate(form.args):
         if a.type == AtomType.SYMB and symbols[a.content][0] == AtomType.UNDEF:
             raise SymbNotFoundException(f"Unknown symbol '{a.content}'")
-        if type(a) != LispAtom:
+        if not isinstance(a, LispAtom):
             raise InvalidFunctionSignatureException(f'{form.content} function only works with atoms')
         if not (a.type == AtomType.SYMB or a.type == AtomType.NUM or a.type == AtomType.PREV):
             raise InvalidFunctionSignatureException(f'{form.content} function only works with numbers')
@@ -299,24 +301,24 @@ def execFunc(form: LispList, prev: int):
 # [evaluator]
 def evaluate(form: LispObject, machineCodes: list, prev):
     global prevId
-    if type(form) == LispAtom:
+    if isinstance(form, LispAtom):
         return machineCodes, prev
     else:
         args = form.args
         if form.content == 'if':
             cond, formThen = args
-            if type(cond) != LispList:
+            if not isinstance(cond, LispList):
                 if cond.type == AtomType.CONST and cond.content == 'NIL':
                     pass
                 else:
                     cond = constT
-            if type(formThen) != LispList:
+            if not isinstance(formThen, LispList):
                 raise InvalidFunctionSignatureException('then form should be lispLis')
 
             condCodes = []
-            if type(cond) == LispList:
+            if isinstance(cond, LispList):
                 for i, arg in enumerate(cond.args):
-                    if type(arg) == LispList:
+                    if isinstance(arg, LispList):
                         prevId += 1
                         e = evaluate(arg, condCodes, prevId)
                         condCodes = e[0]
@@ -334,7 +336,7 @@ def evaluate(form: LispObject, machineCodes: list, prev):
             machineCodes = lispLoop(machineCodes)
         else:
             for i, arg in enumerate(args):
-                if type(arg) == LispList:
+                if isinstance(arg, LispList):
                     prevId += 1
                     e = evaluate(arg, machineCodes, prevId)
                     machineCodes = e[0]

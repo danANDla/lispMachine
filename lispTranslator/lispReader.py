@@ -2,8 +2,12 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-class-docstring
 
-from lispTranslator.lispClasses import *
-from exceptions import *
+"""
+     Модуль для интерпретирования входящего текста в Lisp объекты
+"""
+
+from lispTranslator.lispClasses import ListType, LispList, LispAtom, AtomType
+from exceptions import SymbNotFoundException, MacrosNameTakenException
 
 funcs = {
     'print': ListType.FUNC,
@@ -37,20 +41,18 @@ def checkParentheses(myStr):
             stack.append(i)
         elif i in close_list:
             pos = close_list.index(i)
-            if ((len(stack) > 0) and (open_list[pos] == stack[len(stack) - 1])):
+            if (len(stack) > 0) and (open_list[pos] == stack[len(stack) - 1]):
                 stack.pop()
             else:
                 return "Unbalanced"
     if len(stack) == 0:
         return "Balanced"
-    else:
-        return "Unbalanced"
+    return "Unbalanced"
 
 
 def removeComments(text: str):
     newText = ""
-    for i, line in enumerate(text.split("\n")):
-        commentPos = -1
+    for line in text.split("\n"):
         commentPos = line.find(';')
         if commentPos != -1:
             if not (commentPos == 1 or commentPos == 0):
@@ -63,19 +65,16 @@ def removeComments(text: str):
 
 
 def isSelfEvaluated(pred: str) -> bool:
-    if pred[0] == '"' or str.isnumeric(pred) or pred == 'NIL' or pred == 'T':
-        return True
-    else:
-        return False
+    return pred[0] == '"' or str.isnumeric(pred) or pred == 'NIL' or pred == 'T'
 
 
 def substituteRecursively(dic: dict, expr):
     for i, content in enumerate(expr):
-        if type(content) == str:
+        if isinstance(content, str):
             s = str(content)
             if s.startswith(',') and s[1:] in dic:
                 lispObj = dic.get(s[1:])
-                if type(lispObj) == list:
+                if isinstance(lispObj, list):
                     expr[i] = lispObj[0]
                     for o in lispObj[1:]:
                         expr.append(o)
@@ -110,16 +109,16 @@ def makeFuncFromMacro(macro: LispList):
 
 
 def makeLispForm(expr):
-    if type(expr) == LispAtom or type(expr) == LispList:
+    if isinstance(expr, LispAtom) or isinstance(expr, LispList):
         return expr
-    if type(expr) != list:
+    if not isinstance(expr, list):
         s = str(expr)
         form = []
         if s.isnumeric():
             form = LispAtom(int(expr), AtomType.NUM)
         elif s.startswith('"'):
             form = LispAtom(expr[1:-1], AtomType.STR)
-        elif s == 'NIL' or s == 'T':
+        elif s in {'NIL', 'T'}:
             form = LispAtom(expr, AtomType.CONST)
         elif s in symbols:
             form = LispAtom(expr, AtomType.SYMB)
@@ -149,7 +148,7 @@ def makeLispForm(expr):
         if expr[1] in symbols:
             raise MacrosNameTakenException(f"Macos with name '{pred}' is already defined")
         symbols[expr[1]] = (ListType.MACRO, form)
-    elif pred in symbols and type(symbols.get(pred)) != LispAtom:
+    elif pred in symbols and not isinstance(symbols.get(pred), LispAtom):
         form = makeFuncFromMacro(form)
 
     return form

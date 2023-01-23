@@ -1,11 +1,12 @@
 # pylint: disable=invalid-name
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-class-docstring
+# pylint: disable=line-too-long
 
 import sys
 import logging
-from isa import Opcode, read_code
 from enum import Enum
+from isa import Opcode, read_code
 from exceptions import WrongSignalException, EmptyInputException, ZeroDivisionEception
 
 
@@ -296,15 +297,8 @@ class ControlUnit:
             zf = 1
         if self.dataPath.sf:
             sf = 1
-        state = "{{TICK: {}, PC: {}, ADDR: {}, OUT: {}, ACC: {}, ZF|SF: {}{}}}".format(
-            self._tick,
-            self.pc,
-            self.dataPath.addr,
-            self.dataPath.dataMemory[self.dataPath.addr],
-            self.dataPath.acc,
-            zf, sf
-        )
-
+        state = f"{{TICK: {self._tick}, PC: {self.pc}, ADDR: {self.dataPath.addr}, " \
+                f"OUT: {self.dataPath.dataMemory[self.dataPath.addr]}, ACC: {self.dataPath.acc}, ZF|SF: {zf}{sf}}}"
         instr = self.program[self.pc]
         opcode = instr["opcode"]
         arg = instr.get("arg", "")
@@ -316,9 +310,9 @@ class ControlUnit:
         elif instr["mem"] == 3:
             isAddr = 'relative addr'
 
-        action = "{} {} {}".format(opcode, arg, isAddr)
+        action = f"{opcode} {arg} {isAddr}"
 
-        return "{} {}".format(state, action)
+        return f"{state} {action}"
 
 
 def simulation(code, inputTokens, data_memory_size, limit):
@@ -331,7 +325,7 @@ def simulation(code, inputTokens, data_memory_size, limit):
         while True:
             if instr_counter > limit:
                 print("too long execution")
-                return
+                return ''
             res = control_unit.workInstruction()
             if res == Opcode.HLT:
                 break
