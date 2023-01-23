@@ -1,3 +1,7 @@
+# pylint: disable=invalid-name
+# pylint: disable=missing-function-docstring
+# pylint: disable=missing-class-docstring
+
 from lispTranslator.lispClasses import *
 from lispTranslator.lispReader import funcs, symbols, symbMem
 from exceptions import *
