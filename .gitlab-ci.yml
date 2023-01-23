@@ -11,6 +11,6 @@ test-job:   # This job runs in the test stage.
     - pip3 install --no-cache-dir -r requirements.txt
     - python3-coverage run -m pytest --verbose
     - find . -type f -name "*.py" | xargs -t python3-coverage report
-    - find . -type f -name "*.py" | xargs -t pep8 --ignore=E501
-    - find . -type f -name "*.py" | xargs -t pylint --disable=R1702,R0902,C0200,R0912,R0915,R0914,C0103,C0116
+    - find . -type f -name "*.py" | xargs -t pep8 --ignore=E501,W503,W504,W505
+    - find . -type f -name "*.py" | xargs -t pylint --disable=R0902,R0912,R0913,R0914,R0915,W0603
 
