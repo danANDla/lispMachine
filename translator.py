@@ -24,12 +24,12 @@ def main(args):
         text = f.read().strip()
 
     text = removeComments(text)
-    sExpressions = readerWork(text)
+    sExpressions, symbols, symbMem = readerWork(text)
     forms = []
 
     for expr in sExpressions:
         try:
-            form = makeLispForm(expr)
+            form, symbols, symbMem = makeLispForm(expr, symbols, symbMem)
             forms.append(form)
         except SymbNotFoundException as e:
             print(e)
@@ -38,7 +38,7 @@ def main(args):
     for form in forms:
         machineCodes = []
         prevId = 0
-        machineCodes = evaluate(form, machineCodes, 0)[0]
+        machineCodes, _, symbols = evaluate(form, machineCodes, 0, symbols)
         code += machineCodes
 
     code.append(createInstr(Opcode.HLT, '', 0))

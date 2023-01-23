@@ -8,258 +8,258 @@ output: |
   instr_counter:  252 ticks: 503
 log: |
   DEBUG    root:machine.py:327 {TICK: 0, PC: 0, ADDR: 0, OUT: 0, ACC: 0, ZF|SF: 00} load 1 
-  DEBUG    root:machine.py:337 {TICK: 2, PC: 1, ADDR: 0, OUT: 0, ACC: 1, ZF|SF: 00} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 4, PC: 2, ADDR: 102, OUT: 1, ACC: 1, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 6, PC: 3, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 8, PC: 4, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 9, PC: 5, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 12, PC: 7, ADDR: 102, OUT: 119, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 14, PC: 8, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 15, PC: 9, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 18, PC: 2, ADDR: 102, OUT: 119, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 20, PC: 3, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 22, PC: 4, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 23, PC: 5, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 26, PC: 7, ADDR: 102, OUT: 105, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 28, PC: 8, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 29, PC: 9, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 32, PC: 2, ADDR: 102, OUT: 105, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 34, PC: 3, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 36, PC: 4, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 37, PC: 5, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 40, PC: 7, ADDR: 102, OUT: 110, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 42, PC: 8, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 43, PC: 9, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 46, PC: 2, ADDR: 102, OUT: 110, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 48, PC: 3, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 50, PC: 4, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 51, PC: 5, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 54, PC: 7, ADDR: 102, OUT: 103, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 56, PC: 8, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 57, PC: 9, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 60, PC: 2, ADDR: 102, OUT: 103, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 62, PC: 3, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 64, PC: 4, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 65, PC: 5, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 68, PC: 7, ADDR: 102, OUT: 45, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 70, PC: 8, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 71, PC: 9, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 74, PC: 2, ADDR: 102, OUT: 45, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 76, PC: 3, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 78, PC: 4, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 79, PC: 5, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 82, PC: 7, ADDR: 102, OUT: 119, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 84, PC: 8, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 85, PC: 9, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 88, PC: 2, ADDR: 102, OUT: 119, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 90, PC: 3, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 92, PC: 4, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 93, PC: 5, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 96, PC: 7, ADDR: 102, OUT: 105, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 98, PC: 8, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 99, PC: 9, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 102, PC: 2, ADDR: 102, OUT: 105, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 104, PC: 3, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 106, PC: 4, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 107, PC: 5, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 110, PC: 7, ADDR: 102, OUT: 110, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 112, PC: 8, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 113, PC: 9, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 116, PC: 2, ADDR: 102, OUT: 110, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 118, PC: 3, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 120, PC: 4, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 121, PC: 5, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 124, PC: 7, ADDR: 102, OUT: 103, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 126, PC: 8, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 127, PC: 9, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 130, PC: 2, ADDR: 102, OUT: 103, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 132, PC: 3, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 134, PC: 4, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 135, PC: 5, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 138, PC: 7, ADDR: 102, OUT: 45, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 140, PC: 8, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 141, PC: 9, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 144, PC: 2, ADDR: 102, OUT: 45, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 146, PC: 3, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 148, PC: 4, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 149, PC: 5, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 152, PC: 7, ADDR: 102, OUT: 119, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 154, PC: 8, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 155, PC: 9, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 158, PC: 2, ADDR: 102, OUT: 119, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 160, PC: 3, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 162, PC: 4, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 163, PC: 5, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 166, PC: 7, ADDR: 102, OUT: 105, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 168, PC: 8, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 169, PC: 9, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 172, PC: 2, ADDR: 102, OUT: 105, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 174, PC: 3, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 176, PC: 4, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 177, PC: 5, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 180, PC: 7, ADDR: 102, OUT: 110, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 182, PC: 8, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 183, PC: 9, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 186, PC: 2, ADDR: 102, OUT: 110, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 188, PC: 3, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 190, PC: 4, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 191, PC: 5, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 194, PC: 7, ADDR: 102, OUT: 103, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 196, PC: 8, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 197, PC: 9, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 200, PC: 2, ADDR: 102, OUT: 103, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 202, PC: 3, ADDR: 102, OUT: 32, ACC: 32, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 204, PC: 4, ADDR: 102, OUT: 32, ACC: 32, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 205, PC: 5, ADDR: 102, OUT: 32, ACC: 32, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 208, PC: 7, ADDR: 102, OUT: 32, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 210, PC: 8, ADDR: 102, OUT: 32, ACC: 32, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 211, PC: 9, ADDR: 102, OUT: 32, ACC: 32, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 214, PC: 2, ADDR: 102, OUT: 32, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 216, PC: 3, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 218, PC: 4, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 219, PC: 5, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 222, PC: 7, ADDR: 102, OUT: 119, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 224, PC: 8, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 225, PC: 9, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 228, PC: 2, ADDR: 102, OUT: 119, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 230, PC: 3, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 232, PC: 4, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 233, PC: 5, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 236, PC: 7, ADDR: 102, OUT: 105, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 238, PC: 8, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 239, PC: 9, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 242, PC: 2, ADDR: 102, OUT: 105, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 244, PC: 3, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 246, PC: 4, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 247, PC: 5, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 250, PC: 7, ADDR: 102, OUT: 110, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 252, PC: 8, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 253, PC: 9, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 256, PC: 2, ADDR: 102, OUT: 110, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 258, PC: 3, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 260, PC: 4, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 261, PC: 5, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 264, PC: 7, ADDR: 102, OUT: 103, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 266, PC: 8, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 267, PC: 9, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 270, PC: 2, ADDR: 102, OUT: 103, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 272, PC: 3, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 274, PC: 4, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 275, PC: 5, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 278, PC: 7, ADDR: 102, OUT: 45, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 280, PC: 8, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 281, PC: 9, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 284, PC: 2, ADDR: 102, OUT: 45, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 286, PC: 3, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 288, PC: 4, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 289, PC: 5, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 292, PC: 7, ADDR: 102, OUT: 119, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 294, PC: 8, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 295, PC: 9, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 298, PC: 2, ADDR: 102, OUT: 119, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 300, PC: 3, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 302, PC: 4, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 303, PC: 5, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 306, PC: 7, ADDR: 102, OUT: 105, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 308, PC: 8, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 309, PC: 9, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 312, PC: 2, ADDR: 102, OUT: 105, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 314, PC: 3, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 316, PC: 4, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 317, PC: 5, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 320, PC: 7, ADDR: 102, OUT: 110, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 322, PC: 8, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 323, PC: 9, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 326, PC: 2, ADDR: 102, OUT: 110, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 328, PC: 3, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 330, PC: 4, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 331, PC: 5, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 334, PC: 7, ADDR: 102, OUT: 103, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 336, PC: 8, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 337, PC: 9, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 340, PC: 2, ADDR: 102, OUT: 103, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 342, PC: 3, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 344, PC: 4, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 345, PC: 5, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 348, PC: 7, ADDR: 102, OUT: 45, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 350, PC: 8, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 351, PC: 9, ADDR: 102, OUT: 45, ACC: 45, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 354, PC: 2, ADDR: 102, OUT: 45, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 356, PC: 3, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 358, PC: 4, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 359, PC: 5, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 362, PC: 7, ADDR: 102, OUT: 119, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 364, PC: 8, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 365, PC: 9, ADDR: 102, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 368, PC: 2, ADDR: 102, OUT: 119, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 370, PC: 3, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 372, PC: 4, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 373, PC: 5, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 376, PC: 7, ADDR: 102, OUT: 105, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 378, PC: 8, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 379, PC: 9, ADDR: 102, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 382, PC: 2, ADDR: 102, OUT: 105, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 384, PC: 3, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 386, PC: 4, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 387, PC: 5, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 390, PC: 7, ADDR: 102, OUT: 110, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 392, PC: 8, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 393, PC: 9, ADDR: 102, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 396, PC: 2, ADDR: 102, OUT: 110, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 398, PC: 3, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 400, PC: 4, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 401, PC: 5, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 404, PC: 7, ADDR: 102, OUT: 103, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 406, PC: 8, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 407, PC: 9, ADDR: 102, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 410, PC: 2, ADDR: 102, OUT: 103, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 412, PC: 3, ADDR: 102, OUT: 32, ACC: 32, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 414, PC: 4, ADDR: 102, OUT: 32, ACC: 32, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 415, PC: 5, ADDR: 102, OUT: 32, ACC: 32, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 418, PC: 7, ADDR: 102, OUT: 32, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 420, PC: 8, ADDR: 102, OUT: 32, ACC: 32, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 421, PC: 9, ADDR: 102, OUT: 32, ACC: 32, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 424, PC: 2, ADDR: 102, OUT: 32, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 426, PC: 3, ADDR: 102, OUT: 104, ACC: 104, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 428, PC: 4, ADDR: 102, OUT: 104, ACC: 104, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 429, PC: 5, ADDR: 102, OUT: 104, ACC: 104, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 432, PC: 7, ADDR: 102, OUT: 104, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 434, PC: 8, ADDR: 102, OUT: 104, ACC: 104, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 435, PC: 9, ADDR: 102, OUT: 104, ACC: 104, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 438, PC: 2, ADDR: 102, OUT: 104, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 440, PC: 3, ADDR: 102, OUT: 97, ACC: 97, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 442, PC: 4, ADDR: 102, OUT: 97, ACC: 97, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 443, PC: 5, ADDR: 102, OUT: 97, ACC: 97, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 446, PC: 7, ADDR: 102, OUT: 97, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 448, PC: 8, ADDR: 102, OUT: 97, ACC: 97, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 449, PC: 9, ADDR: 102, OUT: 97, ACC: 97, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 452, PC: 2, ADDR: 102, OUT: 97, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 454, PC: 3, ADDR: 102, OUT: 108, ACC: 108, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 456, PC: 4, ADDR: 102, OUT: 108, ACC: 108, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 457, PC: 5, ADDR: 102, OUT: 108, ACC: 108, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 460, PC: 7, ADDR: 102, OUT: 108, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 462, PC: 8, ADDR: 102, OUT: 108, ACC: 108, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 463, PC: 9, ADDR: 102, OUT: 108, ACC: 108, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 466, PC: 2, ADDR: 102, OUT: 108, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 468, PC: 3, ADDR: 102, OUT: 108, ACC: 108, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 470, PC: 4, ADDR: 102, OUT: 108, ACC: 108, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 471, PC: 5, ADDR: 102, OUT: 108, ACC: 108, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 474, PC: 7, ADDR: 102, OUT: 108, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 476, PC: 8, ADDR: 102, OUT: 108, ACC: 108, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 477, PC: 9, ADDR: 102, OUT: 108, ACC: 108, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 480, PC: 2, ADDR: 102, OUT: 108, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 482, PC: 3, ADDR: 102, OUT: 111, ACC: 111, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 484, PC: 4, ADDR: 102, OUT: 111, ACC: 111, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 485, PC: 5, ADDR: 102, OUT: 111, ACC: 111, ZF|SF: 00} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 488, PC: 7, ADDR: 102, OUT: 111, ACC: 7, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 490, PC: 8, ADDR: 102, OUT: 111, ACC: 111, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 491, PC: 9, ADDR: 102, OUT: 111, ACC: 111, ZF|SF: 00} jmp -7 relative addr
-  DEBUG    root:machine.py:337 {TICK: 494, PC: 2, ADDR: 102, OUT: 111, ACC: 2, ZF|SF: 00} scan 102 addr
-  DEBUG    root:machine.py:337 {TICK: 496, PC: 3, ADDR: 102, OUT: 0, ACC: 0, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 498, PC: 4, ADDR: 102, OUT: 0, ACC: 0, ZF|SF: 00} cmp 0 
-  DEBUG    root:machine.py:337 {TICK: 499, PC: 5, ADDR: 102, OUT: 0, ACC: 0, ZF|SF: 10} jne 2 relative addr
-  DEBUG    root:machine.py:337 {TICK: 500, PC: 6, ADDR: 102, OUT: 0, ACC: 0, ZF|SF: 10} jmp 4 relative addr
-  DEBUG    root:machine.py:337 {TICK: 503, PC: 10, ADDR: 102, OUT: 0, ACC: 10, ZF|SF: 10} hlt  
+  DEBUG    root:machine.py:337 {TICK: 2, PC: 1, ADDR: 0, OUT: 0, ACC: 1, ZF|SF: 00} store 100 addr
+  DEBUG    root:machine.py:337 {TICK: 4, PC: 2, ADDR: 100, OUT: 1, ACC: 1, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 6, PC: 3, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 8, PC: 4, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 9, PC: 5, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 12, PC: 7, ADDR: 100, OUT: 119, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 14, PC: 8, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 15, PC: 9, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 18, PC: 2, ADDR: 100, OUT: 119, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 20, PC: 3, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 22, PC: 4, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 23, PC: 5, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 26, PC: 7, ADDR: 100, OUT: 105, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 28, PC: 8, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 29, PC: 9, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 32, PC: 2, ADDR: 100, OUT: 105, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 34, PC: 3, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 36, PC: 4, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 37, PC: 5, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 40, PC: 7, ADDR: 100, OUT: 110, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 42, PC: 8, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 43, PC: 9, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 46, PC: 2, ADDR: 100, OUT: 110, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 48, PC: 3, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 50, PC: 4, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 51, PC: 5, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 54, PC: 7, ADDR: 100, OUT: 103, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 56, PC: 8, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 57, PC: 9, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 60, PC: 2, ADDR: 100, OUT: 103, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 62, PC: 3, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 64, PC: 4, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 65, PC: 5, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 68, PC: 7, ADDR: 100, OUT: 45, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 70, PC: 8, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 71, PC: 9, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 74, PC: 2, ADDR: 100, OUT: 45, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 76, PC: 3, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 78, PC: 4, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 79, PC: 5, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 82, PC: 7, ADDR: 100, OUT: 119, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 84, PC: 8, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 85, PC: 9, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 88, PC: 2, ADDR: 100, OUT: 119, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 90, PC: 3, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 92, PC: 4, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 93, PC: 5, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 96, PC: 7, ADDR: 100, OUT: 105, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 98, PC: 8, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 99, PC: 9, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 102, PC: 2, ADDR: 100, OUT: 105, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 104, PC: 3, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 106, PC: 4, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 107, PC: 5, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 110, PC: 7, ADDR: 100, OUT: 110, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 112, PC: 8, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 113, PC: 9, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 116, PC: 2, ADDR: 100, OUT: 110, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 118, PC: 3, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 120, PC: 4, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 121, PC: 5, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 124, PC: 7, ADDR: 100, OUT: 103, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 126, PC: 8, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 127, PC: 9, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 130, PC: 2, ADDR: 100, OUT: 103, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 132, PC: 3, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 134, PC: 4, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 135, PC: 5, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 138, PC: 7, ADDR: 100, OUT: 45, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 140, PC: 8, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 141, PC: 9, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 144, PC: 2, ADDR: 100, OUT: 45, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 146, PC: 3, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 148, PC: 4, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 149, PC: 5, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 152, PC: 7, ADDR: 100, OUT: 119, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 154, PC: 8, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 155, PC: 9, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 158, PC: 2, ADDR: 100, OUT: 119, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 160, PC: 3, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 162, PC: 4, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 163, PC: 5, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 166, PC: 7, ADDR: 100, OUT: 105, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 168, PC: 8, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 169, PC: 9, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 172, PC: 2, ADDR: 100, OUT: 105, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 174, PC: 3, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 176, PC: 4, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 177, PC: 5, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 180, PC: 7, ADDR: 100, OUT: 110, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 182, PC: 8, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 183, PC: 9, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 186, PC: 2, ADDR: 100, OUT: 110, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 188, PC: 3, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 190, PC: 4, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 191, PC: 5, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 194, PC: 7, ADDR: 100, OUT: 103, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 196, PC: 8, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 197, PC: 9, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 200, PC: 2, ADDR: 100, OUT: 103, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 202, PC: 3, ADDR: 100, OUT: 32, ACC: 32, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 204, PC: 4, ADDR: 100, OUT: 32, ACC: 32, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 205, PC: 5, ADDR: 100, OUT: 32, ACC: 32, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 208, PC: 7, ADDR: 100, OUT: 32, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 210, PC: 8, ADDR: 100, OUT: 32, ACC: 32, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 211, PC: 9, ADDR: 100, OUT: 32, ACC: 32, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 214, PC: 2, ADDR: 100, OUT: 32, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 216, PC: 3, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 218, PC: 4, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 219, PC: 5, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 222, PC: 7, ADDR: 100, OUT: 119, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 224, PC: 8, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 225, PC: 9, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 228, PC: 2, ADDR: 100, OUT: 119, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 230, PC: 3, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 232, PC: 4, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 233, PC: 5, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 236, PC: 7, ADDR: 100, OUT: 105, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 238, PC: 8, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 239, PC: 9, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 242, PC: 2, ADDR: 100, OUT: 105, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 244, PC: 3, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 246, PC: 4, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 247, PC: 5, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 250, PC: 7, ADDR: 100, OUT: 110, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 252, PC: 8, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 253, PC: 9, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 256, PC: 2, ADDR: 100, OUT: 110, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 258, PC: 3, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 260, PC: 4, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 261, PC: 5, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 264, PC: 7, ADDR: 100, OUT: 103, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 266, PC: 8, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 267, PC: 9, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 270, PC: 2, ADDR: 100, OUT: 103, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 272, PC: 3, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 274, PC: 4, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 275, PC: 5, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 278, PC: 7, ADDR: 100, OUT: 45, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 280, PC: 8, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 281, PC: 9, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 284, PC: 2, ADDR: 100, OUT: 45, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 286, PC: 3, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 288, PC: 4, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 289, PC: 5, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 292, PC: 7, ADDR: 100, OUT: 119, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 294, PC: 8, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 295, PC: 9, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 298, PC: 2, ADDR: 100, OUT: 119, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 300, PC: 3, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 302, PC: 4, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 303, PC: 5, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 306, PC: 7, ADDR: 100, OUT: 105, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 308, PC: 8, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 309, PC: 9, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 312, PC: 2, ADDR: 100, OUT: 105, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 314, PC: 3, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 316, PC: 4, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 317, PC: 5, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 320, PC: 7, ADDR: 100, OUT: 110, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 322, PC: 8, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 323, PC: 9, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 326, PC: 2, ADDR: 100, OUT: 110, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 328, PC: 3, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 330, PC: 4, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 331, PC: 5, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 334, PC: 7, ADDR: 100, OUT: 103, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 336, PC: 8, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 337, PC: 9, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 340, PC: 2, ADDR: 100, OUT: 103, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 342, PC: 3, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 344, PC: 4, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 345, PC: 5, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 348, PC: 7, ADDR: 100, OUT: 45, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 350, PC: 8, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 351, PC: 9, ADDR: 100, OUT: 45, ACC: 45, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 354, PC: 2, ADDR: 100, OUT: 45, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 356, PC: 3, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 358, PC: 4, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 359, PC: 5, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 362, PC: 7, ADDR: 100, OUT: 119, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 364, PC: 8, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 365, PC: 9, ADDR: 100, OUT: 119, ACC: 119, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 368, PC: 2, ADDR: 100, OUT: 119, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 370, PC: 3, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 372, PC: 4, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 373, PC: 5, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 376, PC: 7, ADDR: 100, OUT: 105, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 378, PC: 8, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 379, PC: 9, ADDR: 100, OUT: 105, ACC: 105, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 382, PC: 2, ADDR: 100, OUT: 105, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 384, PC: 3, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 386, PC: 4, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 387, PC: 5, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 390, PC: 7, ADDR: 100, OUT: 110, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 392, PC: 8, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 393, PC: 9, ADDR: 100, OUT: 110, ACC: 110, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 396, PC: 2, ADDR: 100, OUT: 110, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 398, PC: 3, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 400, PC: 4, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 401, PC: 5, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 404, PC: 7, ADDR: 100, OUT: 103, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 406, PC: 8, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 407, PC: 9, ADDR: 100, OUT: 103, ACC: 103, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 410, PC: 2, ADDR: 100, OUT: 103, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 412, PC: 3, ADDR: 100, OUT: 32, ACC: 32, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 414, PC: 4, ADDR: 100, OUT: 32, ACC: 32, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 415, PC: 5, ADDR: 100, OUT: 32, ACC: 32, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 418, PC: 7, ADDR: 100, OUT: 32, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 420, PC: 8, ADDR: 100, OUT: 32, ACC: 32, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 421, PC: 9, ADDR: 100, OUT: 32, ACC: 32, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 424, PC: 2, ADDR: 100, OUT: 32, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 426, PC: 3, ADDR: 100, OUT: 104, ACC: 104, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 428, PC: 4, ADDR: 100, OUT: 104, ACC: 104, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 429, PC: 5, ADDR: 100, OUT: 104, ACC: 104, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 432, PC: 7, ADDR: 100, OUT: 104, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 434, PC: 8, ADDR: 100, OUT: 104, ACC: 104, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 435, PC: 9, ADDR: 100, OUT: 104, ACC: 104, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 438, PC: 2, ADDR: 100, OUT: 104, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 440, PC: 3, ADDR: 100, OUT: 97, ACC: 97, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 442, PC: 4, ADDR: 100, OUT: 97, ACC: 97, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 443, PC: 5, ADDR: 100, OUT: 97, ACC: 97, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 446, PC: 7, ADDR: 100, OUT: 97, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 448, PC: 8, ADDR: 100, OUT: 97, ACC: 97, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 449, PC: 9, ADDR: 100, OUT: 97, ACC: 97, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 452, PC: 2, ADDR: 100, OUT: 97, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 454, PC: 3, ADDR: 100, OUT: 108, ACC: 108, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 456, PC: 4, ADDR: 100, OUT: 108, ACC: 108, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 457, PC: 5, ADDR: 100, OUT: 108, ACC: 108, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 460, PC: 7, ADDR: 100, OUT: 108, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 462, PC: 8, ADDR: 100, OUT: 108, ACC: 108, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 463, PC: 9, ADDR: 100, OUT: 108, ACC: 108, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 466, PC: 2, ADDR: 100, OUT: 108, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 468, PC: 3, ADDR: 100, OUT: 108, ACC: 108, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 470, PC: 4, ADDR: 100, OUT: 108, ACC: 108, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 471, PC: 5, ADDR: 100, OUT: 108, ACC: 108, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 474, PC: 7, ADDR: 100, OUT: 108, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 476, PC: 8, ADDR: 100, OUT: 108, ACC: 108, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 477, PC: 9, ADDR: 100, OUT: 108, ACC: 108, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 480, PC: 2, ADDR: 100, OUT: 108, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 482, PC: 3, ADDR: 100, OUT: 111, ACC: 111, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 484, PC: 4, ADDR: 100, OUT: 111, ACC: 111, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 485, PC: 5, ADDR: 100, OUT: 111, ACC: 111, ZF|SF: 00} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 488, PC: 7, ADDR: 100, OUT: 111, ACC: 7, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 490, PC: 8, ADDR: 100, OUT: 111, ACC: 111, ZF|SF: 00} print  
+  DEBUG    root:machine.py:337 {TICK: 491, PC: 9, ADDR: 100, OUT: 111, ACC: 111, ZF|SF: 00} jmp -7 relative addr
+  DEBUG    root:machine.py:337 {TICK: 494, PC: 2, ADDR: 100, OUT: 111, ACC: 2, ZF|SF: 00} scan 100 addr
+  DEBUG    root:machine.py:337 {TICK: 496, PC: 3, ADDR: 100, OUT: 0, ACC: 0, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 498, PC: 4, ADDR: 100, OUT: 0, ACC: 0, ZF|SF: 00} cmp 0 
+  DEBUG    root:machine.py:337 {TICK: 499, PC: 5, ADDR: 100, OUT: 0, ACC: 0, ZF|SF: 10} jne 2 relative addr
+  DEBUG    root:machine.py:337 {TICK: 500, PC: 6, ADDR: 100, OUT: 0, ACC: 0, ZF|SF: 10} jmp 4 relative addr
+  DEBUG    root:machine.py:337 {TICK: 503, PC: 10, ADDR: 100, OUT: 0, ACC: 10, ZF|SF: 10} hlt  
   INFO     root:machine.py:342 output_buffer: 'wing-wing-wing wing-wing-wing hallo'
 code: |-
   [
@@ -270,17 +270,17 @@ code: |-
       },
       {
           "opcode": "store",
-          "arg": 102,
+          "arg": 100,
           "mem": 1
       },
       {
           "opcode": "scan",
-          "arg": 102,
+          "arg": 100,
           "mem": 1
       },
       {
           "opcode": "load",
-          "arg": 102,
+          "arg": 100,
           "mem": 1
       },
       {
@@ -300,7 +300,7 @@ code: |-
       },
       {
           "opcode": "load",
-          "arg": 102,
+          "arg": 100,
           "mem": 1
       },
       {

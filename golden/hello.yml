@@ -20,49 +20,49 @@ log: |
   DEBUG    root:machine.py:337 {TICK: 20, PC: 10, ADDR: 995, OUT: 101, ACC: 101, ZF|SF: 00} load 104 
   DEBUG    root:machine.py:337 {TICK: 22, PC: 11, ADDR: 995, OUT: 101, ACC: 104, ZF|SF: 00} store 994 addr
   DEBUG    root:machine.py:337 {TICK: 24, PC: 12, ADDR: 994, OUT: 104, ACC: 104, ZF|SF: 00} load 994 
-  DEBUG    root:machine.py:337 {TICK: 26, PC: 13, ADDR: 994, OUT: 104, ACC: 994, ZF|SF: 00} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 28, PC: 14, ADDR: 102, OUT: 994, ACC: 994, ZF|SF: 00} load 102 indirect addr
+  DEBUG    root:machine.py:337 {TICK: 26, PC: 13, ADDR: 994, OUT: 104, ACC: 994, ZF|SF: 00} store 100 addr
+  DEBUG    root:machine.py:337 {TICK: 28, PC: 14, ADDR: 100, OUT: 994, ACC: 994, ZF|SF: 00} load 100 indirect addr
   DEBUG    root:machine.py:337 {TICK: 30, PC: 15, ADDR: 994, OUT: 104, ACC: 104, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 31, PC: 16, ADDR: 994, OUT: 104, ACC: 104, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 33, PC: 17, ADDR: 102, OUT: 994, ACC: 994, ZF|SF: 00} add 1 
-  DEBUG    root:machine.py:337 {TICK: 35, PC: 18, ADDR: 102, OUT: 994, ACC: 995, ZF|SF: 00} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 37, PC: 19, ADDR: 102, OUT: 995, ACC: 995, ZF|SF: 00} load 102 indirect addr
+  DEBUG    root:machine.py:337 {TICK: 31, PC: 16, ADDR: 994, OUT: 104, ACC: 104, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 33, PC: 17, ADDR: 100, OUT: 994, ACC: 994, ZF|SF: 00} add 1 
+  DEBUG    root:machine.py:337 {TICK: 35, PC: 18, ADDR: 100, OUT: 994, ACC: 995, ZF|SF: 00} store 100 addr
+  DEBUG    root:machine.py:337 {TICK: 37, PC: 19, ADDR: 100, OUT: 995, ACC: 995, ZF|SF: 00} load 100 indirect addr
   DEBUG    root:machine.py:337 {TICK: 39, PC: 20, ADDR: 995, OUT: 101, ACC: 101, ZF|SF: 00} cmp 0 
   DEBUG    root:machine.py:337 {TICK: 40, PC: 21, ADDR: 995, OUT: 101, ACC: 101, ZF|SF: 00} je 2 relative addr
   DEBUG    root:machine.py:337 {TICK: 41, PC: 22, ADDR: 995, OUT: 101, ACC: 101, ZF|SF: 00} jmp -8 relative addr
-  DEBUG    root:machine.py:337 {TICK: 44, PC: 14, ADDR: 995, OUT: 101, ACC: 14, ZF|SF: 00} load 102 indirect addr
+  DEBUG    root:machine.py:337 {TICK: 44, PC: 14, ADDR: 995, OUT: 101, ACC: 14, ZF|SF: 00} load 100 indirect addr
   DEBUG    root:machine.py:337 {TICK: 46, PC: 15, ADDR: 995, OUT: 101, ACC: 101, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 47, PC: 16, ADDR: 995, OUT: 101, ACC: 101, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 49, PC: 17, ADDR: 102, OUT: 995, ACC: 995, ZF|SF: 00} add 1 
-  DEBUG    root:machine.py:337 {TICK: 51, PC: 18, ADDR: 102, OUT: 995, ACC: 996, ZF|SF: 00} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 53, PC: 19, ADDR: 102, OUT: 996, ACC: 996, ZF|SF: 00} load 102 indirect addr
+  DEBUG    root:machine.py:337 {TICK: 47, PC: 16, ADDR: 995, OUT: 101, ACC: 101, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 49, PC: 17, ADDR: 100, OUT: 995, ACC: 995, ZF|SF: 00} add 1 
+  DEBUG    root:machine.py:337 {TICK: 51, PC: 18, ADDR: 100, OUT: 995, ACC: 996, ZF|SF: 00} store 100 addr
+  DEBUG    root:machine.py:337 {TICK: 53, PC: 19, ADDR: 100, OUT: 996, ACC: 996, ZF|SF: 00} load 100 indirect addr
   DEBUG    root:machine.py:337 {TICK: 55, PC: 20, ADDR: 996, OUT: 108, ACC: 108, ZF|SF: 00} cmp 0 
   DEBUG    root:machine.py:337 {TICK: 56, PC: 21, ADDR: 996, OUT: 108, ACC: 108, ZF|SF: 00} je 2 relative addr
   DEBUG    root:machine.py:337 {TICK: 57, PC: 22, ADDR: 996, OUT: 108, ACC: 108, ZF|SF: 00} jmp -8 relative addr
-  DEBUG    root:machine.py:337 {TICK: 60, PC: 14, ADDR: 996, OUT: 108, ACC: 14, ZF|SF: 00} load 102 indirect addr
+  DEBUG    root:machine.py:337 {TICK: 60, PC: 14, ADDR: 996, OUT: 108, ACC: 14, ZF|SF: 00} load 100 indirect addr
   DEBUG    root:machine.py:337 {TICK: 62, PC: 15, ADDR: 996, OUT: 108, ACC: 108, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 63, PC: 16, ADDR: 996, OUT: 108, ACC: 108, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 65, PC: 17, ADDR: 102, OUT: 996, ACC: 996, ZF|SF: 00} add 1 
-  DEBUG    root:machine.py:337 {TICK: 67, PC: 18, ADDR: 102, OUT: 996, ACC: 997, ZF|SF: 00} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 69, PC: 19, ADDR: 102, OUT: 997, ACC: 997, ZF|SF: 00} load 102 indirect addr
+  DEBUG    root:machine.py:337 {TICK: 63, PC: 16, ADDR: 996, OUT: 108, ACC: 108, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 65, PC: 17, ADDR: 100, OUT: 996, ACC: 996, ZF|SF: 00} add 1 
+  DEBUG    root:machine.py:337 {TICK: 67, PC: 18, ADDR: 100, OUT: 996, ACC: 997, ZF|SF: 00} store 100 addr
+  DEBUG    root:machine.py:337 {TICK: 69, PC: 19, ADDR: 100, OUT: 997, ACC: 997, ZF|SF: 00} load 100 indirect addr
   DEBUG    root:machine.py:337 {TICK: 71, PC: 20, ADDR: 997, OUT: 108, ACC: 108, ZF|SF: 00} cmp 0 
   DEBUG    root:machine.py:337 {TICK: 72, PC: 21, ADDR: 997, OUT: 108, ACC: 108, ZF|SF: 00} je 2 relative addr
   DEBUG    root:machine.py:337 {TICK: 73, PC: 22, ADDR: 997, OUT: 108, ACC: 108, ZF|SF: 00} jmp -8 relative addr
-  DEBUG    root:machine.py:337 {TICK: 76, PC: 14, ADDR: 997, OUT: 108, ACC: 14, ZF|SF: 00} load 102 indirect addr
+  DEBUG    root:machine.py:337 {TICK: 76, PC: 14, ADDR: 997, OUT: 108, ACC: 14, ZF|SF: 00} load 100 indirect addr
   DEBUG    root:machine.py:337 {TICK: 78, PC: 15, ADDR: 997, OUT: 108, ACC: 108, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 79, PC: 16, ADDR: 997, OUT: 108, ACC: 108, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 81, PC: 17, ADDR: 102, OUT: 997, ACC: 997, ZF|SF: 00} add 1 
-  DEBUG    root:machine.py:337 {TICK: 83, PC: 18, ADDR: 102, OUT: 997, ACC: 998, ZF|SF: 00} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 85, PC: 19, ADDR: 102, OUT: 998, ACC: 998, ZF|SF: 00} load 102 indirect addr
+  DEBUG    root:machine.py:337 {TICK: 79, PC: 16, ADDR: 997, OUT: 108, ACC: 108, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 81, PC: 17, ADDR: 100, OUT: 997, ACC: 997, ZF|SF: 00} add 1 
+  DEBUG    root:machine.py:337 {TICK: 83, PC: 18, ADDR: 100, OUT: 997, ACC: 998, ZF|SF: 00} store 100 addr
+  DEBUG    root:machine.py:337 {TICK: 85, PC: 19, ADDR: 100, OUT: 998, ACC: 998, ZF|SF: 00} load 100 indirect addr
   DEBUG    root:machine.py:337 {TICK: 87, PC: 20, ADDR: 998, OUT: 111, ACC: 111, ZF|SF: 00} cmp 0 
   DEBUG    root:machine.py:337 {TICK: 88, PC: 21, ADDR: 998, OUT: 111, ACC: 111, ZF|SF: 00} je 2 relative addr
   DEBUG    root:machine.py:337 {TICK: 89, PC: 22, ADDR: 998, OUT: 111, ACC: 111, ZF|SF: 00} jmp -8 relative addr
-  DEBUG    root:machine.py:337 {TICK: 92, PC: 14, ADDR: 998, OUT: 111, ACC: 14, ZF|SF: 00} load 102 indirect addr
+  DEBUG    root:machine.py:337 {TICK: 92, PC: 14, ADDR: 998, OUT: 111, ACC: 14, ZF|SF: 00} load 100 indirect addr
   DEBUG    root:machine.py:337 {TICK: 94, PC: 15, ADDR: 998, OUT: 111, ACC: 111, ZF|SF: 00} print  
-  DEBUG    root:machine.py:337 {TICK: 95, PC: 16, ADDR: 998, OUT: 111, ACC: 111, ZF|SF: 00} load 102 addr
-  DEBUG    root:machine.py:337 {TICK: 97, PC: 17, ADDR: 102, OUT: 998, ACC: 998, ZF|SF: 00} add 1 
-  DEBUG    root:machine.py:337 {TICK: 99, PC: 18, ADDR: 102, OUT: 998, ACC: 999, ZF|SF: 00} store 102 addr
-  DEBUG    root:machine.py:337 {TICK: 101, PC: 19, ADDR: 102, OUT: 999, ACC: 999, ZF|SF: 00} load 102 indirect addr
+  DEBUG    root:machine.py:337 {TICK: 95, PC: 16, ADDR: 998, OUT: 111, ACC: 111, ZF|SF: 00} load 100 addr
+  DEBUG    root:machine.py:337 {TICK: 97, PC: 17, ADDR: 100, OUT: 998, ACC: 998, ZF|SF: 00} add 1 
+  DEBUG    root:machine.py:337 {TICK: 99, PC: 18, ADDR: 100, OUT: 998, ACC: 999, ZF|SF: 00} store 100 addr
+  DEBUG    root:machine.py:337 {TICK: 101, PC: 19, ADDR: 100, OUT: 999, ACC: 999, ZF|SF: 00} load 100 indirect addr
   DEBUG    root:machine.py:337 {TICK: 103, PC: 20, ADDR: 999, OUT: 0, ACC: 0, ZF|SF: 00} cmp 0 
   DEBUG    root:machine.py:337 {TICK: 104, PC: 21, ADDR: 999, OUT: 0, ACC: 0, ZF|SF: 10} je 2 relative addr
   DEBUG    root:machine.py:337 {TICK: 107, PC: 23, ADDR: 999, OUT: 0, ACC: 23, ZF|SF: 10} hlt  
@@ -136,12 +136,12 @@ code: |-
       },
       {
           "opcode": "store",
-          "arg": 102,
+          "arg": 100,
           "mem": 1
       },
       {
           "opcode": "load",
-          "arg": 102,
+          "arg": 100,
           "mem": 2
       },
       {
@@ -151,7 +151,7 @@ code: |-
       },
       {
           "opcode": "load",
-          "arg": 102,
+          "arg": 100,
           "mem": 1
       },
       {
@@ -161,12 +161,12 @@ code: |-
       },
       {
           "opcode": "store",
-          "arg": 102,
+          "arg": 100,
           "mem": 1
       },
       {
           "opcode": "load",
-          "arg": 102,
+          "arg": 100,
           "mem": 2
       },
       {

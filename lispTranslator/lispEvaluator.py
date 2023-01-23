@@ -8,7 +8,7 @@
 """
 
 from lispTranslator.lispClasses import LispAtom, AtomType, constNIL, constT, LispList, ListType, LispObject
-from lispTranslator.lispReader import funcs, symbols
+from lispTranslator.lispReader import funcs
 from exceptions import InvalidFunctionSignatureException, SymbNotFoundException
 from isa import Opcode
 
@@ -25,7 +25,7 @@ def createInstr(op: Opcode, arg, ismem):
     }
 
 
-def loadValue(value: LispAtom) -> list:
+def loadValue(value: LispAtom, symbols) -> list:
     loadingValue = 0
     machineCodes = []
     if value.type == AtomType.SYMB:
@@ -50,7 +50,7 @@ def loadValue(value: LispAtom) -> list:
     return machineCodes
 
 
-def storeValue(value: LispAtom) -> list:
+def storeValue(value: LispAtom, symbols) -> list:
     machineCodes = []
     if value.type == AtomType.SYMB:
         address = symbols[value.content][2]
@@ -63,24 +63,24 @@ def storeValue(value: LispAtom) -> list:
     return machineCodes
 
 
-def storeString(value: LispAtom) -> list:
+def storeString(value: LispAtom, symbols) -> list:
     if value.type != AtomType.STR:
         raise InvalidFunctionSignatureException('passing non string into storeString')
     machineCodes = []
     global strPointer
     value.content += '\0'
     for ch in reversed(value.content):
-        machineCodes += loadValue(LispAtom(ch, AtomType.STR))
-        machineCodes += storeValue(LispAtom(strPointer, AtomType.NUM))
+        machineCodes += loadValue(LispAtom(ch, AtomType.STR), symbols)
+        machineCodes += storeValue(LispAtom(strPointer, AtomType.NUM), symbols)
         strPointer -= 1
     return machineCodes
 
 
-def storePrev(prev):
-    return storeValue(LispAtom(prev, AtomType.PREV))
+def storePrev(prev, symbols):
+    return storeValue(LispAtom(prev, AtomType.PREV), symbols)
 
 
-def lispSetq(form):
+def lispSetq(form, symbols):
     machineOp = []
     if len(form.args) != 2:
         raise InvalidFunctionSignatureException(f'wrong arguments number of function {form.content}')
@@ -102,22 +102,22 @@ def lispSetq(form):
     t = val.type
 
     if t == AtomType.STR:
-        machineOp = storeString(val)
-        machineOp += loadValue(LispAtom(strPointer + 1, AtomType.NUM))
-        machineOp += storeValue(form.args[0])
-        return machineOp
+        machineOp = storeString(val, symbols)
+        machineOp += loadValue(LispAtom(strPointer + 1, AtomType.NUM), symbols)
+        machineOp += storeValue(form.args[0], symbols)
+        return machineOp, symbols
 
     if t == AtomType.SYMB:
         if val.content not in symbols:
             raise SymbNotFoundException(f'unknown symbol {val.content}')
-    for i in loadValue(form.args[1]):
+    for i in loadValue(form.args[1], symbols):
         machineOp.append(i)
-    for i in storeValue(form.args[0]):
+    for i in storeValue(form.args[0], symbols):
         machineOp.append(i)
-    return machineOp
+    return machineOp, symbols
 
 
-def arithCheck(form: LispList) -> bool:
+def arithCheck(form: LispList, symbols) -> bool:
     if len(form.args) != 2:
         raise InvalidFunctionSignatureException(f'wrong arguments number of function {form.content}')
     for a in form.args:
@@ -135,13 +135,13 @@ def arithCheck(form: LispList) -> bool:
     return True
 
 
-def lispArith(form: LispList):
-    if not arithCheck(form):
+def lispArith(form: LispList, symbols):
+    if not arithCheck(form, symbols):
         return []
 
     machineCodes = []
 
-    for instr in loadValue(form.args[0]):
+    for instr in loadValue(form.args[0], symbols):
         machineCodes.append(instr)
 
     code = Opcode.ADD
@@ -161,7 +161,7 @@ def lispArith(form: LispList):
     return machineCodes
 
 
-def lispPrint(form: LispList):
+def lispPrint(form: LispList, symbols):
     if len(form.args) != 1:
         raise InvalidFunctionSignatureException(f'wrong arguments number of function {form.content}')
     for a in form.args:
@@ -193,12 +193,12 @@ def lispPrint(form: LispList):
         machineCodes.append(createInstr(Opcode.JE, 2, 3))
         machineCodes.append(createInstr(Opcode.JMP, -8, 3))
     else:
-        machineCodes += loadValue(form.args[0])
+        machineCodes += loadValue(form.args[0], symbols)
         machineCodes.append(createInstr(Opcode.PRINT, '', 0))
     return machineCodes
 
 
-def lispScan(form: LispList):
+def lispScan(form: LispList, symbols):
     if len(form.args) != 1:
         raise InvalidFunctionSignatureException(f'wrong arguments number of function {form.content}')
     for a in form.args:
@@ -213,7 +213,7 @@ def lispScan(form: LispList):
     return machineOp
 
 
-def execCmp(form: LispList, jmpSz: int):
+def execCmp(form: LispList, jmpSz: int, symbols):
     machineCodes = []
     if len(form.args) != 2:
         raise InvalidFunctionSignatureException(f'wrong arguments number of function {form.content}')
@@ -252,14 +252,16 @@ def execCmp(form: LispList, jmpSz: int):
     return machineCodes
 
 
-def lispIf(form: LispList, condCodes: list, prev: int):
+def lispIf(form: LispList, condCodes: list, prev: int, symbols):
     machineCodes = []
     machineCodes += condCodes
     cond, thenForm = form.args
 
     thenCodes = []
-    thenCodes = evaluate(thenForm, thenCodes, prev)[0]
-    machineCodes += execCmp(cond, len(thenCodes) + 1)
+    e = evaluate(thenForm, thenCodes, prev, symbols)
+    thenCodes = e[0]
+    symbols = e[2]
+    machineCodes += execCmp(cond, len(thenCodes) + 1, symbols)
     machineCodes += thenCodes
 
     return machineCodes
@@ -276,32 +278,32 @@ def lispLoop(machineCodes: list):
     return machineCodes
 
 
-def execFunc(form: LispList, prev: int):
+def execFunc(form: LispList, prev: int, symbols):
     machineCodes = []
 
     if form.content in funcs:
         match form.content:
             case '+' | '-' | 'mod' | 'rem':
-                machineCodes = lispArith(form)
+                machineCodes = lispArith(form, symbols)
                 if prev > -1:
-                    machineCodes += storePrev(prev)
+                    machineCodes += storePrev(prev, symbols)
             case 'setq':
-                machineCodes = lispSetq(form)
+                machineCodes, symbols = lispSetq(form, symbols)
             case 'print':
-                machineCodes = lispPrint(form)
+                machineCodes = lispPrint(form, symbols)
             case 'scan':
-                machineCodes = lispScan(form)
+                machineCodes = lispScan(form, symbols)
             case 'return':
                 machineCodes.append(createInstr(Opcode.HLT, "return", 0))
 
-    return machineCodes
+    return machineCodes, symbols
 
 
 # [evaluator]
-def evaluate(form: LispObject, machineCodes: list, prev):
+def evaluate(form: LispObject, machineCodes: list, prev, symbols):
     global prevId
     if isinstance(form, LispAtom):
-        return machineCodes, prev
+        return machineCodes, prev, symbols
     args = form.args
     if form.content == 'if':
         cond, formThen = args
@@ -318,27 +320,34 @@ def evaluate(form: LispObject, machineCodes: list, prev):
             for i, arg in enumerate(cond.args):
                 if isinstance(arg, LispList):
                     prevId += 1
-                    e = evaluate(arg, condCodes, prevId)
+                    e = evaluate(arg, condCodes, prevId, symbols)
                     condCodes = e[0]
                     prevLabel = e[1]
+                    symbols = e[2]
                     cond.args[i] = LispAtom(prevLabel, AtomType.PREV)
 
-        machineCodes += lispIf(LispList('if', ListType.SPEC, [cond, formThen]), condCodes, prev)
+        machineCodes += lispIf(LispList('if', ListType.SPEC, [cond, formThen]), condCodes, prev, symbols)
     elif form.content == 'progn':
         for i, arg in enumerate(args):
-            machineCodes = evaluate(arg, machineCodes, prev)[0]
-        machineCodes += storePrev(prev)
+            e = evaluate(arg, machineCodes, prev, symbols)
+            machineCodes = e[0]
+            symbols = e[2]
+        machineCodes += storePrev(prev, symbols)
     elif form.content == 'loop':
         for i, arg in enumerate(args):
-            machineCodes = evaluate(arg, machineCodes, prev)[0]
+            e = evaluate(arg, machineCodes, prev, symbols)
+            machineCodes = e[0]
+            symbols = e[2]
         machineCodes = lispLoop(machineCodes)
     else:
         for i, arg in enumerate(args):
             if isinstance(arg, LispList):
                 prevId += 1
-                e = evaluate(arg, machineCodes, prevId)
+                e = evaluate(arg, machineCodes, prevId, symbols)
                 machineCodes = e[0]
                 prevLabel = e[1]
+                symbols = e[2]
                 form.args[i] = LispAtom(prevLabel, AtomType.PREV)
-        machineCodes += execFunc(form, prev)
-    return machineCodes, prev
+        mcodes, symbols = execFunc(form, prev, symbols)
+        machineCodes += mcodes
+    return machineCodes, prev, symbols

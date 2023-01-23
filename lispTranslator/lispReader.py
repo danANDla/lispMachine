@@ -27,8 +27,6 @@ funcs = {
     'return': ListType.SPEC,
     'if': ListType.SPEC,
 }
-symbols = {}
-symbMem = [0 for i in range(100)]  # symbols Addresses, prealloc mem for 100 prevs
 
 
 # Function to check balanced parentheses
@@ -86,7 +84,7 @@ def substituteRecursively(dic: dict, expr):
     return expr
 
 
-def makeFuncFromMacro(macro: LispList):
+def makeFuncFromMacro(macro: LispList, symbols, symbMem):
     rule = symbols.get(macro.content)
     macroArgs = {}
     for i, arg in enumerate(rule[1].args[1]):
@@ -102,14 +100,14 @@ def makeFuncFromMacro(macro: LispList):
     body = rule[1].args[2]
     subBody = substituteRecursively(macroArgs, body)
 
-    newForm = makeLispForm(subBody)
+    newForm, symbols, symbMem = makeLispForm(subBody, symbols, symbMem)
 
-    return newForm
+    return newForm, symbols
 
 
-def makeLispForm(expr):
+def makeLispForm(expr, symbols, symbMem):
     if isinstance(expr, (LispAtom, LispList)):
-        return expr
+        return expr, symbols, symbMem
     if not isinstance(expr, list):
         s = str(expr)
         form = []
@@ -126,7 +124,7 @@ def makeLispForm(expr):
             symbMem.append('NIL')
             form = LispAtom(expr, AtomType.SYMB)
 
-        return form
+        return form, symbols, symbMem
 
     pred = expr[0]
     if isSelfEvaluated(pred):
@@ -140,7 +138,10 @@ def makeLispForm(expr):
     else:
         args = []
         for arg in expr[1:]:
-            args.append(makeLispForm(arg))
+            m = makeLispForm(arg, symbols, symbMem)
+            args.append(m[0])
+            symbols = m[1]
+            symbMem = m[2]
         form = LispList(pred, funcs.get(pred), args)
 
     if pred == 'defmacro':
@@ -148,9 +149,9 @@ def makeLispForm(expr):
             raise MacrosNameTakenException(f"Macos with name '{pred}' is already defined")
         symbols[expr[1]] = (ListType.MACRO, form)
     elif pred in symbols and not isinstance(symbols.get(pred), LispAtom):
-        form = makeFuncFromMacro(form)
+        form, symbols = makeFuncFromMacro(form, symbols, symbMem)
 
-    return form
+    return form, symbols, symbMem
 
 
 def readExpressions(text, pos, prevCh):
@@ -195,7 +196,7 @@ def readExpressions(text, pos, prevCh):
     return sExpressions, pos, text[pos - 1]
 
 
-def showSymbols():
+def showSymbols(symbols):
     print("{")
     for k in symbols:
         print(f'{k}: <{symbols.get(k)[0]}> {symbols.get(k)[1].content}')
@@ -205,14 +206,16 @@ def showSymbols():
 
 # [reader]
 def readerWork(text):
-    sExpressions = []
+    symbols = {}
+    symbMem = [0 for _ in range(100)]  # symbols Addresses, prealloc mem for 100 prevs
     forms = []
+
     if checkParentheses(text) == 'Balanced':
         sExpressions = readExpressions(text, 0, 'a')
         for expr in sExpressions[0]:
-            form = makeLispForm(expr)
+            form, symbols, symbMem = makeLispForm(expr, symbols, symbMem)
             if form.type != ListType.MACRO:
                 forms.append(form)
     else:
         print('Bad parenthesis')
-    return forms
+    return forms, symbols, symbMem
