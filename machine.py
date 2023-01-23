@@ -7,7 +7,7 @@ import sys
 import logging
 from enum import Enum
 from isa import Opcode, read_code
-from exceptions import WrongSignalException, EmptyInputException, ZeroDivisionEception
+from exceptions import WrongSignalException, EmptyInputException, ZeroDivisionException
 
 
 class Signal(str, Enum):
@@ -61,11 +61,11 @@ class ArithmeticLogicUnit:
                 self.res = self.left + self.right
             case Opcode.REM:
                 if self.left == 0:
-                    raise ZeroDivisionEception('ALU can not divide by zero')
+                    raise ZeroDivisionException('ALU can not divide by zero')
                 self.res = self.right % self.left
             case Opcode.MOD:
                 if self.left == 0:
-                    raise ZeroDivisionEception('ALU can not divide by zero')
+                    raise ZeroDivisionException('ALU can not divide by zero')
                 self.res = self.right // self.left
             case _:
                 raise WrongSignalException(f'ALU can not exec {self.operation}')
