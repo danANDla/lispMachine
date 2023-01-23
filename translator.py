@@ -20,8 +20,8 @@ def main(args):
         print("wrong args")
         return
     global prevId
-    f = open(args[0], mode="r")
-    text = f.read().strip()
+    with open(args[0], mode="r", encoding="UTF-8") as f:
+        text = f.read().strip()
 
     text = removeComments(text)
     sExpressions = readerWork(text)

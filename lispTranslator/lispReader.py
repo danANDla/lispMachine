@@ -55,7 +55,7 @@ def removeComments(text: str):
     for line in text.split("\n"):
         commentPos = line.find(';')
         if commentPos != -1:
-            if not (commentPos == 1 or commentPos == 0):
+            if not (commentPos in (1, 0)):
                 newText += line[0:commentPos - 1]
                 newText += '\n'
         else:
@@ -79,8 +79,7 @@ def substituteRecursively(dic: dict, expr):
                     for o in lispObj[1:]:
                         expr.append(o)
                     break
-                else:
-                    expr[i] = lispObj
+                expr[i] = lispObj
 
         else:
             expr[i] = substituteRecursively(dic, expr[i])
@@ -93,7 +92,7 @@ def makeFuncFromMacro(macro: LispList):
     for i, arg in enumerate(rule[1].args[1]):
         if arg.startswith('&'):
             s = []
-            for j in range(i, len(macro.args)):
+            for _ in range(i, len(macro.args)):
                 s.append(macro.args[i])
             macroArgs[arg[1:]] = s
 
@@ -109,7 +108,7 @@ def makeFuncFromMacro(macro: LispList):
 
 
 def makeLispForm(expr):
-    if isinstance(expr, LispAtom) or isinstance(expr, LispList):
+    if isinstance(expr, (LispAtom, LispList)):
         return expr
     if not isinstance(expr, list):
         s = str(expr)
@@ -169,10 +168,10 @@ def readExpressions(text, pos, prevCh):
             else:
                 stringReading = True
                 sExpr += ch
-        elif (ch == ' ' or ch == '\n') and not stringReading:
-            if sExpr == '' and (prevCh == ' ' or prevCh == '\n'):
+        elif (ch in (' ', '\\n')) and not stringReading:
+            if sExpr == '' and (prevCh in (' ', '\\n')):
                 sExpr = 'NIL'
-            if sExpr != '' and sExpr != '\n':
+            if sExpr not in ('', '\\n'):
                 sExpressions.append(sExpr)
             sExpr = ''
         elif ch == '(':
@@ -183,9 +182,9 @@ def readExpressions(text, pos, prevCh):
             pos += 1
             continue
         elif ch == ')':
-            if sExpr == '' and (prevCh == ' ' or prevCh == '\n'):
+            if sExpr == '' and (prevCh in (' ', '\\n')):
                 sExpr = 'NIL'
-            if sExpr != '' and sExpr != '\n':
+            if sExpr not in ('', '\\n'):
                 sExpressions.append(sExpr)
             return sExpressions, pos
         else:
@@ -198,7 +197,7 @@ def readExpressions(text, pos, prevCh):
 
 def showSymbols():
     print("{")
-    for k in symbols.keys():
+    for k in symbols:
         print(f'{k}: <{symbols.get(k)[0]}> {symbols.get(k)[1].content}')
     print("}")
     print()

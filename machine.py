@@ -3,6 +3,10 @@
 # pylint: disable=missing-class-docstring
 # pylint: disable=line-too-long
 
+"""
+    CPU model
+"""
+
 import sys
 import logging
 from enum import Enum

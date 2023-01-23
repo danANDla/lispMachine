@@ -8,7 +8,7 @@
 """
 
 from lispTranslator.lispClasses import LispAtom, AtomType, constNIL, constT, LispList, ListType, LispObject
-from lispTranslator.lispReader import funcs, symbols, symbMem
+from lispTranslator.lispReader import funcs, symbols
 from exceptions import InvalidFunctionSignatureException, SymbNotFoundException
 from isa import Opcode
 
@@ -32,7 +32,7 @@ def loadValue(value: LispAtom) -> list:
         address = symbols[value.content][2]
         machineCodes.append(createInstr(Opcode.LOAD, address, 1))
         return machineCodes
-    elif value.type == AtomType.CONST:
+    if value.type == AtomType.CONST:
         if value.content == 'T':
             loadingValue = 1
         else:
@@ -56,7 +56,7 @@ def storeValue(value: LispAtom) -> list:
         address = symbols[value.content][2]
         machineCodes.append(createInstr(Opcode.STORE, address, 1))
         return machineCodes
-    elif value.type == AtomType.NUM:
+    if value.type == AtomType.NUM:
         machineCodes.append(createInstr(Opcode.STORE, value.content, 1))
     elif value.type == AtomType.PREV:
         machineCodes.append(createInstr(Opcode.STORE, value.content, 1))
@@ -121,24 +121,24 @@ def lispSetq(form):
 def arithCheck(form: LispList) -> bool:
     if len(form.args) != 2:
         raise InvalidFunctionSignatureException(f'wrong arguments number of function {form.content}')
-    for i, a in enumerate(form.args):
+    for a in form.args:
         if a.type == AtomType.SYMB and symbols[a.content][0] == AtomType.UNDEF:
             raise SymbNotFoundException(f"Unknown symbol '{a.content}'")
         if not isinstance(a, LispAtom):
-            raise InvalidFunctionSignatureException(f'sum function only works with atoms')
-        if not (a.type == AtomType.SYMB or a.type == AtomType.NUM or a.type == AtomType.PREV):
-            raise InvalidFunctionSignatureException(f'sum function only works with numbers')
+            raise InvalidFunctionSignatureException('sum function only works with atoms')
+        if not (a.type in (AtomType.SYMB, AtomType.NUM, AtomType.PREV)):
+            raise InvalidFunctionSignatureException('sum function only works with numbers')
         if a.type == AtomType.SYMB and not (symbols[a.content] == 'NIL'
                                             or symbols[a.content] == constNIL
                                             or symbols[a.content][0] == AtomType.CONST
                                             or symbols[a.content][0] == AtomType.NUM):
-            raise InvalidFunctionSignatureException(f'sum function only works with numbers')
+            raise InvalidFunctionSignatureException('sum function only works with numbers')
     return True
 
 
 def lispArith(form: LispList):
     if not arithCheck(form):
-        return
+        return []
 
     machineCodes = []
 
@@ -165,12 +165,12 @@ def lispArith(form: LispList):
 def lispPrint(form: LispList):
     if len(form.args) != 1:
         raise InvalidFunctionSignatureException(f'wrong arguments number of function {form.content}')
-    for i, a in enumerate(form.args):
+    for a in form.args:
         if a.type == AtomType.SYMB and symbols[a.content][0] == AtomType.UNDEF:
             raise SymbNotFoundException(f"Unknown symbol '{a.content}'")
         if not isinstance(a, LispAtom):
             raise InvalidFunctionSignatureException(f'{form.content} function only works with atoms')
-        if not (a.type == AtomType.SYMB or a.type == AtomType.NUM or a.type == AtomType.PREV):
+        if not (a.type in (AtomType.SYMB, AtomType.NUM, AtomType.PREV)):
             raise InvalidFunctionSignatureException(f'{form.content} function only works with numbers')
         if a.type == AtomType.SYMB and not (symbols[a.content][0] == AtomType.STR
                                             or symbols[a.content] == 'NIL'
@@ -202,7 +202,7 @@ def lispPrint(form: LispList):
 def lispScan(form: LispList):
     if len(form.args) != 1:
         raise InvalidFunctionSignatureException(f'wrong arguments number of function {form.content}')
-    for i, a in enumerate(form.args):
+    for a in form.args:
         if a.type != AtomType.SYMB:
             raise InvalidFunctionSignatureException(f'{form.content} function only works with numbers')
         if a.type == AtomType.SYMB and symbols[a.content][0] == AtomType.UNDEF:
@@ -303,44 +303,43 @@ def evaluate(form: LispObject, machineCodes: list, prev):
     global prevId
     if isinstance(form, LispAtom):
         return machineCodes, prev
-    else:
-        args = form.args
-        if form.content == 'if':
-            cond, formThen = args
-            if not isinstance(cond, LispList):
-                if cond.type == AtomType.CONST and cond.content == 'NIL':
-                    pass
-                else:
-                    cond = constT
-            if not isinstance(formThen, LispList):
-                raise InvalidFunctionSignatureException('then form should be lispLis')
+    args = form.args
+    if form.content == 'if':
+        cond, formThen = args
+        if not isinstance(cond, LispList):
+            if cond.type == AtomType.CONST and cond.content == 'NIL':
+                pass
+            else:
+                cond = constT
+        if not isinstance(formThen, LispList):
+            raise InvalidFunctionSignatureException('then form should be lispLis')
 
-            condCodes = []
-            if isinstance(cond, LispList):
-                for i, arg in enumerate(cond.args):
-                    if isinstance(arg, LispList):
-                        prevId += 1
-                        e = evaluate(arg, condCodes, prevId)
-                        condCodes = e[0]
-                        prevLabel = e[1]
-                        cond.args[i] = LispAtom(prevLabel, AtomType.PREV)
-
-            machineCodes += lispIf(LispList('if', ListType.SPEC, [cond, formThen]), condCodes, prev)
-        elif form.content == 'progn':
-            for i, arg in enumerate(args):
-                machineCodes = evaluate(arg, machineCodes, prev)[0]
-            machineCodes += storePrev(prev)
-        elif form.content == 'loop':
-            for i, arg in enumerate(args):
-                machineCodes = evaluate(arg, machineCodes, prev)[0]
-            machineCodes = lispLoop(machineCodes)
-        else:
-            for i, arg in enumerate(args):
+        condCodes = []
+        if isinstance(cond, LispList):
+            for i, arg in enumerate(cond.args):
                 if isinstance(arg, LispList):
                     prevId += 1
-                    e = evaluate(arg, machineCodes, prevId)
-                    machineCodes = e[0]
+                    e = evaluate(arg, condCodes, prevId)
+                    condCodes = e[0]
                     prevLabel = e[1]
-                    form.args[i] = LispAtom(prevLabel, AtomType.PREV)
-            machineCodes += execFunc(form, prev)
+                    cond.args[i] = LispAtom(prevLabel, AtomType.PREV)
+
+        machineCodes += lispIf(LispList('if', ListType.SPEC, [cond, formThen]), condCodes, prev)
+    elif form.content == 'progn':
+        for i, arg in enumerate(args):
+            machineCodes = evaluate(arg, machineCodes, prev)[0]
+        machineCodes += storePrev(prev)
+    elif form.content == 'loop':
+        for i, arg in enumerate(args):
+            machineCodes = evaluate(arg, machineCodes, prev)[0]
+        machineCodes = lispLoop(machineCodes)
+    else:
+        for i, arg in enumerate(args):
+            if isinstance(arg, LispList):
+                prevId += 1
+                e = evaluate(arg, machineCodes, prevId)
+                machineCodes = e[0]
+                prevLabel = e[1]
+                form.args[i] = LispAtom(prevLabel, AtomType.PREV)
+        machineCodes += execFunc(form, prev)
     return machineCodes, prev

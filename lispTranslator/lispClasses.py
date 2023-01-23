@@ -2,6 +2,10 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-class-docstring
 
+"""
+    Lisp objects that used in Lisp evaluator
+"""
+import dataclasses
 from enum import Enum
 
 
@@ -20,11 +24,13 @@ class ListType(str, Enum):
     MACRO = 'macros'
 
 
+@dataclasses.dataclass
 class LispObject:
     def __init__(self, content):
         self.content = content
 
 
+@dataclasses.dataclass
 class LispAtom(LispObject):
     def __init__(self, content, atomType: AtomType):
         super().__init__(content)
@@ -34,6 +40,7 @@ class LispAtom(LispObject):
         return f'|{self.type}| {self.content}'
 
 
+@dataclasses.dataclass
 class LispList(LispObject):
     def __init__(self, content, listType: ListType, args):
         super().__init__(content)
