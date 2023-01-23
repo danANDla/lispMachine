@@ -260,6 +260,7 @@ def lispIf(form: LispList, condCodes: list, prev: int, symbols):
     thenCodes = []
     e = evaluate(thenForm, thenCodes, prev, symbols)
     thenCodes = e[0]
+    thenCodes += storePrev(prev, symbols)
     symbols = e[2]
     machineCodes += execCmp(cond, len(thenCodes) + 1, symbols)
     machineCodes += thenCodes
@@ -303,6 +304,7 @@ def execFunc(form: LispList, prev: int, symbols):
 def evaluate(form: LispObject, machineCodes: list, prev, symbols):
     global prevId
     if isinstance(form, LispAtom):
+        machineCodes = loadValue(form, symbols)
         return machineCodes, prev, symbols
     args = form.args
     if form.content == 'if':
@@ -312,8 +314,8 @@ def evaluate(form: LispObject, machineCodes: list, prev, symbols):
                 pass
             else:
                 cond = constT
-        if not isinstance(formThen, LispList):
-            raise InvalidFunctionSignatureException('then form should be lispLis')
+        # if not isinstance(formThen, LispList):
+        #     raise InvalidFunctionSignatureException('then form should be lispLis')
 
         condCodes = []
         if isinstance(cond, LispList):

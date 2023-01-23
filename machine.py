@@ -190,6 +190,7 @@ class ControlUnit:
                     self.dataPath.latchAcc(Signal.MEM)
 
                     self.dataPath.latchAddr(Signal.ACC)
+                    self.tick()
                     self.dataPath.latchAcc(Signal.MEM)
                 else:
                     self.putToAcc(arg)
@@ -221,6 +222,7 @@ class ControlUnit:
                 else:
                     self.dataPath.alu.setNoArg(False, False, False, opcode)
                 self.dataPath.alu.execOperation()
+                self.tick()
                 self.dataPath.latchAcc(Signal.ALU)
                 self.latchPC(Signal.NEXT)
                 self.tick()

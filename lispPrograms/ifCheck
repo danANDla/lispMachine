@@ -8,6 +8,8 @@
 ; input_buffer: '2' (50th char in ascii table)
 ; output_buffer after hlt: '2'
 ;
+; (setq a 2)
+; (scan a)
+; (if (>= (+ a a) 100) (print a))
 (setq a 2)
-(scan a)
-(if (>= (+ a a) 100) (print a)) 
+(print (if (= a 2) 100))
