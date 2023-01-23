@@ -16,6 +16,7 @@ import sys
 import machine
 import translator
 
+
 @pytest.mark.golden_test("golden/*.yml")
 def test_whole_by_golden(golden, caplog):
     caplog.set_level(logging.DEBUG)

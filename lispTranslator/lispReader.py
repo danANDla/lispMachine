@@ -33,8 +33,7 @@ def checkParentheses(myStr):
             stack.append(i)
         elif i in close_list:
             pos = close_list.index(i)
-            if ((len(stack) > 0) and
-                    (open_list[pos] == stack[len(stack) - 1])):
+            if ((len(stack) > 0) and (open_list[pos] == stack[len(stack) - 1])):
                 stack.pop()
             else:
                 return "Unbalanced"
@@ -51,7 +50,7 @@ def removeComments(text: str):
         commentPos = line.find(';')
         if commentPos != -1:
             if not (commentPos == 1 or commentPos == 0):
-                newText += line[0:commentPos-1]
+                newText += line[0:commentPos - 1]
                 newText += '\n'
         else:
             newText += line
