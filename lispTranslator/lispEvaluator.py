@@ -126,7 +126,7 @@ def arithCheck(form: LispList) -> bool:
             raise SymbNotFoundException(f"Unknown symbol '{a.content}'")
         if not isinstance(a, LispAtom):
             raise InvalidFunctionSignatureException('sum function only works with atoms')
-        if not (a.type in (AtomType.SYMB, AtomType.NUM, AtomType.PREV)):
+        if a.type not in (AtomType.SYMB, AtomType.NUM, AtomType.PREV):
             raise InvalidFunctionSignatureException('sum function only works with numbers')
         if a.type == AtomType.SYMB and not (symbols[a.content] == 'NIL'
                                             or symbols[a.content] == constNIL
@@ -170,7 +170,7 @@ def lispPrint(form: LispList):
             raise SymbNotFoundException(f"Unknown symbol '{a.content}'")
         if not isinstance(a, LispAtom):
             raise InvalidFunctionSignatureException(f'{form.content} function only works with atoms')
-        if not (a.type in (AtomType.SYMB, AtomType.NUM, AtomType.PREV)):
+        if a.type not in (AtomType.SYMB, AtomType.NUM, AtomType.PREV):
             raise InvalidFunctionSignatureException(f'{form.content} function only works with numbers')
         if a.type == AtomType.SYMB and not (symbols[a.content][0] == AtomType.STR
                                             or symbols[a.content] == 'NIL'

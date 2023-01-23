@@ -55,7 +55,7 @@ def removeComments(text: str):
     for line in text.split("\n"):
         commentPos = line.find(';')
         if commentPos != -1:
-            if not (commentPos in (1, 0)):
+            if commentPos not in (1, 0):
                 newText += line[0:commentPos - 1]
                 newText += '\n'
         else:

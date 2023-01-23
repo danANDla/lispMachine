@@ -1,3 +1,11 @@
+# pylint: disable=missing-class-docstring
+# pylint: disable=super-init-not-called
+
+"""
+    Exceptions for unacceptable behaviors
+"""
+
+
 class SymbNotFoundException(Exception):
     def __init__(self, value):
         self.value = value
