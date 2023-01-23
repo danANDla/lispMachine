@@ -2,6 +2,7 @@
 ; in thenForm. This means that all instructions will
 ; be executed if condition is true.
 ;
-; output_buffer after hlt: '87'
+; output_buffer after hlt: '87x'
 ;
 (setq a 100) (if (>= a 83) (progn (print 56) (print 55)))
+(print (progn (setq a 2) (setq a 5) 120))

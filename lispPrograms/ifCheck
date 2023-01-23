@@ -5,11 +5,7 @@
 ; want several instructions executed if condition is
 ; true, you have to use progn function or macros
 ;
-; input_buffer: '2' (50th char in ascii table)
-; output_buffer after hlt: '2'
+; output_buffer after hlt: 'd'
 ;
-; (setq a 2)
-; (scan a)
-; (if (>= (+ a a) 100) (print a))
 (setq a 2)
 (print (if (= a 2) 100))
