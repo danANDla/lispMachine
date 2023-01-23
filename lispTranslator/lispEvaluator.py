@@ -126,7 +126,10 @@ def arithCheck(form: LispList) -> bool:
             raise InvalidFunctionSignatureException(f'sum function only works with atoms')
         if not (a.type == AtomType.SYMB or a.type == AtomType.NUM or a.type == AtomType.PREV):
             raise InvalidFunctionSignatureException(f'sum function only works with numbers')
-        if a.type == AtomType.SYMB and not (symbols[a.content] == 'NIL' or symbols[a.content] == constNIL or symbols[a.content][0] == AtomType.CONST or symbols[a.content][0] == AtomType.NUM):
+        if a.type == AtomType.SYMB and not (symbols[a.content] == 'NIL'
+                or symbols[a.content] == constNIL
+                or symbols[a.content][0] == AtomType.CONST
+                or symbols[a.content][0] == AtomType.NUM):
             raise InvalidFunctionSignatureException(f'sum function only works with numbers')
     return True
 
@@ -167,7 +170,11 @@ def lispPrint(form: LispList):
             raise InvalidFunctionSignatureException(f'{form.content} function only works with atoms')
         if not (a.type == AtomType.SYMB or a.type == AtomType.NUM or a.type == AtomType.PREV):
             raise InvalidFunctionSignatureException(f'{form.content} function only works with numbers')
-        if a.type == AtomType.SYMB and not (symbols[a.content][0] == AtomType.STR or symbols[a.content] == 'NIL' or symbols[a.content] == constNIL or symbols[a.content][0] == AtomType.CONST or symbols[a.content][0] == AtomType.NUM):
+        if a.type == AtomType.SYMB and not (symbols[a.content][0] == AtomType.STR
+                or symbols[a.content] == 'NIL'
+                or symbols[a.content] == constNIL
+                or symbols[a.content][0] == AtomType.CONST
+                or symbols[a.content][0] == AtomType.NUM):
             raise InvalidFunctionSignatureException(f'{form.content} function only works with numbers')
 
     machineCodes = []
