@@ -168,10 +168,10 @@ def readExpressions(text, pos, prevCh):
             else:
                 stringReading = True
                 sExpr += ch
-        elif (ch in (' ', '\\n')) and not stringReading:
-            if sExpr == '' and (prevCh in (' ', '\\n')):
+        elif (ch in (' ', '\n')) and not stringReading:
+            if sExpr == '' and (prevCh in (' ', '\n')):
                 sExpr = 'NIL'
-            if sExpr not in ('', '\\n'):
+            if sExpr not in ('', '\n'):
                 sExpressions.append(sExpr)
             sExpr = ''
         elif ch == '(':
@@ -182,9 +182,9 @@ def readExpressions(text, pos, prevCh):
             pos += 1
             continue
         elif ch == ')':
-            if sExpr == '' and (prevCh in (' ', '\\n')):
+            if sExpr == '' and (prevCh in (' ', '\n')):
                 sExpr = 'NIL'
-            if sExpr not in ('', '\\n'):
+            if sExpr not in ('', '\n'):
                 sExpressions.append(sExpr)
             return sExpressions, pos
         else:
