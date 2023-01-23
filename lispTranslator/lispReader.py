@@ -210,6 +210,7 @@ def readerWork(text):
     symbMem = [0 for _ in range(100)]  # symbols Addresses, prealloc mem for 100 prevs
     forms = []
 
+    text = removeComments(text)
     if checkParentheses(text) == 'Balanced':
         sExpressions = readExpressions(text, 0, 'a')
         for expr in sExpressions[0]:

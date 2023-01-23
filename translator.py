@@ -7,9 +7,8 @@
 """
 
 import sys
-from lispTranslator.lispReader import removeComments, readerWork, makeLispForm
+from lispTranslator.lispReader import readerWork
 from lispTranslator.lispEvaluator import evaluate, createInstr
-from exceptions import SymbNotFoundException
 from isa import write_code, Opcode
 
 prevId = 0
@@ -23,19 +22,10 @@ def main(args):
     with open(args[0], mode="r", encoding="UTF-8") as f:
         text = f.read().strip()
 
-    text = removeComments(text)
     sExpressions, symbols, symbMem = readerWork(text)
-    forms = []
-
-    for expr in sExpressions:
-        try:
-            form, symbols, symbMem = makeLispForm(expr, symbols, symbMem)
-            forms.append(form)
-        except SymbNotFoundException as e:
-            print(e)
 
     code = []
-    for form in forms:
+    for form in sExpressions:
         machineCodes = []
         prevId = 0
         machineCodes, _, symbols = evaluate(form, machineCodes, 0, symbols)
